@@ -1,0 +1,4 @@
+Location: Some God-forsaken Rock on the Askonia Fringe
+Date: 198.05.17
+
+Why is compiler and programming stuff so stupidly complex...
