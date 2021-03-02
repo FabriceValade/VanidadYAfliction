@@ -3,13 +3,13 @@
     "fluxCapacitors": 12,
     "fluxVents": 20,
     "goalVariant": true,
-    "hullId": "VAO_ionizador",
+    "hullId": "vanidad_ionizador",
     "hullMods": [
         "targetingunit",
         "fluxbreakers"
     ],
     "permaMods": [],
-    "variantId": "VAO_ionizador_support",
+    "variantId": "vanidad_ionizador_support",
     "weaponGroups": [
         {
             "autofire": true,

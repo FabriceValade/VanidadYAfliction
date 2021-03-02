@@ -22,24 +22,28 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 		
 		// Set a small blurb for each fleet that shows up on the mission detail and
 		// mission results screens to identify each side.
-		api.setFleetTagline(FleetSide.PLAYER, "'Some lazy programmer'");
-		api.setFleetTagline(FleetSide.ENEMY, "All that stuff that is so complex");
+		api.setFleetTagline(FleetSide.PLAYER, "'The might of the Vanidad y Afliction operation'");
+		api.setFleetTagline(FleetSide.ENEMY, "Some lousy rustbucket");
 		
 		// These show up as items in the bulleted list under 
 		// "Tactical Objectives" on the mission detail screen
-		api.addBriefingItem("Show them ALL!");
-		api.addBriefingItem("Don't die");
-		api.addBriefingItem("Moon's ship has delicate engine mods; use Salamander Missiles to leave her adrift");
+		api.addBriefingItem("Test all these new ship");
+		api.addBriefingItem("Notice the imbalance");
+		api.addBriefingItem("Obtain useful insight");
 		
 		// Set up the player's fleet.  Variant names come from the
 		// files in data/variants and data/variants/fighters
 		//api.addToFleet(FleetSide.PLAYER, "station_small_Standard", FleetMemberType.SHIP, "Test Station", false);
-		api.addToFleet(FleetSide.PLAYER, "VAO_ionizador_support", FleetMemberType.SHIP, true);
-		api.addToFleet(FleetSide.PLAYER, "hound_d_Standard", FleetMemberType.SHIP, "Milk Run", false);
+		api.addToFleet(FleetSide.PLAYER, "vanidad_ionizador_support", FleetMemberType.SHIP, true);
+                api.addToFleet(FleetSide.PLAYER, "vanidad_cazador_hunter", FleetMemberType.SHIP, true);
+                api.addToFleet(FleetSide.PLAYER, "vanidad_granfrio_defender", FleetMemberType.SHIP, true);
+                api.addToFleet(FleetSide.PLAYER, "vanidad_viajero_default", FleetMemberType.SHIP, true);
+
 		
 		// Set up the enemy fleet.
-		api.addToFleet(FleetSide.ENEMY, "mule_d_pirates_Smuggler", FleetMemberType.SHIP, "Cherenkov Bloom", false);
-		
+		api.addToFleet(FleetSide.ENEMY, "mule_d_pirates_Smuggler", FleetMemberType.SHIP,  false);
+		api.addToFleet(FleetSide.ENEMY, "dominator_Support", FleetMemberType.SHIP, false);
+                api.addToFleet(FleetSide.ENEMY, "lasher_Standard", FleetMemberType.SHIP, false);
 		
 		// Set up the map.
 		float width = 12000f;
@@ -53,7 +57,7 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 		api.addAsteroidField(minX, minY + height / 2, 0, 8000f,
 							 20f, 70f, 100);
 		
-		api.addPlanet(0, 0, 50f, StarTypes.RED_GIANT, 250f, true);
+		api.addPlanet(0, 0, 50f, StarTypes.BLUE_SUPERGIANT, 250f, true);
 		
 	}
 

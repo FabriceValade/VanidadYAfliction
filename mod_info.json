@@ -5,4 +5,6 @@
 	"version":"1.0",
 	"gameVersion":"0.9.1a",
 	"description":"A singular ship added to neutral and high tech faction",
+	"jars":["jars/distribution/ProjectVao.jar"],
+	"modPlugin":"data.scripts.vanidad_aflictionModPlugin",
 }

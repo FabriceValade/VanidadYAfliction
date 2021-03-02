@@ -1,6 +1,6 @@
 {
   "hullName": "Ionizador",
-  "hullId": "VAO_ionizador",
+  "hullId": "vanidad_ionizador",
   "hullSize": "DESTROYER",
   "spriteName": "graphics/ships/Ionizador/Ionizador.png",
   "style": "HIGH_TECH",
@@ -78,7 +78,7 @@
   ],
   "engineSlots": [
     {
-      "location": [-78, -0],
+      "location": [-85.5, 0],
       "length": 33.5,
       "width": 25,
       "angle": 180,
@@ -86,7 +86,7 @@
       "style": "HIGH_TECH"
     },
     {
-      "location": [-73, -22],
+      "location": [-80.5, -22],
       "length": 32,
       "width": 14,
       "angle": 180,
@@ -94,7 +94,7 @@
       "style": "HIGH_TECH"
     },
     {
-      "location": [-73, 22],
+      "location": [-80.5, 22],
       "length": 32,
       "width": 14,
       "angle": -180,
@@ -102,7 +102,7 @@
       "style": "HIGH_TECH"
     },
     {
-      "location": [-66, -39],
+      "location": [-70.5, -40],
       "length": 32,
       "width": 14,
       "angle": 180,
@@ -110,7 +110,7 @@
       "style": "HIGH_TECH"
     },
     {
-      "location": [-66, 39],
+      "location": [-70.5, 40],
       "length": 32,
       "width": 14,
       "angle": -180,
@@ -120,9 +120,8 @@
   ],
   "bounds": [
     -83.5, 4.5,
-    -73.5, 28.5,
-    -89, 28.5,
-    -72.5, 46.5,
+    -70, 27.5,
+    -69, 46,
     -38.5, 45.5,
     -27.5, 65.5,
     10, 65.5,
@@ -143,9 +142,8 @@
     10, -66.5,
     -27.5, -66.5,
     -38.5, -46.5,
-    -72.5, -47.5,
-    -89, -29.5,
-    -73.5, -29.5,
+    -67, -47,
+    -70, -28.5,
     -83.5, -5.5
   ]
 }

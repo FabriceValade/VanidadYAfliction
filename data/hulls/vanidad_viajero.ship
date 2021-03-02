@@ -1,0 +1,200 @@
+{
+  "hullName": "Viajero Estellar",
+  "hullId": "vanidad_viajero",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/viajeroestellar/viajeroestellar.png",
+  "style": "HIGH_TECH",
+  "height": 251,
+  "width": 145,
+  "center": [73, 128.5],
+  "collisionRadius": 137,
+  "shieldCenter": [-3, 0.5],
+  "shieldRadius": 128.5,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 104,
+      "angle": -22,
+      "locations": [62.5, -29]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 104,
+      "angle": 22,
+      "locations": [62.5, 29]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 270,
+      "angle": -29,
+      "locations": [25, -0]
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "SYNERGY",
+      "mount": "TURRET",
+      "arc": 277,
+      "angle": 150.5,
+      "locations": [-26.5, 27]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 193,
+      "angle": -90,
+      "locations": [-38.5, -30.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 258,
+      "angle": -168,
+      "locations": [-78.5, -12]
+    },
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        92.5, 0.5,
+        90.5, -5,
+        90, 6
+      ]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        -2, 51,
+        -12.5, 55,
+        5.5, 46
+      ]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-109, 24.5],
+      "length": 28.5,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-109, -24.5],
+      "length": 28.5,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-105.5, 34],
+      "length": 15,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-105.5, -34],
+      "length": 15,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-108.5, 29],
+      "length": 15,
+      "width": 5,
+      "angle": 180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-108.5, -29],
+      "length": 15,
+      "width": 5,
+      "angle": -180,
+      "contrailSize": 5,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-100, -46.5],
+      "length": 46.5,
+      "width": 18,
+      "angle": 180,
+      "contrailSize": 18,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-100, 46.5],
+      "length": 46.5,
+      "width": 18,
+      "angle": -180,
+      "contrailSize": 18,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-77.5, -56.5],
+      "length": 26.502806,
+      "width": 12.263987,
+      "angle": -157,
+      "contrailSize": 12.263987,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-77.5, 56.5],
+      "length": 26.502806,
+      "width": 12.263987,
+      "angle": 157,
+      "contrailSize": 12.263987,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-109.5, -0],
+      "length": 20.5,
+      "width": 6,
+      "angle": 180,
+      "contrailSize": 6,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -104.5, 8,
+    -96, 60,
+    -30, 62,
+    6.5, 61.5,
+    38.5, 40.5,
+    113, 15,
+    113, -15,
+    38.5, -40.5,
+    -29.5, -39,
+    -30, -62,
+    -96, -60,
+    -104.5, -8
+  ]
+}
