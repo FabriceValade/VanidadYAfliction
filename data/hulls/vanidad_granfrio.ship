@@ -2,7 +2,7 @@
   "hullName": "Granfrio",
   "hullId": "vanidad_granfrio",
   "hullSize": "CRUISER",
-  "spriteName": "graphics/ships/granfrio/granfrio.png",
+  "spriteName": "graphics/vanidad/ships/granfrio/granfrio.png",
   "style": "HIGH_TECH",
   "height": 231,
   "width": 143,

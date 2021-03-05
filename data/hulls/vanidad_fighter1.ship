@@ -1,0 +1,51 @@
+{
+  "hullName": "Mole",
+  "hullId": "vanidad_fighter1",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/vanidad/ships/vanidad_fighter1.png",
+  "style": "LOW_TECH",
+  "height": 33,
+  "width": 30,
+  "center": [15, 16.5],
+  "collisionRadius": 25.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 19.5,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "HIDDEN",
+      "arc": 41,
+      "angle": 0,
+      "locations": [12.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-9, -6.5],
+      "length": 14.5,
+      "width": 4,
+      "angle": -177.5,
+      "contrailSize": 4,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-9, 6.5],
+      "length": 14.5,
+      "width": 4,
+      "angle": 177.5,
+      "contrailSize": 4,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    -13.5, 2.5,
+    -4, 13,
+    14.5, 3,
+    14.5, -3,
+    -4, -13,
+    -13.5, -2.5
+  ]
+}

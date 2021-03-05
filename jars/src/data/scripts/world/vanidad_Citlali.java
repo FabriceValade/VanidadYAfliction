@@ -5,6 +5,7 @@
  */
 package data.scripts.world;
 
+import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
@@ -34,8 +35,8 @@ public class vanidad_Citlali {
                 900, //set radius, 900 is a typical radius size
                 1000); //radius of corona terrain around star
         
-        final float arida_distance = 4000;
-        final float ice_ring_distance = 5000;
+        final float arida_distance = 5000;
+        final float ice_ring_distance = 5500;
         final float krystos_distance = 8000;
         final float gaseoso_distance = 6000;
         
@@ -43,21 +44,22 @@ public class vanidad_Citlali {
         system.addRingBand(citlali_star,"misc" , "rings_ice0" , 500, 0, Color.yellow, 500, ice_ring_distance-100, 150);
         system.addRingBand(citlali_star,"misc" , "rings_ice0" , 80, 0, Color.green, 80, ice_ring_distance+310, 150);
         
+        final float krystos_angle = 360 * (float) Math.random();
         PlanetAPI krystos = system.addPlanet("krystos", //unique id
                 citlali_star, //orbiting target
                 "Krystos", //name
                 "frozen", //set planet type, the type IDs come from starsector-core/data/campaign/procgen/planet_gen_data.csv
-                360 * (float) Math.random(), //angle
+                krystos_angle, //angle
                 190f, //radius
                 krystos_distance, //distance from orbiting target
                 500f); //orbit days
         krystos.setCustomDescriptionId("vanidad_planet_kristos"); //reference descriptions.csv
-        MarketAPI krystos_market = vanidad_AddMarketplace.addMarketplace("hegemony", krystos, null,
+        MarketAPI krystos_market = vanidad_AddMarketplace.addMarketplace("vanidad", krystos, null,
                 "Krystos",
                 6,
                 new ArrayList<>(
                         Arrays.asList(
-                                Conditions.POPULATION_6,
+                                Conditions.POPULATION_7,
                                 Conditions.ORE_ULTRARICH,
                                 Conditions.RARE_ORE_RICH,
                                 Conditions.DARK,
@@ -80,21 +82,58 @@ public class vanidad_Citlali {
                                 Industries.BATTLESTATION_HIGH,
                                 Industries.HEAVYBATTERIES,
                                 Industries.ORBITALWORKS,
+                                Industries.HIGHCOMMAND
+                        )
+                ),
+                true,
+                false);
+        JumpPointAPI jumpPointKrystos = Global.getFactory().createJumpPoint("tahlan_spindle_charkha_jump", "Spinner's Road");
+        jumpPointKrystos.setCircularOrbit(citlali_star, krystos_angle+15, 8000, 300);
+        jumpPointKrystos.setRelatedPlanet(krystos);
+        system.addEntity(jumpPointKrystos);
+        
+        
+        PlanetAPI arida = system.addPlanet("arida", 
+                citlali_star, 
+                "Arida", 
+                "arid",
+                360 * (float) Math.random() ,
+                90, 
+                arida_distance,
+                140);
+        arida.setCustomDescriptionId("vanidad_planet_arida"); //reference descriptions.csv
+        MarketAPI arida_market = vanidad_AddMarketplace.addMarketplace("vanidad", arida, null,
+                "Arida",
+                5,
+                new ArrayList<>(
+                        Arrays.asList(
+                                Conditions.POPULATION_5,
+                                Conditions.FARMLAND_ADEQUATE,
+                                Conditions.HABITABLE,
+                                Conditions.RUINS_SCATTERED,
+                                Conditions.HOT,
+                                Conditions.ORGANICS_TRACE                             
+                        )
+                ),
+                new ArrayList<>(
+                        Arrays.asList(
+                                Submarkets.SUBMARKET_OPEN,
+                                Submarkets.SUBMARKET_BLACK,
+                                Submarkets.SUBMARKET_STORAGE
+                        )
+                ),
+                new ArrayList<>(
+                        Arrays.asList(
+                                Industries.POPULATION,
+                                Industries.SPACEPORT,
+                                Industries.FARMING,
+                                Industries.LIGHTINDUSTRY,
+                                Industries.GROUNDDEFENSES,
                                 Industries.PATROLHQ
                         )
                 ),
                 true,
                 false);
-        
-        PlanetAPI arida = system.addPlanet("arida", 
-                citlali_star, 
-                "Arida", 
-                "desert",
-                360 * (float) Math.random() ,
-                90, 
-                arida_distance,
-                140);
-        PlanetConditionGenerator.generateConditionsForPlanet(arida, StarAge.AVERAGE);
         
        PlanetAPI metzli = system.addPlanet("metzli", //unique id
                 krystos, //orbiting target

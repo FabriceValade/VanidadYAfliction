@@ -1,0 +1,26 @@
+{
+	# should be a copy of "combatSmall", minus variants that are annoying to fight in low numbers
+	# for example, no Hyperions or fast beam-based kiting loadouts, or ships with damper field
+	"combatSmallForSmallFleet":{
+		"vanidad_cazador_hunter":10,
+	},
+	"combatSmall":{
+		"vanidad_cazador_hunter":10,
+	},
+	"combatMedium":{
+		"vanidad_granfrio_defender":10,
+		"vanidad_ionizador_support":10,
+	},
+	"combatLarge":{
+		"vanidad_viajero_default":10,
+	},
+
+
+
+	# carriers
+	"carrierMedium":{
+		"vanidad_viajero_default":10,
+	},
+
+	
+}

@@ -1,0 +1,2 @@
+name,id,tags,rarity,base price,stack size,cargo space,icon,sound id,sound id drop,plugin,plugin params,desc,order
+VAO Hulls Blueprint Package,vanidad_hull_package,package_bp,0.5,100000,1000,1,graphics/icons/cargo/blueprint_hightech.png,ui_chip_pickup,ui_bp_package_drop,com.fs.starfarer.api.campaign.impl.items.MultiBlueprintItemPlugin,vanidad_bp,Enables heavy industry to construct ship hulls designed by the Vanidad y Afliction Operation.,210
