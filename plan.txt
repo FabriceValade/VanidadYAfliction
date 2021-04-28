@@ -1,0 +1,52 @@
+
+ships:
+
+2 frigates
+	cazador
+		description 0%
+		sprite 100%
+		stats 50%
+2 destroyer
+	ionizador
+		description 0%
+		sprite 100%
+		stats 50%
+2 cruiser
+	granfrio 
+		description 0%
+		sprite 75%
+		stats 50%
+	Viajador Estellar
+		description 0%
+		sprite 100%
+		stats 50%
+		
+		
+weapon and fighters
+	2 fighters
+		Lenador bomber
+			sprite 50%
+			loadout 50%
+			description 0%
+			custom system 0%
+		Other fighters
+			sprite 50%
+			loadout 0%
+			description 0%
+			custom system 0%
+	1 laser flak line
+		description 0%
+		small sprite 0%
+		med sprite 0%
+		large sprite 0%
+		custom effect 75%
+		stats 50%
+		
+Campaign stuff
+	Blueprint availability 0%
+	custom system 50%
+	faction flag 100%
+	Nerexelin integration 0%
+	Commisioned crew integration 0%
+	Industrial evolution integration 0%
+	Lore 33%

@@ -1,5 +1,6 @@
 id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,,,,,,,,,,,,,number
 vanidad_fighter1,vanidad_fighter1,"fighter4, fighter, low, lowtech_bp",0,,6,8,V,4000,500,,3,FIGHTER,Heavy Fighter,10,6000,,,,,,,,,,,,,1
+vanidad_lenador,vanidad_lenador_fighter,"fighter4, fighter, low, vanidad_bp",0,,6,8,V,4000,500,,2,FIGHTER,Heavy Fighter,10,6000,,,,,,,,,,,,,
 #broadsword_wing,broadsword_Fighter,"fighter4, fighter, low, lowtech_bp",0,,6,8,V,4000,500,,3,FIGHTER,Heavy Fighter,10,6000,,,,,,,,,,,,,1
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,25
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,26

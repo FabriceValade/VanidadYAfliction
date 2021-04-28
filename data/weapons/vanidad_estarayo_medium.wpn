@@ -1,15 +1,14 @@
 {
-  "id": "vanidad_placehold",
+  "id": "vanidad_estarayo_medium",
   "specClass": "beam",
   "type": "ENERGY",
   "size": "MEDIUM",
+  "beamEffect": "data.scripts.weapons.vanidad_beamFocusEffect",
   "everyFrameEffect": "data.scripts.weapons.vanidad_alternatingBeam",
-  "beamEffect":"data.scripts.weapons.vanidad_beamFlakEffect",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/vanidad/weapons/vanidad_placehold_med_turret_base.png",
-  "hardpointSprite": "graphics/vanidad/weapons/vanidad_placehold_med_turret_base.png",
-  "renderAboveAllWeapons": 0,
+  "turretSprite": "graphics/vanidad/weapons/vanidad_estarayo_medium.png",
+  "hardpointSprite": "graphics/vanidad/weapons/vanidad_estarayo_medium.png",
   "glowColor": [
     225,
     100,
@@ -21,15 +20,15 @@
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    20.5,
-    -6
+    18,
+    -5.5
   ],
   "turretAngleOffsets": [
     0
   ],
   "hardpointOffsets": [
-    34,
-    0
+    27.5,
+    -5.5
   ],
   "hardpointAngleOffsets": [
     0

@@ -1,0 +1,14 @@
+{
+	"graphics":{
+		"misc":{
+			"vanidad_cadenaVioHead":"graphics/vanidad/weapons/chainsaw/vanidad_cadenavio_sprite.png",
+			"vanidad_cadenaVioAnim1":"graphics/vanidad/weapons/chainsaw/vanidad_cadenavioanim1.png",
+			"vanidad_cadenaVioAnim2":"graphics/vanidad/weapons/chainsaw/vanidad_cadenavioanim2.png",
+			"vanidad_cadenaVioAnim3":"graphics/vanidad/weapons/chainsaw/vanidad_cadenavioanim3.png",
+			"vanidad_cadenaVioAnim4":"graphics/vanidad/weapons/chainsaw/vanidad_cadenavioanim4.png",
+			"vanidad_cadenaVioAnim5":"graphics/vanidad/weapons/chainsaw/vanidad_cadenavioanim5.png",
+			"vanidad_cadenaVioAnim6":"graphics/vanidad/weapons/chainsaw/vanidad_cadenavioanim6.png",
+			"vanidad_cadenaVioAnim7":"graphics/vanidad/weapons/chainsaw/vanidad_cadenavioanim7.png"
+		}
+	}
+}

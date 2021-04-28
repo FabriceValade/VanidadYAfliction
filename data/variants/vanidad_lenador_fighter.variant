@@ -1,0 +1,29 @@
+{
+  "variantId": "vanidad_lenador_fighter",
+  "hullId": "vanidad_lenador",
+  "displayName": "Disassembler",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+		"ARMLEFT": "vanidad_lenador_arm_left"
+      }
+    },
+	{
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+		"ARMRIGHT": "vanidad_lenador_arm_right"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

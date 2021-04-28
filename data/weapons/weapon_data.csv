@@ -1,8 +1,17 @@
 name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn rate,OPs,ammo,ammo/sec,reload size,type,energy/shot,energy/second,chargeup,chargedown,burst size,burst delay,min spread,max spread,spread/shot,spread decay/sec,beam speed,proj speed,launch speed,flight time,proj hitpoints,hints,tags,groupTag,tech/manufacturer,for weapon tooltip>>,primaryRoleStr,speedStr,trackingStr,turnRateStr,accuracyStr,customPrimary,customPrimaryHL,customAncillary,customAncillaryHL,noDPSInTooltip,number
-Place Holder,vanidad_placehold,1,,1500,700,300,,,0,20,10,,,,ENERGY,,300,0.1,0.1,0.5,0,,,,,3200,,,,,,"energy14, beam10, vanidad_bp",,,,General,,,,,,,,,,20
+Medium Estarayo,vanidad_estarayo_medium,1,,1500,700,300,,,0,20,10,,,,KINETIC,,300,0.1,0.1,0.5,0,,,,,3200,,,,,,"energy14, beam10, vanidad_bp",,,,General,,,,,,,,,,20
+Estarayo Minelayer,vanidad_estarayo_minelayer,0,,,,,1000,,25,,,,,,ENERGY,0,,,,1,,,,,,,0,0,20,1000,,,SYSTEM,,,Unknown,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Cadena vio,vanidad_cadena_vio,1,,1500,25,300,,,0,60,10,,,,HIGH_EXPLOSIVE,,50,0.1,0.1,,,,,,,3200,,,,,,"energy14, beam10, vanidad_bp",,,,General,,,,,,,,,,20
 kinecannon,vanidad_fighter_weapon1,1,,1000,500,,200,,10,40,8,,,,FRAGMENTATION,50,,0,1,1,,0,10,2,10,,700,,,30,PD,"pd13, SR",,,,Point Defense (Area),,,,,,,,,,4
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,48
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,49
+#lenador,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Arm lmg (150 KE),vanidad_lenador_arm_right,0,,100,300,,25,,1,50,3,,,,KINETIC,3,,0,0.4,5,0.1,0,5,1,15,,600,,,10,PD,"pd6, kinetic3",,,,Anti Shield,,,,,,,,,,0.5
+Cadena Vio (300 HE beam dps),vanidad_lenador_arm_left,1,,1500,25,300,,,0,60,10,,,,HIGH_EXPLOSIVE,,50,0.1,0.1,,,,,,,3200,,,,,,"energy14, beam10",,Vanidad y Afliction,,Shredder,,,,,,,,,,
+,vanidad_lenador_shoulder_right,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
+,vanidad_lenador_shoulder_left,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
+,vanidad_lenador_head,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
+,vanidad_lenador_torso,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,50
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,51
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,52

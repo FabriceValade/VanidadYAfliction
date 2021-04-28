@@ -25,13 +25,13 @@ public class vanidad_alternatingBeam implements EveryFrameWeaponEffectPlugin {
     //Offsets for medium weapons
     private static Map<Integer, Vector2f> mediumHardpointOffsets = new HashMap<Integer, Vector2f>();
     static {
-        mediumHardpointOffsets.put(0, new Vector2f(22.5f, 6f));
-        mediumHardpointOffsets.put(1, new Vector2f(22.5f, -6f));
+        mediumHardpointOffsets.put(0, new Vector2f(27.5f, 5.5f));
+        mediumHardpointOffsets.put(1, new Vector2f(27.5f, -5.5f));
     }
     private static Map<Integer, Vector2f> mediumTurretOffsets = new HashMap<Integer, Vector2f>();
     static {
-        mediumTurretOffsets.put(0, new Vector2f(22.5f, 6f));
-        mediumTurretOffsets.put(1, new Vector2f(22.5f, -6f));
+        mediumTurretOffsets.put(0, new Vector2f(18f, 5.5f));
+        mediumTurretOffsets.put(1, new Vector2f(18f, -5.5f));
 
     }
 

@@ -1,0 +1,27 @@
+{
+	"id":"vanidad_lenador_arm_left",
+	"specClass":"beam",
+	"type":"ENERGY",
+	"size":"SMALL",
+	"everyFrameEffect": "data.scripts.weapons.vanidad_cadenaVioBeam",
+	"beamEffect": "data.scripts.weapons.vanidad_cadenaVioBeamEffect",
+	"displayArcRadius":0,
+	
+	"turretSprite":"graphics/vanidad/ships/wielder/vanidad_wielder_arm_left.png",
+	"hardpointSprite":"",	
+
+	"turretOffsets":[19, 14],
+	"turretAngleOffsets":[0],
+	"hardpointOffsets":[10, 1],
+	"hardpointAngleOffsets":[0],
+
+	#beam stuff
+	"width": 26,
+	"fringeColor": [181,83,25,0],
+    "coreColor": [244,111,33,0],
+	"textureType": ROUGH,
+    "textureScrollSpeed": -20,
+    "pixelsPerTexel": 5,
+    "pierceSet": [PROJECTILE_FF,PROJECTILE_NO_FF,PROJECTILE_FIGHTER,MISSILE_FF,MISSILE_NO_FF, SHIP, ASTEROID],
+	"fireSoundTwo":"flak_fire",
+}

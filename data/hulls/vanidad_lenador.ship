@@ -1,0 +1,102 @@
+{
+  "hullName": "Lenador",
+  "hullId": "vanidad_lenador",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/vanidad/ships/wielder/vanidad_wielder_body.png",
+  "style": "LOW_TECH",
+  "height": 41,
+  "width": 32,
+  "center": [16, 17.5],
+  "collisionRadius": 23.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 20.5,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "ARMLEFT": "vanidad_lenador_arm_left",
+    "ARMRIGHT": "vanidad_lenador_arm_right",
+    "HEAD": "vanidad_lenador_head",
+    "SHOULDERRIGHT": "vanidad_lenador_shoulder_right",
+    "SHOULDERLEFT": "vanidad_lenador_shoulder_left",
+	"TORSO": "vanidad_lenador_torso"
+  },
+  "weaponSlots": [
+    {
+      "id": "ARMLEFT",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 0,
+      "locations": [4, -0]
+    },
+    {
+      "id": "ARMRIGHT",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -11.5,
+      "locations": [4, -0]
+    },
+        {
+      "id": "HEAD",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [4, -0]
+    },
+    {
+      "id": "SHOULDERRIGHT",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": -0,
+      "locations": [4, -0]
+    },
+    {
+      "id": "SHOULDERLEFT",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [4, 0]
+    },
+	{
+      "id": "TORSO",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [4, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-14, 4.5],
+      "length": 13.5,
+      "width": 7,
+      "angle": 174,
+      "contrailSize": 7,
+      "style": "LOW_TECH"
+    },
+    {
+      "location": [-14, -4.5],
+      "length": 13.5,
+      "width": 7,
+      "angle": -174,
+      "contrailSize": 7,
+      "style": "LOW_TECH"
+    }
+  ],
+  "bounds": [
+    -14, 7,
+    9, 15.5,
+    9, -15.5,
+    -14, -7
+  ]
+}

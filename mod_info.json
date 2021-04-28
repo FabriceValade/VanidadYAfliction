@@ -1,9 +1,9 @@
 {
-	"id":"VAO",
+	"id":"vanidad",
 	"name":"Vanidad y Afliction Operation",
 	"author":"Lethargie",
 	"version":"1.0",
-	"gameVersion":"0.9.1a",
+	"gameVersion":"0.95a-RC12",
 	"description":"A singular ship added to neutral and high tech faction",
 	"jars":["jars/distribution/ProjectVao.jar"],
 	"modPlugin":"data.scripts.vanidad_aflictionModPlugin",
