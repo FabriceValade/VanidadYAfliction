@@ -9,11 +9,8 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.CombatEntityAPI;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
-import com.fs.starfarer.api.combat.ProximityExplosionEffect;
-
-import com.fs.starfarer.api.impl.combat.RiftCascadeEffect;
-import com.fs.starfarer.api.loading.MissileSpecAPI;
 import com.fs.starfarer.api.util.Misc;
+import static data.scripts.weapons.vanidad_beamFocusMineExplosion.createStandardRiftParams;
 import java.awt.Color;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -21,29 +18,9 @@ import org.lwjgl.util.vector.Vector2f;
  *
  * @author Fabrice Valade
  */
-public class vanidad_beamFocusMineExplosion implements ProximityExplosionEffect {
-	
-	public static String SIZE_MULT_KEY = "core_sizeMultKey";
-	
-	public void onExplosion(DamagingProjectileAPI explosion, DamagingProjectileAPI originalProjectile) {
-		Float sizeMult = null;
-		if (originalProjectile.getCustomData() != null) {
-			sizeMult = (Float) originalProjectile.getCustomData().get(SIZE_MULT_KEY);
-		}
-		if (sizeMult == null) sizeMult = 1f;
-		
-		vanidad_negativeExplosionVisual.NEParams p = createStandardRiftParams("vanidad_estarayo_minelayer", 25f * sizeMult);
-		p.fadeOut = 1f;
-		//p.hitGlowSizeMult = 0.5f;
-		spawnStandardRift(explosion, p);
-	}
-	
-//	public static void spawnStandardRift(DamagingProjectileAPI explosion, String minelayerId, float baseRadius) {
-//		NEParams p = createStandardRiftParams(minelayerId, baseRadius);
-//		spawnStandardRift(explosion, p); 
-//	}
-	
-	public static void spawnStandardRift(DamagingProjectileAPI explosion, vanidad_negativeExplosionVisual.NEParams params) {
+public class vanidad_interestingVisual {
+    	public static void spawnStandardRift(DamagingProjectileAPI explosion) {
+                vanidad_negativeExplosionVisual.NEParams params = createStandardRiftParams(new Color(100,100,255,255), 25f);
 		CombatEngineAPI engine = Global.getCombatEngine();
 		explosion.addDamagedAlready(explosion.getSource());
 		
@@ -73,20 +50,9 @@ public class vanidad_beamFocusMineExplosion implements ProximityExplosionEffect 
 		}
 		
 	}
-	
-	
-	public static vanidad_negativeExplosionVisual.NEParams createStandardRiftParams(String minelayerId, float baseRadius) {
-		Color color = new Color(100,100,255,255);
-		Object o = Global.getSettings().getWeaponSpec(minelayerId).getProjectileSpec();
-		if (o instanceof MissileSpecAPI) {
-			MissileSpecAPI spec = (MissileSpecAPI) o;
-			color = spec.getGlowColor();
-		}
-		vanidad_negativeExplosionVisual.NEParams p = createStandardRiftParams(color, baseRadius);
-		return p;
-	}
-	
-	public static vanidad_negativeExplosionVisual.NEParams createStandardRiftParams(Color borderColor, float radius) {
+        
+        
+    public static vanidad_negativeExplosionVisual.NEParams createStandardRiftParams(Color borderColor, float radius) {
 		vanidad_negativeExplosionVisual.NEParams p = new vanidad_negativeExplosionVisual.NEParams();
 		//p.radius = 50f;
 		p.hitGlowSizeMult = .75f;
@@ -101,7 +67,7 @@ public class vanidad_beamFocusMineExplosion implements ProximityExplosionEffect 
 		//p.hitGlowSizeMult = .75f;
 		p.fadeIn = 0.1f;
 		//p.noisePeriod = 0.05f;
-		p.underglow = RiftCascadeEffect.EXPLOSION_UNDERCOLOR;
+		p.underglow = new Color(100, 0, 25, 100);
 		//p.withHitGlow = i == 0;
 		p.withHitGlow = true;
 		
@@ -112,6 +78,4 @@ public class vanidad_beamFocusMineExplosion implements ProximityExplosionEffect 
 		p.color = borderColor;
 		return p;
 	}
-	
-	
 }

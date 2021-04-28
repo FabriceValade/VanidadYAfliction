@@ -22,7 +22,7 @@ import org.lwjgl.util.vector.Vector2f;
  */
 public class vanidad_beamFlakEffect implements BeamEffectPlugin {
     private final Color PARTICLE_COLOR = new Color(215, 225, 255, 255);
-    private final float EXPLOSION_DAMAGE = 100f;
+    private final float EXPLOSION_DAMAGE = 2000f;
     private final float EXPLOSION_RANGE = 50f;
     private boolean hasFired = false;
 
@@ -67,6 +67,7 @@ public class vanidad_beamFlakEffect implements BeamEffectPlugin {
                             beamCore);
                     explosionSpec.setDamageType(DamageType.HIGH_EXPLOSIVE);
                     DamagingProjectileAPI boom = engine.spawnDamagingExplosion(explosionSpec, beam.getSource(), end);
+                    vanidad_interestingVisual.spawnStandardRift(boom);
                 }
                 //visual effect
                 /*engine.addHitParticle(

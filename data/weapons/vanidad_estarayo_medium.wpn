@@ -3,7 +3,7 @@
   "specClass": "beam",
   "type": "ENERGY",
   "size": "MEDIUM",
-  "beamEffect": "data.scripts.weapons.vanidad_beamFocusEffect",
+  "beamEffect": "data.scripts.weapons.vanidad_beamFlakEffect",
   "everyFrameEffect": "data.scripts.weapons.vanidad_alternatingBeam",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",

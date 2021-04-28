@@ -9,7 +9,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BeamAPI;
 import com.fs.starfarer.api.combat.BeamEffectPlugin;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.EmpArcEntityAPI;
+import com.fs.starfarer.api.combat.DamagingProjectileAPI;
 import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
@@ -93,7 +93,7 @@ public class vanidad_beamFocusEffect implements BeamEffectPlugin {
         public void spawnMine(ShipAPI source, Vector2f mineLoc) {
 		CombatEngineAPI engine = Global.getCombatEngine();
 		
-		          MissileAPI mine = (MissileAPI) engine.spawnProjectile(source,
+		          DamagingProjectileAPI mine = (DamagingProjectileAPI) engine.spawnProjectile(source,
                     null,
                     ESTARAYO_MINELAYER,
                     mineLoc,
@@ -112,18 +112,18 @@ public class vanidad_beamFocusEffect implements BeamEffectPlugin {
 		mine.getDamage().getModifier().modifyMult("mine_sizeMult", sizeMult);
 		
 		
-		float fadeInTime = 0.05f;
+		//float fadeInTime = 0.05f;
 		mine.getVelocity().scale(0);
-		mine.fadeOutThenIn(fadeInTime);
+		//mine.fadeOutThenIn(fadeInTime);
 		
 		//Global.getCombatEngine().addPlugin(createMissileJitterPlugin(mine, fadeInTime));
 		
 		//mine.setFlightTime((float) Math.random());
 		float liveTime = 0f;
 		//liveTime = 0.01f;
-		mine.setFlightTime(mine.getMaxFlightTime() - liveTime);
-		mine.addDamagedAlready(source);
-		mine.setNoMineFFConcerns(true);
+		//mine.setFlightTime(mine.getMaxFlightTime() - liveTime);
+		//mine.addDamagedAlready(source);
+		//mine.setNoMineFFConcerns(true);
 		
 		prevMineLoc = mineLoc;
 	}

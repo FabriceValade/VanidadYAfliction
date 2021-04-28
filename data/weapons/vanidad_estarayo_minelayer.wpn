@@ -13,5 +13,5 @@
 	"barrelMode":"ALTERNATING",
 	"animationType":"SMOKE",
 	"interruptibleBurst":false,
-	"projectileSpecId":"vanidad_beam_explosion",
+	"projectileSpecId":"vanidad_beam_explosionNotMine",
 }
