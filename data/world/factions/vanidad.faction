@@ -29,7 +29,6 @@
 	},
 	"hullFrequency":{
 		"tags":{
-			"heg_aux_bp":2,
 		},
 		"hulls":{
 			"buffalo2":0, # just say no
@@ -44,8 +43,6 @@
 	"knownShips":{
 		"tags":["base_bp", "lowtech_bp", "midline_bp", "vanidad_bp"],
 		"hulls":[
-			"atlas",
-			"prometheus",
 			"onslaught",
 			"eagle",
 		],
@@ -58,19 +55,18 @@
 		],
 	},
 	"knownFighters":{
-		"tags":["base_bp", "lowtech_bp", "midline_bp"],
+		"tags":["base_bp", "lowtech_bp"],
 		"fighters":[
-			"thunder_wing",
 			"hoplon_wing",
 		],
 	},
 	"priorityFighters":{
-		"tags":[],
+		"tags":["vanidad_bp"],
 		"fighters":[
 		],
 	},
 	"knownWeapons":{
-		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "missile_bp"],
+		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "missile_bp", "vanidad_bp"],
 		"weapons":[
 			"railgun",
 			"dualflak",
@@ -85,12 +81,12 @@
 		],
 	},
 	"priorityWeapons":{
-		"tags":[],
+		"tags":["vanidad_bp"],
 		"weapons":[
 		],
 	},
 	"knownHullMods":{
-		"tags":["base_bp"],
+		"tags":["base_bp", "vanidad_bp"],
 		"hullMods":[
 			"advancedshieldemitter",
 			"turretgyros",
@@ -124,7 +120,7 @@
 		"shipQuality":1,
 		"numShips":3,
 		
-		"shipSize":3,
+		"shipSize":2,
 		
 		"aggression":3,
 		

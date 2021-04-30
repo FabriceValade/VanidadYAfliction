@@ -29,7 +29,7 @@ public class vanidad_Citlali {
     public void generate(SectorAPI sector) {
         StarSystemAPI system = sector.createStarSystem("Citlali");
         //system.getLocation().set(22000,-14000);
-        system.getLocation().set(100,100);
+        system.getLocation().set(22000,3000);
         PlanetAPI citlali_star = system.initStar("vanidad_Citlali",
                 "star_orange",//set star type, the type IDs come from starsector-core/data/campaign/procgen/star_gen_data.csv
                 900, //set radius, 900 is a typical radius size
@@ -82,12 +82,13 @@ public class vanidad_Citlali {
                                 Industries.BATTLESTATION_HIGH,
                                 Industries.HEAVYBATTERIES,
                                 Industries.ORBITALWORKS,
-                                Industries.HIGHCOMMAND
+                                Industries.HIGHCOMMAND,
+                                Industries.REFINING
                         )
                 ),
                 true,
                 false);
-        JumpPointAPI jumpPointKrystos = Global.getFactory().createJumpPoint("tahlan_spindle_charkha_jump", "Spinner's Road");
+        JumpPointAPI jumpPointKrystos = Global.getFactory().createJumpPoint("vanidad_citlali_jump", "Forgotten path");
         jumpPointKrystos.setCircularOrbit(citlali_star, krystos_angle+15, 8000, 300);
         jumpPointKrystos.setRelatedPlanet(krystos);
         system.addEntity(jumpPointKrystos);

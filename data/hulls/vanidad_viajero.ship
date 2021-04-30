@@ -2,7 +2,7 @@
   "hullName": "Viajero Estellar",
   "hullId": "vanidad_viajero",
   "hullSize": "CRUISER",
-  "spriteName": "graphics/vanidad/ships/viajeroestellar/viajeroestellar.png",
+  "spriteName": "graphics/vanidad/ships/vanidad_viajeroestellar.png",
   "style": "HIGH_TECH",
   "height": 251,
   "width": 145,

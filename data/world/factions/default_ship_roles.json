@@ -8,14 +8,18 @@
 		"vanidad_cazador_hunter":10,
 	},
 	"combatMedium":{
-		"vanidad_granfrio_defender":10,
+		"vanidad_halcon_leader":10,
 		"vanidad_ionizador_support":10,
+		"vanidad_viajero_default":5,
 	},
 	"combatLarge":{
 		"vanidad_viajero_default":10,
+		"vanidad_almadena_support":10,
 	},
 
-
+	"combatFreighterSmall":{
+		"vanidad_forrajeador_explorer":10,	
+	},
 
 	# carriers
 	"carrierMedium":{

@@ -21,9 +21,9 @@ import org.lwjgl.util.vector.Vector2f;
  *
  * @author Fabrice Valade
  */
-public class vanidad_beamFlakEffectSmall implements BeamEffectPlugin {
+public class vanidad_beamFlakEffectFighter implements BeamEffectPlugin {
     private final Color PARTICLE_COLOR = new Color(215, 225, 255, 255);
-    private final float EXPLOSION_DAMAGE = 15f;
+    private final float EXPLOSION_DAMAGE = 10f;
     private final float EXPLOSION_RANGE = 150f;
     private boolean hasFired = false;
 
@@ -44,12 +44,12 @@ public class vanidad_beamFlakEffectSmall implements BeamEffectPlugin {
                 Color beamCore = beam.getCoreColor();
                 float maxRange = beam.getWeapon().getRange();
                 float distanceRatio = prevLength / maxRange;
-                if(prevLength>=700)
+                if(prevLength>=300)
                     distanceRatio=1;
-                else if(prevLength<=50)
+                else if(prevLength<=150)
                     distanceRatio=0;
                 else {
-                    distanceRatio=(prevLength-50)/650;
+                    distanceRatio=(prevLength-150)/150;
                 }
                 
                 ;

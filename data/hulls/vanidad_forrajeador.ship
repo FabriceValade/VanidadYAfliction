@@ -1,0 +1,76 @@
+{
+  "hullName": "Forrajeador",
+  "hullId": "vanidad_forrajeador",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/vanidad/ships/vanidad_forrajeador.png",
+  "style": "HIGH_TECH",
+  "height": 122,
+  "width": 79,
+  "center": [39, 66.5],
+  "collisionRadius": 69.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 66.5,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 12,
+      "angle": 0,
+      "locations": [28, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 205,
+      "angle": -70,
+      "locations": [5.5, -17.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 205,
+      "angle": 70,
+      "locations": [5.5, 17.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 228,
+      "angle": -123.5,
+      "locations": [-43.5, -16]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 228,
+      "angle": 123.5,
+      "locations": [-43.5, 16]
+    }
+  ],
+  "engineSlots": [],
+  "bounds": [
+    -55.5, 20.5,
+    -44.5, 30,
+    8.5, 30,
+    10, 24.5,
+    29, 24.5,
+    43, 11.5,
+    43, -11.5,
+    29, -24.5,
+    10, -24.5,
+    8.5, -30,
+    -44.5, -30,
+    -55.5, -20.5
+  ]
+}

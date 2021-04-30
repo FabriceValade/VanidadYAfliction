@@ -2,7 +2,7 @@
   "hullName": "Ionizador",
   "hullId": "vanidad_ionizador",
   "hullSize": "DESTROYER",
-  "spriteName": "graphics/vanidad/ships/Ionizador/Ionizador.png",
+  "spriteName": "graphics/vanidad/ships/vanidad_ionizador.png",
   "style": "HIGH_TECH",
   "height": 242,
   "width": 155,

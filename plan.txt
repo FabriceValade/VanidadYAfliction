@@ -6,20 +6,28 @@ ships:
 		description 0%
 		sprite 100%
 		stats 50%
+	Forrajeador
+		description 0%
+		sprite 100%
+		stats 50%
 2 destroyer
 	ionizador
 		description 0%
 		sprite 100%
 		stats 50%
-2 cruiser
-	granfrio 
-		description 0%
-		sprite 75%
-		stats 50%
-	Viajador Estellar
+	halcon
 		description 0%
 		sprite 100%
 		stats 50%
+2 cruiser
+	Almadena 
+		description 0%
+		sprite 75%
+		stats 50%
+	Carrier
+		description 0%
+		sprite 25%
+		stats 0%
 		
 		
 weapon and fighters
@@ -29,22 +37,29 @@ weapon and fighters
 			loadout 50%
 			description 0%
 			custom system 0%
-		Other fighters
-			sprite 50%
-			loadout 0%
+		Abogado heavy fighter
+			sprite 100%
+			loadout 100%
 			description 0%
 			custom system 0%
+			balance 0%
 	1 laser flak line
+		sound 0%
+		need to do proper hardpoint versions
 		description 0%
-		small sprite 0%
-		med sprite 0%
-		large sprite 0%
-		custom effect 75%
-		stats 50%
+		small sprite 50%
+			missing glow
+		med sprite 50%
+			Missing glow
+		large sprite 100%
+		Fighter weap 100%
+		custom effect 100%
+		balance 50%
 		
 Campaign stuff
 	Blueprint availability 0%
 	custom system 50%
+	custom mission 0%
 	faction flag 100%
 	Nerexelin integration 0%
 	Commisioned crew integration 0%

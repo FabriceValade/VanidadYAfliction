@@ -2,7 +2,7 @@
   "hullName": "Cazador",
   "hullId": "vanidad_cazador",
   "hullSize": "FRIGATE",
-  "spriteName": "graphics/vanidad/ships/cazador/Cazador.png",
+  "spriteName": "graphics/vanidad/ships/vanidad_cazador.png",
   "style": "HIGH_TECH",
   "height": 108,
   "width": 79,

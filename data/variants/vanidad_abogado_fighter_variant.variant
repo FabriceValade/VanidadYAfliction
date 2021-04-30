@@ -1,0 +1,22 @@
+{
+  "variantId": "vanidad_abogado_fighter_variant",
+  "hullId": "vanidad_abogado_fighter",
+  "displayName": "fighter",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "vanidad_estarayo_fighter"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}
