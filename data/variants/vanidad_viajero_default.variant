@@ -1,10 +1,11 @@
 {
     "displayName": "Support",
     "fluxCapacitors": 14,
-    "fluxVents": 4,
+    "fluxVents": 2,
     "hullId": "vanidad_viajero",
     "hullMods": ["targetingunit"],
     "permaMods": [],
+    "sMods": [],
     "variantId": "vanidad_viajero_default",
     "weaponGroups": [
         {
@@ -21,8 +22,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0001": "taclaser",
-                "WS0002": "taclaser",
+                "WS0001": "vanidad_estarayo_light",
+                "WS0002": "vanidad_estarayo_light",
                 "WS0005": "taclaser"
             }
         },
@@ -33,8 +34,8 @@
         }
     ],
     "wings": [
-        "thunder_wing",
-        "thunder_wing",
-        "hoplon_wing"
+        "vanidad_lenador",
+        "vanidad_abogado_fighter",
+        "vanidad_abogado_fighter"
     ]
 }
