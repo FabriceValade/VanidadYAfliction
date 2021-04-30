@@ -1,14 +1,14 @@
 {
-  "id": "vanidad_estarayo_medium",
+  "id": "vanidad_estarayo_light",
   "specClass": "beam",
   "type": "ENERGY",
-  "size": "MEDIUM",
-  "beamEffect": "data.scripts.weapons.vanidad_beamFlakEffect",
-  "everyFrameEffect": "data.scripts.weapons.vanidad_alternatingBeam",
+  "size": "SMALL",
+  "beamEffect": "data.scripts.weapons.vanidad_beamFlakEffectSmall",
+  "everyFrameEffect": "data.scripts.weapons.vanidad_alternatingBeamSmall",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/vanidad/weapons/vanidad_estarayo_medium.png",
-  "hardpointSprite": "graphics/vanidad/weapons/vanidad_estarayo_medium.png",
+  "turretSprite": "graphics/vanidad/weapons/vanidad_estarayo_light.png",
+  "hardpointSprite": "graphics/vanidad/weapons/vanidad_estarayo_light.png",
   "glowColor": [
     225,
     100,
@@ -20,15 +20,15 @@
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    18,
-    -5.5
+    12.5,
+    0
   ],
   "turretAngleOffsets": [
     0
   ],
   "hardpointOffsets": [
-    27.5,
-    -5.5
+    19,
+    0
   ],
   "hardpointAngleOffsets": [
     0
@@ -46,7 +46,7 @@
     255
   ],
   "darkCore":TRUE,
-  "width": 15,
+  "width": 10,
   "textureType": ROUGH,
   "textureScrollSpeed": 64,
   "pixelsPerTexel": 5,
@@ -56,14 +56,6 @@
     PROJECTILE_FIGHTER,
     MISSILE_FF,
     MISSILE_NO_FF
-  ],
-  "animationType":"MUZZLE_FLASH",
-  "muzzleFlashSpec":{"length":35.0,   # only used if animationType = MUZZLE_FLASH
-					   "spread":0.0,
-					   "particleSizeMin":12.0,
-					   "particleSizeRange":12.0,
-					   "particleDuration":0.12,
-					   "particleCount":12,
-					   "particleColor":[100,100,255,255]},		
+  ],	
   "fireSoundTwo": "phase_beam_loop"
 }

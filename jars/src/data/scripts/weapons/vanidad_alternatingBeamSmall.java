@@ -26,25 +26,14 @@ import org.lwjgl.util.vector.Vector2f;
  *
  * @author Fabrice Valade
  */
-public class vanidad_alternatingBeam implements EveryFrameWeaponEffectPlugin {
+public class vanidad_alternatingBeamSmall implements EveryFrameWeaponEffectPlugin {
     
-    private final       Color LowerColor = new Color(251,189,41);
-     private final       Color CenterColor = new Color(251,102,41);
-     private final       Color UpperColor = new Color(250,65,41);
-    private final float inacuracyAngle = 15;
-    //----------------This area is for setting all offsets for the barrels: note that the turret and hardpoint version of the weapon *must* have an equal amount of offsets--------------------
-    //Offsets for medium weapons
-    private static Map<Integer, Vector2f> mediumHardpointOffsets = new HashMap<Integer, Vector2f>();
-    static {
-        mediumHardpointOffsets.put(0, new Vector2f(27.5f, 5.5f));
-        mediumHardpointOffsets.put(1, new Vector2f(27.5f, -5.5f));
-    }
-    private static Map<Integer, Vector2f> mediumTurretOffsets = new HashMap<Integer, Vector2f>();
-    static {
-        mediumTurretOffsets.put(0, new Vector2f(18f, 5.5f));
-        mediumTurretOffsets.put(1, new Vector2f(18f, -5.5f));
+    private final       Color LowerColor = new Color(251,219,41);
+    private final       Color CenterColor = new Color(251,189,41);
+    private final       Color UpperColor = new Color(251,102,41);
+    private final float inacuracyAngle = 10;
 
-    }
+    
     
     //-----------------------------------------------------------------------------END OF OFFSET SPECIFICATIONS---------------------------------------------------------------------------------
 
@@ -84,16 +73,7 @@ public class vanidad_alternatingBeam implements EveryFrameWeaponEffectPlugin {
             return;
         }
 
-        int numOffset = 0;
-
-
-
-            counter++;
-            if (!mediumHardpointOffsets.containsKey(counter)) {
-                counter = 0;
-            }
             weapon.ensureClonedSpec();
-
             float randomInterpolate = 0.8f*(float)Math.random()-0.4f;
             Color finalColor;
             if (randomInterpolate>=0)
@@ -112,16 +92,15 @@ public class vanidad_alternatingBeam implements EveryFrameWeaponEffectPlugin {
             beamMap.get(0).setFringeColor(fringe);
             
             float currentAngle = (inacuracyAngle*(float)Math.random())-inacuracyAngle/2;
-            weapon.getSpec().getHardpointFireOffsets().set(numOffset, mediumHardpointOffsets.get(counter));
-            weapon.getSpec().getHiddenFireOffsets().set(numOffset, mediumTurretOffsets.get(counter));
-            weapon.getSpec().getTurretFireOffsets().set(numOffset, mediumTurretOffsets.get(counter));
+
             
-            weapon.getSpec().getHardpointAngleOffsets().set(numOffset,currentAngle);
-            weapon.getSpec().getTurretAngleOffsets().set(numOffset, currentAngle);
+            weapon.getSpec().getHardpointAngleOffsets().set(0,currentAngle);
+            weapon.getSpec().getTurretAngleOffsets().set(0, currentAngle);
 
             
                 
             
-
+            
+         
     }
 }

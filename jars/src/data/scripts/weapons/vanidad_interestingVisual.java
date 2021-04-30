@@ -19,13 +19,17 @@ import org.lwjgl.util.vector.Vector2f;
  * @author Fabrice Valade
  */
 public class vanidad_interestingVisual {
-    	public static void spawnStandardRift(DamagingProjectileAPI explosion) {
-                vanidad_negativeExplosionVisual.NEParams params = createStandardRiftParams(new Color(100,100,255,255), 25f);
+        public static void spawnStandardRift(DamagingProjectileAPI explosion){
+            spawnStandardRift(explosion,new Color(100,100,255,255),new Color(100, 0, 25, 100));
+            
+        }
+    	public static void spawnStandardRift(DamagingProjectileAPI explosion, Color borderColor, Color underGlow) {
+                vanidad_negativeExplosionVisual.NEParams params = createStandardRiftParams(borderColor,underGlow, 25f);
 		CombatEngineAPI engine = Global.getCombatEngine();
 		explosion.addDamagedAlready(explosion.getSource());
 		
 		CombatEntityAPI prev = null;
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 1; i++) {
 			vanidad_negativeExplosionVisual.NEParams p;
                         p = params.clone();
 			p.radius *= 0.75f + 0.5f * (float) Math.random();
@@ -52,7 +56,7 @@ public class vanidad_interestingVisual {
 	}
         
         
-    public static vanidad_negativeExplosionVisual.NEParams createStandardRiftParams(Color borderColor, float radius) {
+    public static vanidad_negativeExplosionVisual.NEParams createStandardRiftParams(Color borderColor,Color underGlow, float radius) {
 		vanidad_negativeExplosionVisual.NEParams p = new vanidad_negativeExplosionVisual.NEParams();
 		//p.radius = 50f;
 		p.hitGlowSizeMult = .75f;
@@ -67,7 +71,7 @@ public class vanidad_interestingVisual {
 		//p.hitGlowSizeMult = .75f;
 		p.fadeIn = 0.1f;
 		//p.noisePeriod = 0.05f;
-		p.underglow = new Color(100, 0, 25, 100);
+		p.underglow = underGlow;
 		//p.withHitGlow = i == 0;
 		p.withHitGlow = true;
 		

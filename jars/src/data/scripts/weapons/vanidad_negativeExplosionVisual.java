@@ -32,7 +32,7 @@ public class vanidad_negativeExplosionVisual extends BaseCombatLayeredRenderingP
 		public float noisePeriod = 0.1f;
 		public boolean withHitGlow = true;
 		public Color color = new Color(100,100,255);
-		public Color underglow = vanidad_beamFocusEffect.EXPLOSION_UNDERCOLOR;
+		public Color underglow = new Color(100, 0, 25, 100);
 		public Color invertForDarkening = null;
 		
 		public NEParams() {
@@ -130,62 +130,60 @@ public class vanidad_negativeExplosionVisual extends BaseCombatLayeredRenderingP
 			engine.addHitParticle(point, vel, coreSize * 1.5f, 1f, dur, Color.white);
 			//engine.addHitParticle(point, vel, coreSize * 1f, 1f, dur, Color.white);
 
-			Color invert = p.color;
-			if (p.invertForDarkening != null) invert = p.invertForDarkening;
-			Color c = new Color(255 - invert.getRed(),
-								255 - invert.getGreen(),
-								255 - invert.getBlue(), 127);
+
+                        Color c = p.color;
 			c = Misc.interpolateColor(c, Color.white, 0.4f);
-			//c = Misc.setAlpha(c, 80);
-			//c = Misc.scaleAlpha(c, 0.5f);
-			float durMult = 1f;
+                        //c = p.underglow;
+
+                        //this code here add the overglow on the cloud
 			for (int i = 0; i < 7; i++) {
-				dur = 4f + 4f * (float) Math.random();
+				dur = 0.5f + 0.5f * (float) Math.random();
 				//dur = p.fadeIn + p.fadeOut + 3f + (float) Math.random() * 2f;
-				dur *= durMult;
-				dur *= 0.5f;
+
 				//float nSize = size * (1f + 0.0f * (float) Math.random());
 				//float nSize = size * (0.75f + 0.5f * (float) Math.random());
 				float nSize = size * 1f;
-				Vector2f pt = Misc.getPointAtRadius(point, nSize * 0.5f);
-				Vector2f v = Misc.getUnitVectorAtDegreeAngle((float) Math.random() * 360f);
-				v.scale(nSize + nSize * (float) Math.random() * 0.5f);
-				v.scale(0.15f);
-				Vector2f.add(vel, v, v);
-				
-//				float maxSpeed = nSize * 1.5f * 0.2f; 
-//				float minSpeed = nSize * 1f * 0.2f; 
-//				float overMin = v.length() - minSpeed;
-//				if (overMin > 0) {
-//					float durMult2 = 1f - overMin / (maxSpeed - minSpeed);
-//					if (durMult2 < 0.1f) durMult2 = 0.1f;
-//					dur *= 0.5f + 0.5f * durMult2;
-//				}
-				v = new Vector2f(entity.getVelocity());
-//				engine.addNegativeParticle(pt, v, nSize * 1f, p.fadeIn / dur, dur, c);
-				engine.addNegativeNebulaParticle(pt, v, nSize * 1f, 2f,
-												p.fadeIn / dur, 0f, dur, c);
+				Vector2f pt = Misc.getPointAtRadius(point, nSize * 0.25f);
+                                
+				Vector2f v = Misc.getDiff(pt,point);
+				v= Misc.normalise(v);
+				v.scale(10f);
+				//Vector2f.add(vel, v, v);
+                                
+                                
+				engine.addNegativeParticle(pt, v, nSize * 1f, p.fadeIn / dur, dur, c);
+				engine.addNebulaParticle(pt, v, nSize * 0.5f, 5f,0.5f/ dur, 0f, dur, c);
 			}
 			
-			dur = p.fadeIn + p.fadeOut + 2f;
-			dur *= durMult;
+			dur = p.fadeIn + p.fadeOut + 0.5f;
+
 			float rampUp = (p.fadeIn + p.fadeOut) / dur;
 			rampUp = 0f;
-			//rampUp = rampUp + (1f - rampUp) * 0.25f;
-			//float sizeMult = p.hitGlowSizeMult;
+
 			
 			c = p.underglow;
+ 
+                        //this is where we build the "nebula"
 			//c = Misc.setAlpha(c, 255);
 			for (int i = 0; i < 15; i++) {
 				//rampUp = (float) Math.random() * 0.05f + 0.05f;
 				Vector2f loc = new Vector2f(point);
 				loc = Misc.getPointWithinRadius(loc, size * 1f);
 				//loc = Misc.getPointAtRadius(loc, size * 1f);
-				float s = size * 3f * (0.25f + (float) Math.random() * 0.25f);
+				float s = size * (0.75f + (float) Math.random() * 0.5f);
 				//s *= 0.5f;
 //				engine.addSmoothParticle(loc, entity.getVelocity(), s, 1f, rampUp, dur, c);
-				engine.addNebulaParticle(loc, entity.getVelocity(), s, 1.5f, rampUp, 0f, dur, c);
+				engine.addNebulaParticle(loc,
+                                        entity.getVelocity(),
+                                        s, 
+                                        2f, //size it will reach from inital size after ramp up
+                                        rampUp/dur, //portion of duration spent apearing, rest of the time for disapear
+                                        0f, //portion of duration spent at full brighness
+                                        dur, //duration
+                                        c );//actual color
+                                
 			}
+ 
 			spawnedHitGlow = true;
 		}
 	}
@@ -223,6 +221,7 @@ public class vanidad_negativeExplosionVisual extends BaseCombatLayeredRenderingP
 		}
 		
 		float r = p.radius;
+                float circleR = 0.3f;
 		float tSmall = p.thickness;
 		
 		if (fader.isFadingIn()) {
@@ -231,7 +230,7 @@ public class vanidad_negativeExplosionVisual extends BaseCombatLayeredRenderingP
 			r *= 0.1f + 0.9f * f;
 			tSmall = Math.min(r * 1f, p.thickness);
 		}
-		
+		circleR = circleR*r;
 //		GL11.glPushMatrix();
 //		GL11.glTranslatef(x, y, 0);
 //		GL11.glScalef(6f, 6f, 1f);
@@ -248,8 +247,8 @@ public class vanidad_negativeExplosionVisual extends BaseCombatLayeredRenderingP
 				circleAlpha = alphaMult * 2f;
 			}
 			float tCircleBorder = 1f;
-			renderCircle(x, y, r, circleAlpha, segments, Color.black);
-			renderAtmosphere(x, y, r, tCircleBorder, circleAlpha, segments, atmosphereTex, noise, Color.black, false);
+			renderCircle(x, y, r*0.5f, circleAlpha, segments, Color.black);
+			renderAtmosphere(x, y, r*0.5f, tCircleBorder, circleAlpha, segments, atmosphereTex, noise, Color.black, false);
 		}
 		//GL14.glBlendEquation(GL14.GL_FUNC_ADD);
 		

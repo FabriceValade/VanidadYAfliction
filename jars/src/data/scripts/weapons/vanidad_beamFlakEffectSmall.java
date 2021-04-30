@@ -21,10 +21,10 @@ import org.lwjgl.util.vector.Vector2f;
  *
  * @author Fabrice Valade
  */
-public class vanidad_beamFlakEffect implements BeamEffectPlugin {
+public class vanidad_beamFlakEffectSmall implements BeamEffectPlugin {
     private final Color PARTICLE_COLOR = new Color(215, 225, 255, 255);
-    private final float EXPLOSION_DAMAGE = 50f;
-    private final float EXPLOSION_RANGE = 250f;
+    private final float EXPLOSION_DAMAGE = 10f;
+    private final float EXPLOSION_RANGE = 150f;
     private boolean hasFired = false;
 
     @Override
@@ -82,7 +82,7 @@ public class vanidad_beamFlakEffect implements BeamEffectPlugin {
                             explosionColor,
                             EXPLOSION_RANGE*distanceRatio,
                             0.5f);
-                    engine.addNegativeSwirlyNebulaParticle(end,
+                    /*engine.addNegativeSwirlyNebulaParticle(end,
                             new Vector2f(0,0),
                             EXPLOSION_RANGE*distanceRatio*0.5f,
                             2f,
@@ -90,7 +90,7 @@ public class vanidad_beamFlakEffect implements BeamEffectPlugin {
                             0f,
                             2f,
                             Color.white);
-                    engine.addSwirlyNebulaParticle(end,
+                    /*engine.addSwirlyNebulaParticle(end,
                             new Vector2f(0,0),
                             EXPLOSION_RANGE*distanceRatio,
                             2f,
@@ -98,7 +98,7 @@ public class vanidad_beamFlakEffect implements BeamEffectPlugin {
                             0f,
                             2f,
                             riftColor,
-                            true);
+                            true);*/
                     //vanidad_interestingVisual.spawnStandardRift(boom,riftColor,new Color(240,40,20,200));
                 }
             }

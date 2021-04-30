@@ -9,6 +9,7 @@ import com.fs.starfarer.api.combat.BeamAPI;
 import com.fs.starfarer.api.combat.BeamEffectPlugin;
 import com.fs.starfarer.api.combat.CollisionClass;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
+import com.fs.starfarer.api.combat.CombatEntityAPI;
 import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
@@ -21,10 +22,10 @@ import org.lwjgl.util.vector.Vector2f;
  *
  * @author Fabrice Valade
  */
-public class vanidad_beamFlakEffect implements BeamEffectPlugin {
+public class vanidad_beamFlakEffectLarge implements BeamEffectPlugin {
     private final Color PARTICLE_COLOR = new Color(215, 225, 255, 255);
-    private final float EXPLOSION_DAMAGE = 50f;
-    private final float EXPLOSION_RANGE = 250f;
+    private final float EXPLOSION_DAMAGE = 100f;
+    private final float EXPLOSION_RANGE = 350f;
     private boolean hasFired = false;
 
     @Override
@@ -75,6 +76,7 @@ public class vanidad_beamFlakEffect implements BeamEffectPlugin {
                             new Color(125,0,0,0), //particle color
                             explosionColor); //exlosion color
                     explosionSpec.setDamageType(DamageType.HIGH_EXPLOSIVE);
+                    explosionSpec.setDuration(2f);
                     explosionSpec.setShowGraphic(false);
                     DamagingProjectileAPI boom = engine.spawnDamagingExplosion(explosionSpec, beam.getSource(), end);
                     engine.spawnExplosion(end,
@@ -99,7 +101,18 @@ public class vanidad_beamFlakEffect implements BeamEffectPlugin {
                             2f,
                             riftColor,
                             true);
-                    //vanidad_interestingVisual.spawnStandardRift(boom,riftColor,new Color(240,40,20,200));
+                    vanidad_negativeExplosionVisual.NEParams p = new vanidad_negativeExplosionVisual.NEParams();
+                    p.hitGlowSizeMult = .75f;
+                    p.spawnHitGlowAt = 0f;
+                    p.noiseMag = 1f;
+                    p.fadeIn = 0.1f;
+                    p.underglow = riftColor;
+                    p.withHitGlow = true;
+                    p.radius = 35f;
+                    p.color = explosionColor;
+                    Vector2f loc = new Vector2f(boom.getLocation());
+                    CombatEntityAPI e = engine.addLayeredRenderingPlugin(new vanidad_negativeExplosionVisual(p));
+                    e.getLocation().set(loc);
                 }
             }
 
