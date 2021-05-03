@@ -6,14 +6,21 @@
 package data.scripts.weapons;
 
 import com.fs.starfarer.api.AnimationAPI;
+import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BeamAPI;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.loading.WeaponSlotAPI;
+import com.fs.starfarer.api.loading.WeaponSpecAPI;
 import com.fs.starfarer.api.util.Misc;
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 
 /**
@@ -25,7 +32,7 @@ public class vanidad_alternatingBeamLarge implements EveryFrameWeaponEffectPlugi
      private final       Color LowerColor = new Color(251,102,41);
      private final       Color CenterColor = new Color(250,65,41);
      private final       Color UpperColor = new Color(255,30,0);
-    private final float inacuracyAngle = 15;
+    private final float inacuracyAngle = 25;
     //----------------This area is for setting all offsets for the barrels: note that the turret and hardpoint version of the weapon *must* have an equal amount of offsets--------------------
     //Offsets for medium weapons
     private static Map<Integer, Vector2f> LargeHardpointOffsets = new HashMap<Integer, Vector2f>();
@@ -50,8 +57,13 @@ public class vanidad_alternatingBeamLarge implements EveryFrameWeaponEffectPlugi
     private int counter = 0;
     private boolean runOnce = false;
     private boolean firingStarted = false;
-    private boolean recoilFinished = false;
+    private boolean recoilFinished = false, foundSpec = false;
     private Map<Integer, BeamAPI> beamMap = new HashMap<Integer, BeamAPI>();
+    private WeaponSpecAPI weaponSpecForMuzzle;
+    
+    private float angleMemory = 0;
+    private float timerAngle =0f;
+    private float angleMove = 0f;
     
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
@@ -63,6 +75,13 @@ public class vanidad_alternatingBeamLarge implements EveryFrameWeaponEffectPlugi
             runOnce = true;
             theAnim = weapon.getAnimation();
             interFrameDelay = recoilDuration/7f;
+            List<WeaponSpecAPI> allWeapon = Global.getSettings().getAllWeaponSpecs();
+            for(WeaponSpecAPI oneSpec :allWeapon)
+            {
+                if(oneSpec.getWeaponId().equals("vanidad_estarayo_heavy_flash"))
+                    weaponSpecForMuzzle=oneSpec;
+            }
+            
         }
         //Resets the beam map and variables between firing
         if (weapon.getChargeLevel() <= 0) {
@@ -71,6 +90,7 @@ public class vanidad_alternatingBeamLarge implements EveryFrameWeaponEffectPlugi
             theAnim.setFrame(0);
             recoilFinished = false;
             timer =0;
+            timerAngle =0;
             return;
         }
         weapon.ensureClonedSpec();
@@ -79,6 +99,9 @@ public class vanidad_alternatingBeamLarge implements EveryFrameWeaponEffectPlugi
         //we run all this stuff when the weapon fire. set offset, color, proper counter
         if (weapon.getChargeLevel() > 0f && !firingStarted) {
             firingStarted = true;
+
+
+                    
             if (!LargeHardpointOffsets.containsKey(counter)) {
                 counter = 0;
             }
@@ -133,6 +156,31 @@ public class vanidad_alternatingBeamLarge implements EveryFrameWeaponEffectPlugi
                     currentAngle);
             weapon.getSpec().getTurretAngleOffsets().set(0,
                     currentAngle);
+            angleMove = currentAngle;
+            angleMemory = currentAngle;
+            
+            //muzzle spawn
+            Vector2f loc = weapon.getLocation();
+            Float realFiringAngle = weapon.getCurrAngle() + currentAngle;
+            Vector2f firePoint = weapon.getFirePoint(0);
+            Color muzzleColor = Misc.interpolateColor(CenterColor,
+                        new Color(255,255,0,0),
+                        0.5f);
+            for (int i = 0; i < 12; i++) {
+                float dist = 15f*(float)Math.random()+1;
+                float spreadedAngle = ((float)Math.random()*50f -25f)+realFiringAngle;
+                float spreadedSize = (float)Math.random()*30f +5f;
+                Vector2f endPoint = MathUtils.getPoint(firePoint,dist,spreadedAngle);
+                Vector2f endPoint2 = MathUtils.getPoint(firePoint,200,spreadedAngle);
+                Vector2f vel = Vector2f.sub(endPoint2, firePoint, null);
+                engine.addHitParticle(endPoint,
+                        vel,
+                        spreadedSize,
+                        0.4f,
+                        0.12f,
+                        muzzleColor);
+            }
+
             counter++;
             
         }
@@ -141,6 +189,7 @@ public class vanidad_alternatingBeamLarge implements EveryFrameWeaponEffectPlugi
         if(firingStarted)
         {
             timer += amount;
+            timerAngle+=amount;
             if (timer >= interFrameDelay && !recoilFinished)
             {
                 timer -= interFrameDelay;
@@ -154,6 +203,19 @@ public class vanidad_alternatingBeamLarge implements EveryFrameWeaponEffectPlugi
                 recoilFinished =true;
             }
             theAnim.setFrame(frameNbr);
+            
+            if (Math.abs(angleMemory)>0f && timerAngle>recoilDuration)
+            {
+                
+                float ratioremaining = 1f- (timerAngle-recoilDuration)/0.7f;
+                if (ratioremaining<0)
+                    angleMemory=0;
+                else
+                    angleMemory = angleMove*ratioremaining;
+                weapon.getSpec().getHardpointAngleOffsets().set(0,angleMemory);
+                weapon.getSpec().getTurretAngleOffsets().set(0, angleMemory);
+            }
+            
         }
         
             

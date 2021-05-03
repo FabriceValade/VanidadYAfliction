@@ -1,8 +1,7 @@
 name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn rate,OPs,ammo,ammo/sec,reload size,type,energy/shot,energy/second,chargeup,chargedown,burst size,burst delay,min spread,max spread,spread/shot,spread decay/sec,beam speed,proj speed,launch speed,flight time,proj hitpoints,hints,tags,groupTag,tech/manufacturer,for weapon tooltip>>,primaryRoleStr,speedStr,trackingStr,turnRateStr,accuracyStr,customPrimary,customPrimaryHL,customAncillary,customAncillaryHL,noDPSInTooltip,number
 Estarayo,vanidad_estarayo_medium,1,,1500,700,300,,,0,20,10,,,,ENERGY,,300,0.1,0.1,0.5,0,,,,,3200,,,,,,"energy14, beam10, vanidad_bp",,Vanidad y Afliction,,General,,,,,,,,,,20
-Medium Estarayo,vanidad_estarayo_medium_flash,1,,1500,700,300,,,0,20,12,,,,ENERGY,,300,0.1,0.1,0.5,0,,,,,3200,,,,,,,,,,General,,,,,,,,,,20
 Light Estarayo,vanidad_estarayo_light,1,,1500,600,100,,,0,30,7,,,,ENERGY,,110,0.1,0.1,0.5,0,,,,,3200,,,,,,"energy14, beam10, vanidad_bp",,Vanidad y Afliction,,General,,,,,,,,,,20
-Heavy Estarayo,vanidad_estarayo_heavy,1,,1500,800,600,,,0,15,27,,,,ENERGY,,550,0.1,0.1,1,0,,,,,6200,,,,,,"energy14, beam10, vanidad_bp",,Vanidad y Afliction,,General,,,,,,,,,,20
+Heavy Estarayo,vanidad_estarayo_heavy,1,,1500,800,600,,,0,15,27,,,,ENERGY,,550,0.1,0.1,1.2,0,,,,,4200,,,,,,"energy14, beam10, vanidad_bp",,Vanidad y Afliction,,General,,,,,,,,,,20
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #fighter weapon,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Light Estarayo (fighter),vanidad_estarayo_fighter,1,,1500,400,100,,,0,30,7,,,,ENERGY,,110,0.1,0.1,0.5,0,,,,,3200,,,,,,,,,,General,,,,,,,,,,20

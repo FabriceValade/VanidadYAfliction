@@ -31,7 +31,7 @@ public class vanidad_alternatingBeam implements EveryFrameWeaponEffectPlugin {
     private final       Color LowerColor = new Color(251,189,41);
      private final       Color CenterColor = new Color(251,102,41);
      private final       Color UpperColor = new Color(250,65,41);
-    private final float inacuracyAngle = 15;
+    private final float inacuracyAngle = 20;
     //----------------This area is for setting all offsets for the barrels: note that the turret and hardpoint version of the weapon *must* have an equal amount of offsets--------------------
     //Offsets for medium weapons
     private static Map<Integer, Vector2f> mediumHardpointOffsets = new HashMap<Integer, Vector2f>();
@@ -41,8 +41,8 @@ public class vanidad_alternatingBeam implements EveryFrameWeaponEffectPlugin {
     }
     private static Map<Integer, Vector2f> mediumTurretOffsets = new HashMap<Integer, Vector2f>();
     static {
-        mediumTurretOffsets.put(0, new Vector2f(18f, 5.5f));
-        mediumTurretOffsets.put(1, new Vector2f(18f, -5.5f));
+        mediumTurretOffsets.put(0, new Vector2f(14f, 5.5f));
+        mediumTurretOffsets.put(1, new Vector2f(14f, -5.5f));
 
     }
     
@@ -51,7 +51,11 @@ public class vanidad_alternatingBeam implements EveryFrameWeaponEffectPlugin {
     //Instantiates variables we will use later
     private int counter = 0;
     private boolean runOnce = true;
-
+    private float angleMemory = 0;
+    private boolean hasmemory = false;
+    private float timer =0f;
+    private float angleMove = 0f;
+  
     private Map<Integer, BeamAPI> beamMap = new HashMap<Integer, BeamAPI>();
     
     @Override
@@ -60,14 +64,28 @@ public class vanidad_alternatingBeam implements EveryFrameWeaponEffectPlugin {
         if (engine.isPaused() || weapon == null) {
             return;
         }
-
+        weapon.ensureClonedSpec();
         //Resets the beam map and variables if we are not firing
         if (weapon.getChargeLevel() <= 0) {
             beamMap.clear();
             runOnce = true;
+            hasmemory = false;
+            timer = 0f;
             return;
         }
-
+        if (hasmemory)
+        {
+            if (Math.abs(angleMemory)>=1)
+            {
+                timer+=amount;
+                float ratioremaining = 1f- timer/0.5f;
+                angleMemory = angleMove*ratioremaining;
+                weapon.getSpec().getHardpointAngleOffsets().set(0,angleMemory);
+                weapon.getSpec().getTurretAngleOffsets().set(0, angleMemory);
+            }
+            
+            
+        }
         //If we are firing, start the code and change variables
         if (weapon.getChargeLevel() > 0f && runOnce) {
             runOnce = false;
@@ -92,7 +110,7 @@ public class vanidad_alternatingBeam implements EveryFrameWeaponEffectPlugin {
             if (!mediumHardpointOffsets.containsKey(counter)) {
                 counter = 0;
             }
-            weapon.ensureClonedSpec();
+            
 
             float randomInterpolate = 0.8f*(float)Math.random()-0.4f;
             Color finalColor;
@@ -118,9 +136,10 @@ public class vanidad_alternatingBeam implements EveryFrameWeaponEffectPlugin {
             
             weapon.getSpec().getHardpointAngleOffsets().set(numOffset,currentAngle);
             weapon.getSpec().getTurretAngleOffsets().set(numOffset, currentAngle);
-
             
-                
+            angleMove = currentAngle;
+            angleMemory = currentAngle;
+            hasmemory = true;
             
 
     }
