@@ -46,13 +46,9 @@ weapon and fighters
 	1 laser flak line
 		sound 0%
 		need to do proper hardpoint versions
-		description 0%
-		small sprite 50%
-			missing glow
-		med sprite 50%
-			Missing glow
-		large sprite 100%
-		Fighter weap 100%
+		need bigger muzzle flash
+		integrate script
+		description 50%
 		custom effect 100%
 		balance 50%
 		
