@@ -1,5 +1,4 @@
 name,id,designation,tech/manufacturer,system id,fleet pts,hitpoints,armor rating,max flux,8/6/5/4%,flux dissipation,ordnance points,fighter bays,max speed,acceleration,deceleration,max turn rate,turn acceleration,mass,shield type,defense id,shield arc,shield upkeep,shield efficiency,phase cost,phase upkeep,min crew,max crew,cargo,fuel,fuel/ly,range,max burn,base value,cr %/day,CR to deploy,peak CR sec,CR loss/sec,supplies/rec,supplies/mo,hints,tags,rarity,breakProb,minPieces,maxPieces,number
-Mole,vanidad_fighter1,,VAO,flarelauncher_fighter,,750,100,80,,10,0,,200,400,350,90,180,30,NONE,,0,0,0,,,1,1,,,,,,,,,,,,,,,,0,,,104
 Abogado,vanidad_abogado_fighter,,VAO,flarelauncher_fighter,,750,100,300,,150,0,,200,400,350,90,180,30,NONE,,0,0,0,,,2,2,,,,,,,,,,,,,,vanidad_bp,,0,,,104
 Lenador,vanidad_lenador,,VAO,flarelauncher_fighter,,1200,250,300,,100,0,,180,300,275,80,170,50,NONE,,0,0,0,,,1,1,,,,,,,,,,,,,,vanidad_bp,,0,,,302
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
