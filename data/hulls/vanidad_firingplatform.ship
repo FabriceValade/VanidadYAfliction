@@ -1,0 +1,97 @@
+{
+  "hullName": "A-firing platform",
+  "hullId": "vanidad_firingplatform",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/vanidad/ships/vanidad_firingplatform.png",
+  "style": "HIGH_TECH",
+  "height": 103,
+  "width": 149,
+  "center": [76.5, 52.5],
+  "collisionRadius": 93,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 82,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 76,
+      "angle": 0,
+      "locations": [5.5, 36.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 65,
+      "angle": 0,
+      "locations": [5.5, -10.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 67,
+      "angle": 0,
+      "locations": [5.5, -45.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-37, -33.5],
+      "length": 18.5,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-41, -16],
+      "length": 18.5,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-36, 0.5],
+      "length": 18.5,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-41, 14.5],
+      "length": 18.5,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "HIGH_TECH"
+    },
+    {
+      "location": [-38, 33.5],
+      "length": 18.5,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "HIGH_TECH"
+    }
+  ],
+  "bounds": [
+    31.5, 49.5,
+    18, -57.5,
+    -11.5, -59,
+    -13.5, -42.5,
+    -37.5, -41.5,
+    -41.5, -19.5,
+    -36, 4.5,
+    -41.5, 19.5,
+    -36, 40,
+    2.5, 68.5
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "variantId": "vanidad_firingplatform_estarayo",
+  "hullId": "vanidad_firingplatform",
+  "displayName": "Estarayo platform",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "vanidad_estarayo_heavy",
+        "WS0002": "vanidad_estarayo_medium",
+        "WS0003": "vanidad_estarayo_light"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}
