@@ -20,6 +20,8 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 import java.util.Objects;
+import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 
 /**
@@ -29,118 +31,93 @@ import org.lwjgl.util.vector.Vector2f;
 public class vanidad_alternatingBeam implements EveryFrameWeaponEffectPlugin {
     
     private final       Color LowerColor = new Color(251,189,41);
-     private final       Color CenterColor = new Color(251,102,41);
-     private final       Color UpperColor = new Color(250,65,41);
-    private final float inacuracyAngle = 20;
-    //----------------This area is for setting all offsets for the barrels: note that the turret and hardpoint version of the weapon *must* have an equal amount of offsets--------------------
-    //Offsets for medium weapons
-    private static Map<Integer, Vector2f> mediumHardpointOffsets = new HashMap<Integer, Vector2f>();
-    static {
-        mediumHardpointOffsets.put(0, new Vector2f(27.5f, 5.5f));
-        mediumHardpointOffsets.put(1, new Vector2f(27.5f, -5.5f));
-    }
-    private static Map<Integer, Vector2f> mediumTurretOffsets = new HashMap<Integer, Vector2f>();
-    static {
-        mediumTurretOffsets.put(0, new Vector2f(14f, 5.5f));
-        mediumTurretOffsets.put(1, new Vector2f(14f, -5.5f));
-
-    }
-    
-    //-----------------------------------------------------------------------------END OF OFFSET SPECIFICATIONS---------------------------------------------------------------------------------
+    private final       Color UpperColor = new Color(250,65,41);
+    private final float inacuracyAngle = 10;
 
     //Instantiates variables we will use later
-    private int counter = 0;
-    private boolean runOnce = true;
-    private float angleMemory = 0;
-    private boolean hasmemory = false;
-    private float timer =0f;
-    private float angleMove = 0f;
-  
-    private Map<Integer, BeamAPI> beamMap = new HashMap<Integer, BeamAPI>();
+    private vanidad_beamRecoilHandler recoilHandler= new vanidad_beamRecoilHandler();
+    private boolean runOnce = false;
+    private boolean firingStarted = false;
     
-    @Override
+    //stuff for the recoil
+    public float recoilDuration = 0.3f;
+    public float muzzleDistMin = 1f;
+    public float muzzleDistMax = 10f;
+    public float muzzleAngleMin = -18f;
+    public float muzzleAngleMax = 18f;
+    public float muzzleSizeMin = 10f;
+    public float muzzleSizeMax = 20f;
+    
+    private Map<Integer, BeamAPI> beamMap = new HashMap<>();
+    
+ @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
         //Don't run if we are paused, or our if weapon is null
         if (engine.isPaused() || weapon == null) {
             return;
         }
-        weapon.ensureClonedSpec();
-        //Resets the beam map and variables if we are not firing
+        if (!runOnce) {
+            runOnce = true;
+            recoilHandler.init(engine, weapon, 1);
+            recoilHandler.recoilDuration = recoilDuration;
+            recoilHandler.muzzleDistMin = muzzleDistMin;
+            recoilHandler.muzzleDistMax = muzzleDistMax;
+            recoilHandler.muzzleAngleMin = muzzleAngleMin;
+            recoilHandler.muzzleAngleMax = muzzleAngleMax;
+            recoilHandler.muzzleSizeMin = muzzleSizeMin;
+            recoilHandler.muzzleSizeMax = muzzleSizeMax;
+        }
+        recoilHandler.advance(amount);
+        //Resets the beam map and variables between firing
         if (weapon.getChargeLevel() <= 0) {
             beamMap.clear();
-            runOnce = true;
-            hasmemory = false;
-            timer = 0f;
+            firingStarted = false;
             return;
         }
-        if (hasmemory)
-        {
-            if (Math.abs(angleMemory)>=1)
-            {
-                timer+=amount;
-                float ratioremaining = 1f- timer/0.5f;
-                angleMemory = angleMove*ratioremaining;
-                weapon.getSpec().getHardpointAngleOffsets().set(0,angleMemory);
-                weapon.getSpec().getTurretAngleOffsets().set(0, angleMemory);
-            }
+        
+
+        
+        //we run all this stuff when the weapon fire. set offset, color, proper counter
+        if (weapon.getChargeLevel() > 0f && !firingStarted) {
+            firingStarted = true;
             
             
-        }
-        //If we are firing, start the code and change variables
-        if (weapon.getChargeLevel() > 0f && runOnce) {
-            runOnce = false;
             int counterForBeams = 0;
             for (BeamAPI beam : engine.getBeams()) {
                 if (beam.getWeapon() == weapon) {
                     if (!beamMap.containsValue(beam)) {
-                        beamMap.put(counterForBeams, beam);
+                        beamMap.put(counterForBeams,
+                                beam);
                         counterForBeams++;
                     }
                 }
             }
-        } else {
-            return;
-        }
-
-        int numOffset = 0;
-
-
-
-            counter++;
-            if (!mediumHardpointOffsets.containsKey(counter)) {
-                counter = 0;
-            }
             
-
-            float randomInterpolate = 0.8f*(float)Math.random()-0.4f;
-            Color finalColor;
-            if (randomInterpolate>=0)
-                finalColor = Misc.interpolateColor(CenterColor,
-                        UpperColor,
-                        randomInterpolate);
-            else
-                finalColor = Misc.interpolateColor(CenterColor,
-                        LowerColor,
-                        randomInterpolate*-1f);
-            int green = finalColor.getGreen();
-            int red = finalColor.getRed();
-            int blue = finalColor.getBlue();
-            Color fringe = new Color(red/2, green/2, blue/2);
-            beamMap.get(0).setCoreColor(finalColor);
+            Color finalColor=vanidad_Color.GenRandomColor(LowerColor,UpperColor);
+            Color fringe = vanidad_Color.GenFringeColor(finalColor);
+            beamMap.get(0).setCoreColor(vanidad_Color.GenCoreColor(finalColor));
             beamMap.get(0).setFringeColor(fringe);
             
-            float currentAngle = (inacuracyAngle*(float)Math.random())-inacuracyAngle/2;
-            weapon.getSpec().getHardpointFireOffsets().set(numOffset, mediumHardpointOffsets.get(counter));
-            weapon.getSpec().getHiddenFireOffsets().set(numOffset, mediumTurretOffsets.get(counter));
-            weapon.getSpec().getTurretFireOffsets().set(numOffset, mediumTurretOffsets.get(counter));
-            
-            weapon.getSpec().getHardpointAngleOffsets().set(numOffset,currentAngle);
-            weapon.getSpec().getTurretAngleOffsets().set(numOffset, currentAngle);
-            
-            angleMove = currentAngle;
-            angleMemory = currentAngle;
-            hasmemory = true;
             
 
+            float currentAngle = (inacuracyAngle * (float) Math.random())-inacuracyAngle/2f ;
+
+            
+            weapon.ensureClonedSpec();
+           
+           //if we want to modify offset angle instead of actual firing angle
+            weapon.getSpec().getHardpointAngleOffsets().set(0,currentAngle);
+            weapon.getSpec().getTurretAngleOffsets().set(0,currentAngle);
+            
+            //lets specify custom position/angle for recoil
+            Vector2f backMuzzlePosOffset = new Vector2f(-8,0);
+            Vector2f muzzleRotated = VectorUtils.rotate(backMuzzlePosOffset, weapon.getCurrAngle());
+            Vector2f firePoint = new Vector2f(0,0);
+            Vector2f.add(weapon.getLocation(), muzzleRotated, firePoint);
+            Float fireAngle = MathUtils.clampAngle(weapon.getCurrAngle()+180);
+            recoilHandler.fire(0,firePoint,fireAngle);
+            
+            
+        }
     }
 }

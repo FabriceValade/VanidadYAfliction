@@ -20,6 +20,8 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 import java.util.Objects;
+import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 
 /**
@@ -29,18 +31,22 @@ import org.lwjgl.util.vector.Vector2f;
 public class vanidad_alternatingBeamSmall implements EveryFrameWeaponEffectPlugin {
     
     private final       Color LowerColor = new Color(251,219,41);
-    private final       Color CenterColor = new Color(251,189,41);
     private final       Color UpperColor = new Color(251,102,41);
     private final float inacuracyAngle = 10;
 
+        //Instantiates variables we will use later
+    private vanidad_beamRecoilHandler recoilHandler= new vanidad_beamRecoilHandler();
+    private boolean runOnce = false;
+    private boolean firingStarted = false;
     
-    
-    //-----------------------------------------------------------------------------END OF OFFSET SPECIFICATIONS---------------------------------------------------------------------------------
-
-    //Instantiates variables we will use later
-    private int counter = 0;
-    private boolean runOnce = true;
-
+    //stuff for the recoil
+    public float recoilDuration = 0.3f;
+    public float muzzleDistMin = 1f;
+    public float muzzleDistMax = 8f;
+    public float muzzleAngleMin = -15f;
+    public float muzzleAngleMax = 15f;
+    public float muzzleSizeMin = 6f;
+    public float muzzleSizeMax = 15f;
     private Map<Integer, BeamAPI> beamMap = new HashMap<Integer, BeamAPI>();
     
     @Override
@@ -49,54 +55,64 @@ public class vanidad_alternatingBeamSmall implements EveryFrameWeaponEffectPlugi
         if (engine.isPaused() || weapon == null) {
             return;
         }
-
-        //Resets the beam map and variables if we are not firing
+        if (!runOnce) {
+            runOnce = true;
+            recoilHandler.init(engine, weapon, 1);
+            recoilHandler.recoilDuration = recoilDuration;
+            recoilHandler.muzzleDistMin = muzzleDistMin;
+            recoilHandler.muzzleDistMax = muzzleDistMax;
+            recoilHandler.muzzleAngleMin = muzzleAngleMin;
+            recoilHandler.muzzleAngleMax = muzzleAngleMax;
+            recoilHandler.muzzleSizeMin = muzzleSizeMin;
+            recoilHandler.muzzleSizeMax = muzzleSizeMax;
+        }
+        recoilHandler.advance(amount);
+        //Resets the beam map and variables between firing
         if (weapon.getChargeLevel() <= 0) {
             beamMap.clear();
-            runOnce = true;
+            firingStarted = false;
             return;
         }
+        
 
-        //If we are firing, start the code and change variables
-        if (weapon.getChargeLevel() > 0f && runOnce) {
-            runOnce = false;
+        
+        //we run all this stuff when the weapon fire. set offset, color, proper counter
+        if (weapon.getChargeLevel() > 0f && !firingStarted) {
+            firingStarted = true;
+            
+            
             int counterForBeams = 0;
             for (BeamAPI beam : engine.getBeams()) {
                 if (beam.getWeapon() == weapon) {
                     if (!beamMap.containsValue(beam)) {
-                        beamMap.put(counterForBeams, beam);
+                        beamMap.put(counterForBeams,
+                                beam);
                         counterForBeams++;
                     }
                 }
             }
-        } else {
-            return;
-        }
-
-            weapon.ensureClonedSpec();
-            float randomInterpolate = 0.8f*(float)Math.random()-0.4f;
-            Color finalColor;
-            if (randomInterpolate>=0)
-                finalColor = Misc.interpolateColor(CenterColor,
-                        UpperColor,
-                        randomInterpolate);
-            else
-                finalColor = Misc.interpolateColor(CenterColor,
-                        LowerColor,
-                        randomInterpolate*-1f);
-            int green = finalColor.getGreen();
-            int red = finalColor.getRed();
-            int blue = finalColor.getBlue();
-            Color fringe = new Color(red/2, green/2, blue/2);
-            beamMap.get(0).setCoreColor(finalColor);
+            Color finalColor=vanidad_Color.GenRandomColor(LowerColor,UpperColor);
+            Color fringe = vanidad_Color.GenFringeColor(finalColor);
+            beamMap.get(0).setCoreColor(vanidad_Color.GenCoreColor(finalColor));
             beamMap.get(0).setFringeColor(fringe);
-            
-            float currentAngle = (inacuracyAngle*(float)Math.random())-inacuracyAngle/2;
+
+            float currentAngle = (inacuracyAngle * (float) Math.random())-inacuracyAngle/2f ;
 
             
+            weapon.ensureClonedSpec();
+           
+           //if we want to modify offset angle instead of actual firing angle
             weapon.getSpec().getHardpointAngleOffsets().set(0,currentAngle);
-            weapon.getSpec().getTurretAngleOffsets().set(0, currentAngle);
-
+            weapon.getSpec().getTurretAngleOffsets().set(0,currentAngle);
+            
+            //lets specify custom position/angle for recoil
+            Vector2f backMuzzlePosOffset = new Vector2f(-7,0);
+            Vector2f muzzleRotated = VectorUtils.rotate(backMuzzlePosOffset, weapon.getCurrAngle());
+            Vector2f firePoint = new Vector2f(0,0);
+            Vector2f.add(weapon.getLocation(), muzzleRotated, firePoint);
+            Float fireAngle = MathUtils.clampAngle(weapon.getCurrAngle()+180);
+            recoilHandler.fire(0,firePoint,fireAngle);
+        }
             
                 
             

@@ -33,7 +33,7 @@ public class vanidad_beamRecoilHandler {
     public float muzzleSizeMin = 12f;
     public float muzzleSizeMax = 35f;
     
-    
+    private CombatEngineAPI engine;
     private int currentBarrel;
     private float interFrameDelay = 0f;
     private int frameNbr = 0;
@@ -47,7 +47,8 @@ public class vanidad_beamRecoilHandler {
 
     }
 
-    public void init(WeaponAPI w, int numBarrel) {
+    public void init(CombatEngineAPI e, WeaponAPI w, int numBarrel) {
+        engine = e;
         weapon = w;
         theAnim = weapon.getAnimation();
         int numFrame = theAnim.getNumFrames();
@@ -66,8 +67,9 @@ public class vanidad_beamRecoilHandler {
             frameNbr++;
         }
 
-        if (frameNbr == (currentBarrel) * numBarrelFrame) {
-            frameNbr = (currentBarrel - 1) * numBarrelFrame;
+        if (frameNbr == (currentBarrel+1) * numBarrelFrame) 
+        {
+            frameNbr = (currentBarrel) * numBarrelFrame;
             firingStarted = false;
             timer = 0;
         }
@@ -75,25 +77,44 @@ public class vanidad_beamRecoilHandler {
 
     }
 
-    public void fire(CombatEngineAPI engine, int barrelIndex)
+    public void fire(int barrelIndex)
     {
         currentBarrel = barrelIndex;
         firingStarted = true;
-        
+        frameNbr = barrelIndex*numBarrelFrame + 1;
         if (spawnMuzzleFlash)
         {
             Float realFiringAngle = weapon.getCurrAngle();
             Vector2f firePoint = weapon.getFirePoint(0);
 
-            for (int i = 0; i < 12; i++) {
+            SpawnMuzzleFlash(firePoint, realFiringAngle);
+            
+        }
+    }
+    
+    public void fire( int barrelIndex, Vector2f firePoint, Float fireAngle)
+    {
+        currentBarrel = barrelIndex;
+        firingStarted = true;
+        frameNbr = barrelIndex*numBarrelFrame + 1;
+        if (spawnMuzzleFlash)
+        {
+            SpawnMuzzleFlash(firePoint, fireAngle);
+            
+        }
+    }
+    
+    private void SpawnMuzzleFlash( Vector2f firePoint, Float fireAngle)
+    {
+        for (int i = 0; i < 12; i++) {
                 float dist = MathUtils.getRandomNumberInRange(muzzleDistMin, muzzleDistMax);
                 float spreadedAngle = MathUtils.getRandomNumberInRange(muzzleAngleMin, muzzleAngleMax);
                 float spreadedSize = MathUtils.getRandomNumberInRange(muzzleSizeMin, muzzleSizeMax);
                 float randomSpeed = MathUtils.getRandomNumberInRange(200, 400);
                 
                 
-                Vector2f endPoint = MathUtils.getPoint(firePoint,dist,spreadedAngle+realFiringAngle);
-                Vector2f endPoint2 = MathUtils.getPoint(firePoint,randomSpeed,spreadedAngle+realFiringAngle);
+                Vector2f endPoint = MathUtils.getPoint(firePoint,dist,spreadedAngle+fireAngle);
+                Vector2f endPoint2 = MathUtils.getPoint(firePoint,randomSpeed,spreadedAngle+fireAngle);
                 Vector2f vel = Vector2f.sub(endPoint2, firePoint, null);
                 
                 engine.addHitParticle(endPoint,
@@ -103,7 +124,6 @@ public class vanidad_beamRecoilHandler {
                         0.2f,
                         muzzleColor);
             }
-        }
     }
 
 }

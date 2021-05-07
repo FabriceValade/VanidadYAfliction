@@ -7,11 +7,9 @@
   "everyFrameEffect": "data.scripts.weapons.vanidad_alternatingBeamLarge",
   "collisionClass": "RAY",
   "collisionClassByFighter": "RAY_FIGHTER",
-  "turretSprite": "graphics/vanidad/weapons/estarayolarge/vanidad_estarayo_large_t0000.png",
-  "turretGlowSprite":"graphics/vanidad/weapons/estarayolarge/vanidad_estarayo_heavy_glow.png",
-  "hardpointSprite": "graphics/vanidad/weapons/estarayolarge/vanidad_estarayo_large_t0000.png",
-  "hardpointGlowSprite":"graphics/vanidad/weapons/estarayolarge/vanidad_estarayo_heavy_glow.png",
-  "numFrames":14,	
+  "turretSprite": "graphics/vanidad/weapons/estarayolarge/vanidad_estarayo_l_t0000.png",
+  "hardpointSprite": "graphics/vanidad/weapons/estarayolarge/vanidad_estarayo_l_h0000.png",
+  "numFrames":6,	
   "frameRate":20,
   "glowColor": [
     225,
@@ -24,15 +22,15 @@
     RENDER_BARREL_BELOW
   ],
   "turretOffsets": [
-    26,
-    -6.5
+    16,
+    0
   ],
   "turretAngleOffsets": [
     0
   ],
   "hardpointOffsets": [
-    42,
-    -6.5
+    21.5,
+    0
   ],
   "hardpointAngleOffsets": [
     0
@@ -50,7 +48,7 @@
     255
   ],
   "darkCore":TRUE,
-  "width": 35,
+  "width": 30,
   "textureType": ROUGH,
   "textureScrollSpeed": 64,
   "pixelsPerTexel": 5,
