@@ -1,0 +1,47 @@
+{
+    "playableFaction":true,
+    "corvusCompatible":false,
+    
+    "rebelFleetSuffix":"Splinter Group",
+    
+    "directoryUseShortName":true,
+    
+    "marketSpawnWeight":0.75,
+	
+
+     
+    "startRelationships":{ 
+		"hegemony": +0.3, 
+		"luddic_church":+0.2, 
+		"diableavionics":-0.2, #Dreadnought bros
+		"pirates":-0.6,
+		"luddic_path":-0.6,
+		"dassault_mikoyan":+0.1,
+		"ora":-0.2,
+		},
+    "maxRelationships":{},
+    "diplomacyPositiveChance":{},
+    "diplomacyNegativeChance":{},
+    "morality":"neutral",
+    
+    "alignments":{
+        "corporate":-0.3,
+        "technocratic":1,
+		"diplomatic":0,
+		"militarist":0.5,
+		"ideological":0.1
+    },
+	
+    "diplomacyTraits":["submissive", "helps_allies", "temperamental", "lowprofile"],
+    
+    "freeMarket":false,
+    
+    # chance of the faction being picked to send a colony expedition. Default 0 (disabled)
+    "colonyExpeditionChance":1.1,	# They like to bunker up in Spindle
+    "colonyTargetValuator":"exerelin.campaign.colony.LuddicColonyTargetValuator",
+        
+	"startShipsSolo":[["vanidad_cazador_hunter"]],
+    "startShipsCombatSmall":[["vanidad_forrajeador_explorer", "vanidad_halcon_leader", "vanidad_cazador_hunter"]],
+    "startShipsCarrierSmall":[["vanidad_forrajeador_explorer", "vanidad_viajero_default", "vanidad_cazador_hunter"]],
+    "startShipsCombatLarge":[["vanidad_forrajeador_explorer", "vanidad_almadena_support", "vanidad_ionizador_support", "vanidad_halcon_leader"]],
+}

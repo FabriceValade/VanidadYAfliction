@@ -1,4 +1,7 @@
 {
+	"designTypeColors":{
+            "Vanidad y Afliction":[45,57,242,255],
+    },
 	"graphics":{
 		"misc":{
 			"vanidad_cadenaVioHead":"graphics/vanidad/weapons/chainsaw/vanidad_cadenavio_sprite.png",
