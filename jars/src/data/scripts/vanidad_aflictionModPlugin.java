@@ -21,7 +21,7 @@ public class vanidad_aflictionModPlugin extends BaseModPlugin {
     public void onNewGame() {
         
         (new vanidad_Citlali()).generate(Global.getSector());
-		SharedData.getData().getPersonBountyEventData().addParticipatingFaction("vanidad");
+		//SharedData.getData().getPersonBountyEventData().addParticipatingFaction("vanidad");
 
     }
     

@@ -1,37 +1,41 @@
 {
-    "displayName": "Hunter",
-    "fluxCapacitors": 10,
-    "fluxVents": 10,
-    "hullId": "vanidad_cazador",
-    "hullMods": [],
-    "permaMods": [],
-    "variantId": "vanidad_cazador_hunter",
-    "weaponGroups": [
-        {
-            "autofire": false,
-            "mode": "LINKED",
-            "weapons": {"WS0005": "phasebeam"}
-        },
-        {
-            "autofire": false,
-            "mode": "ALTERNATING",
-            "weapons": {
-                "WS0003": "sabot_single",
-                "WS0004": "sabot_single"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0001": "irpulse",
-                "WS0002": "irpulse"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {"WS0006": "pdburst"}
-        }
-    ]
+  "variantId": "vanidad_cazador_hunter",
+  "hullId": "vanidad_cazador",
+  "displayName": "Hunter",
+  "goalVariant": true,
+  "fluxCapacitors": 9,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "vanidad_estarayo_light",
+        "WS0004": "vanidad_estarayo_light",
+        "WS0005": "pulselaser"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "ALTERNATING",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0006": "pdburst"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
 }

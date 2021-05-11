@@ -1,0 +1,14 @@
+{
+	"VanidadFlare":{
+		"engineColor":[168,236,229,215], 
+		"contrailParticleSizeMult":3,
+		"contrailParticleDuration":4,
+		"contrailParticleFinalSizeMult":0.5,
+		"contrailMaxSpeedMult":0.5,
+		"contrailAngularVelocityMult":0,
+		"contrailColor":[85,35,50,30],
+		"type":"SMOKE" # GLOW or SMOKE
+	},
+
+	
+}
