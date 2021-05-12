@@ -7,9 +7,9 @@
   "height": 251,
   "width": 160,
   "center": [80, 125.5],
-  "collisionRadius": 142.5,
+  "collisionRadius": 168.5,
   "shieldCenter": [0, 0],
-  "shieldRadius": 130,
+  "shieldRadius": 157,
   "viewOffset": 0,
   "builtInWeapons": {
     "WS0014": "vanidad_almadena_deco"
