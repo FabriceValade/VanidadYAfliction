@@ -12,10 +12,21 @@ vanidad_viajero,SHIP,"A standard carrier of VAO design. Usefull in an escort rol
 vanidad_abogado,SHIP,"It is a marvel of engineering to have sloted a fully functional light estarayo on a fighter frame. The dual barrel system manage to maintain the same per beam efficiency as the standard weapon. Inneficient vs larger vessel, it excell at hunting down frigate and light destroyers.",,,
 vanidad_lenador,SHIP,"The mining operation of Kristos contains many unique device to help the worker. The lenador is one of them, a massive mechanised suit meant to tear down transplutonic material. Inventive mind mind of the VAO noticed they were able to operate in space however. Small modification to their design allow them to participate in dismantling ennemy vessel. The civilian origin is easy to see however as they are very vulnerable to counter fire.",,,
 #---- gun_estarayo,,,,,
-vanidad_estarayo_light,WEAPON,"A light version of the Estarayo. Lower energy means it create explosion starting at 50 range with size maxing at 700 range dealing 15 HE damage. Though vibration of the firing mechanism are reduced so it is more accurate.
-",,,
-vanidad_estarayo_medium,WEAPON,"The full blueprint name is Estallido rayo, but archeoengineer ignore the meaning of it. In practice most crew like to call them exploding rays. It is a self-focused ray produced by exploding capacitor. Starting at 200 range and maxing at 900, it will produce a localized explosion dealing 50 HE damage on its end-point. The peculiar charging mechanism rattle the device however and firing direction is extremely innacurate.",,,
-vanidad_estarayo_heavy,WEAPON,A larger version of the Estarayo. Explosion start at 300 range and reach max size at 1000 range. The extreme power at the focus point seems to go beyond expected explosion and deal 150 HE damage. Increased capacitors however make the weapon even more inacurate than the standard estarayo.,,,
+vanidad_estarayo_light,WEAPON,"It is a self-focused ray produced by exploding capacitor. If given sufficient distance the short burst of energy creates large explosion. The peculiar charging mechanism rattle the optical focusing device however and the weapon is quite innacurate.
+
+The full blueprint name is Estallido rayo, but archeoengineer ignore the meaning of it. In practice most crew like to call them exploding rays. Many a veteran spacer will tell you stories of missing beam suddently exploding behind their ships. 
+
+The VA Operation uses this line of weapon extensively to supress ship trying to vent or to clear large group of fighters. This is the largest version found and the energy reached by the beam make the weapon surprisingly deadly, it is for this reason one of the most restricted weapon made by the VAO. ",,,
+vanidad_estarayo_medium,WEAPON,"It is a self-focused ray produced by exploding capacitor. If given sufficient distance the short burst of energy creates large explosion. The peculiar charging mechanism rattle the optical focusing device however and the weapon is quite innacurate.
+
+The full blueprint name is Estallido rayo, but archeoengineer ignore the meaning of it. In practice most crew like to call them exploding rays. Many a veteran spacer will tell you stories of missing beam suddently exploding behind their ships. 
+
+The VA Operation uses this line of weapon extensively to supress ship trying to vent or to clear large group of fighters. This is the largest version found and the energy reached by the beam make the weapon surprisingly deadly, it is for this reason one of the most restricted weapon made by the VAO. ",,,
+vanidad_estarayo_heavy,WEAPON,"It is a self-focused ray produced by exploding capacitor. If given sufficient distance the short burst of energy creates large explosion. The peculiar charging mechanism rattle the optical focusing device however and the weapon is quite innacurate.
+
+The full blueprint name is Estallido rayo, but archeoengineer ignore the meaning of it. In practice most crew like to call them exploding rays. Many a veteran spacer will tell you stories of missing beam suddently exploding behind their ships. 
+
+The VA Operation uses this line of weapon extensively to supress ship trying to vent or to clear large group of fighters. This is the largest version found and the energy reached by the beam make the weapon surprisingly deadly, it is for this reason one of the most restricted weapon made by the VAO. ",,,
 ,,,,,
 #Campaign,,,,,
 #---- faction,,,,,

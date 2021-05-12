@@ -1,43 +1,51 @@
-name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn rate,OPs,ammo,ammo/sec,reload size,type,energy/shot,energy/second,chargeup,chargedown,burst size,burst delay,min spread,max spread,spread/shot,spread decay/sec,beam speed,proj speed,launch speed,flight time,proj hitpoints,hints,tags,groupTag,tech/manufacturer,for weapon tooltip>>,primaryRoleStr,speedStr,trackingStr,turnRateStr,accuracyStr,customPrimary,customPrimaryHL,customAncillary,customAncillaryHL,noDPSInTooltip,number
-Estarayo,vanidad_estarayo_medium,1,,1500,700,300,,,0,20,10,,,,ENERGY,,300,0.1,0.45,0.6,0,,,,,4200,,,,,,"energy14, beam10, vanidad_bp",,Vanidad y Afliction,,General,,,,,,,,,,20
-Light Estarayo,vanidad_estarayo_light,1,,1500,600,100,,,0,30,7,,,,ENERGY,,110,0.1,0.45,0.6,0,,,,,4200,,,,,,"energy14, beam10, vanidad_bp",,Vanidad y Afliction,,General,,,,,,,,,,20
-Heavy Estarayo,vanidad_estarayo_heavy,1,,1500,800,600,,,0,15,27,,,,ENERGY,,550,0.1,0.7,0.9,0,,,,,4200,,,,,,"energy14, beam10, vanidad_bp",,Vanidad y Afliction,,General,,,,,,,,,,20
-Heavy Laere,vanidad_laere_heavy,1,,1200,850,,300,100,0,15,25,,,,ENERGY,210,,0,0.5,0,0,0,10,2,10,,1500,,,,,"energy14, vanidad_bp",,Vanidad y Afliction,,General,,,,,,,,,,
-Medium Laere,vanidad_laere_medium,1,,1200,750,,200,75,0,15,12,,,,ENERGY,210,200,0,0.5,0,0,0,10,2,10,,1500,,,,,"energy14, vanidad_bp",,Vanidad y Afliction,,General,,,,,,,,,,
-Small Laere,vanidad_laere_small,1,,1200,650,,100,50,0,15,7,,,,ENERGY,210,,0,0.5,0,0,0,5,1,10,,1500,,,,,"energy14, vanidad_bp",,Vanidad y Afliction,,General,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-#fighter weapon,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Light Estarayo (fighter),vanidad_estarayo_fighter,1,,1500,400,100,,,0,30,7,,,,ENERGY,,110,0.1,0.1,0.5,0,,,,,3200,,,,,,,,,,General,,,,,,,,,,20
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,48
-#lenador,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Arm lmg (150 KE),vanidad_lenador_arm_right,0,,100,300,,25,,1,50,3,,,,KINETIC,3,,0,0.4,5,0.1,0,5,1,15,,600,,,10,PD,,,,,Anti Shield,,,,,,,,,,0.5
-Cadena Vio (300 HE beam dps),vanidad_lenador_arm_left,1,,1500,25,300,,,0,60,10,,,,HIGH_EXPLOSIVE,,50,0.1,0.1,,,,,,,3200,,,,,,,,Vanidad y Afliction,,Shredder,,,,,,,,,,
-,vanidad_lenador_shoulder_right,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
-,vanidad_lenador_shoulder_left,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
-,vanidad_lenador_head,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
-,vanidad_lenador_torso,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,50
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,51
-#cruiser deco,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,52
-,vanidad_almadena_deco,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,53
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,54
-#deco,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,55
-,vanidad_cazador_decothruster,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,56
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,57
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,58
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,59
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,60
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,61
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,62
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,63
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,64
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,65
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,66
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,67
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,68
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,69
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,70
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,71
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,72
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,73
+name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn rate,OPs,ammo,ammo/sec,reload size,type,energy/shot,energy/second,chargeup,chargedown,burst size,burst delay,min spread,max spread,spread/shot,spread decay/sec,beam speed,proj speed,launch speed,flight time,proj hitpoints,autofireAccBonus,extraArcForAI,hints,tags,groupTag,tech/manufacturer,for weapon tooltip>>,primaryRoleStr,speedStr,trackingStr,turnRateStr,accuracyStr,customPrimary,customPrimaryHL,customAncillary,customAncillaryHL,noDPSInTooltip,number
+Heavy Estarayo,vanidad_estarayo_heavy,3,0.7,7500,800,600,,,10,15,27,,,,ENERGY,,600,0.1,0.7,0.9,,,,,,4200,,,,,,,"ANTI_FTR, FIRE_WHEN_INEFFICIENT","energy18, beam18, hist3t, vanidad_bp",,Vanidad y Afliction,,Suppression,,,,,"Explode on contact or after reaching max range dealing 150 HE damage. Size and damage reduced under beam length of 1000, none under 300.",,,,,20
+Estarayo,vanidad_estarayo_medium,2,,1500,700,300,,,5,20,11,,,,ENERGY,,300,0.1,0.45,0.6,,,,,,4200,,,,,,,"ANTI_FTR, FIRE_WHEN_INEFFICIENT","energy12, beam12, merc, vanidad_bp",,Vanidad y Afliction,,Suppression,,,,,"Explode on contact or after reaching max range dealing 40 HE damage. Size and damage reduced under beam length of 900, none under 200.",,,,,20
+Light Estarayo,vanidad_estarayo_light,1,,400,600,100,,,0,30,7,,,,ENERGY,,110,0.1,0.45,0.6,,,,,,4200,,,,,,,"ANTI_FTR, FIRE_WHEN_INEFFICIENT","energy8, beam8, merc, vanidad_bp",,Vanidad y Afliction,,Suppression,,,,,"Explode on contact or after reaching max range dealing 15 HE damage. Size and damage reduced under beam length of 700, none under 50..",,,,,20
+Heavy Laere,vanidad_laere_heavy,3,,7000,850,,300,100,0,15,25,,,,ENERGY,310,,0,0.5,0,,0,10,2,10,,1500,,,,,,,"energy17, hist3t, vanidad_bp",,Vanidad y Afliction,,General,,,,,,,,,,2
+Medium Laere,vanidad_laere_medium,1,,1200,750,,200,75,0,20,12,,,,ENERGY,210,,0,0.6,0,,0,10,2,10,,1500,,,,,,,"energy12, merc vanidad_bp",,Vanidad y Afliction,,General,,,,,,,,,,3
+Small Laere,vanidad_laere_small,0,,200,650,,100,50,0,30,6,,,,ENERGY,110,,0,0.8,0,,0,5,1,10,,1500,,,,,,,"energy8, merc, vanidad_bp",,Vanidad y Afliction,,General,,,,,,,,,,4
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#fighter weapon,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Light Estarayo (fighter),vanidad_estarayo_fighter,5,,1500,400,100,,,0,30,7,,,,ENERGY,,110,0.1,0.1,0.5,0,,,,,3200,,,,,,,,,,,,General,,,,,,,,,,20
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,48
+#lenador,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Arm lmg (150 KE),vanidad_lenador_arm_right,5,,100,300,,25,,1,50,3,,,,KINETIC,3,,0,0.4,5,0.1,0,5,1,15,,600,,,10,,,"PD, SYSTEM",,,,,Anti Shield,,,,,,,,,,0.5
+Cadena Vio (300 HE beam dps),vanidad_lenador_arm_left,5,,1500,25,300,,,0,60,10,,,,HIGH_EXPLOSIVE,,50,0.1,0.1,,,,,,,3200,,,,,,,SYSTEM,,,,,Shredder,,,,,,,,,,
+,vanidad_lenador_shoulder_right,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
+,vanidad_lenador_shoulder_left,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
+,vanidad_lenador_head,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
+,vanidad_lenador_torso,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,50
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,51
+#cruiser deco,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,52
+,vanidad_almadena_deco,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,53
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,54
+#deco,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,55
+,vanidad_cazador_decothruster,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,56
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,49
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,50
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,51
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,52
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,53
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,54
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,55
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,56
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,57
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,58
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,59
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,60
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,61
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,62
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,63
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,64
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,65
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,66
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,67
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,68
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,69
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,70
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,71
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,72
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,73
