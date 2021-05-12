@@ -1,0 +1,24 @@
+{
+  "variantId": "vanidad_firingplatform_laere",
+  "hullId": "vanidad_firingplatform",
+  "displayName": "Laere platform",
+  "goalVariant": false,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "vanidad_laere_heavy",
+        "WS0002": "vanidad_laere_medium",
+        "WS0003": "vanidad_laere_small"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}

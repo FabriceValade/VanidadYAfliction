@@ -1,0 +1,34 @@
+{
+	"id":"vanidad_laere_medium",  # this id must match what's in the spreadsheet
+	"specClass":"projectile",
+	"type":"ENERGY",
+	"size":"MEDIUM",
+	"displayArcRadius":750,
+	"turretSprite":"graphics/vanidad/weapons/vanidad_medium_laere_t.png",
+	"turretGunSprite":"graphics/vanidad/weapons/vanidad_medium_laere_barrels_t.png",
+	"turretGlowSprite":"graphics/vanidad/weapons/vanidad_medium_laere_glow_t.png",
+	"hardpointSprite":"graphics/vanidad/weapons/vanidad_medium_laere_h.png",
+	"hardpointGunSprite":"graphics/vanidad/weapons/vanidad_medium_laere_barrels_h.png",	
+	"hardpointGlowSprite":"graphics/vanidad/weapons/vanidad_medium_laere_glow_h.png",
+	"glowColor":[255,100,50,255],
+	"visualRecoil":5.0,  # the gun sprites are only used if this is non-0
+	"renderHints":[RENDER_BARREL_BELOW],
+	"turretOffsets":[18, -5.5,  18, 5.5],
+	"turretAngleOffsets":[0, 0],
+	"hardpointOffsets":[18, -5.5, 18, 5.5],
+	"hardpointAngleOffsets":[0, 0],
+	"specialWeaponGlowWidth":15,
+	"specialWeaponGlowHeight":40,
+	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.
+	"animationType":"GLOW_AND_FLASH",  # NONE, GLOW, MUZZLE_FLASH, SMOKE
+	"muzzleFlashSpec":{"length":8.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":31,
+					   "particleSizeMin":10.0,
+					   "particleSizeRange":42.0,
+					   "particleDuration":0.63,
+					   "particleCount":25,
+					   "particleColor":[50,50,200,100]},
+	"autocharge":true,
+	"projectileSpecId":"vanidad_laere_shot_medium",  # projectile that will be fired
+	"fireSoundTwo":"autocannon_fire",	
+}

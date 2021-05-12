@@ -1,0 +1,17 @@
+{
+	"id":"vanidad_laere_shot_medium",
+	"specClass":"projectile",
+	#"spawnType":"BEAM",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":120.0,
+	"width":35.0,
+	"fadeTime":0.5,
+	"fringeColor":[0,0,255,255],
+	"coreColor":[200,200,255,200],
+	#"coreColor":[175,175,175,255],
+	"textureType":"ROUGH",  # only needed for BEAM spawnType
+	"textureScrollSpeed":-1.0,
+	"pixelsPerTexel":5.0	
+}
