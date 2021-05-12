@@ -1,0 +1,27 @@
+{
+  "variantId": "vanidad_pazjoya_guardian",
+  "hullId": "vanidad_pazjoya",
+  "displayName": "Guardian",
+  "goalVariant": true,
+  "fluxCapacitors": 8,
+  "fluxVents": 10,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [],
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "lightac",
+        "WS0002": "lightac",
+        "WS0003": "atropos_single",
+        "WS0004": "atropos_single",
+        "WS0005": "vanidad_estarayo_medium",
+        "WS0006": "pdlaser"
+      }
+    }
+  ],
+  "modules": [],
+  "wings": []
+}
