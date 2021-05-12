@@ -1,44 +1,41 @@
 {
-    "displayName": "Standard",
-    "fluxCapacitors": 0,
+    "displayName": "Pursuit",
+    "fluxCapacitors": 9,
     "fluxVents": 9,
     "goalVariant": true,
     "hullId": "vanidad_invasor",
-    "hullMods": [
-        "advancedoptics",
-        "targetingunit"
-    ],
+    "hullMods": ["targetingunit"],
     "permaMods": [],
     "sMods": [],
-    "variantId": "vanidad_invasor_standard",
+    "variantId": "vanidad_invasor_pursuit",
     "weaponGroups": [
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0007": "vanidad_estarayo_medium",
-                "WS0008": "vanidad_estarayo_medium"
+                "WS0007": "vanidad_laere_medium",
+                "WS0008": "vanidad_laere_medium"
             }
         },
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0009": "typhoon"}
+            "weapons": {"WS0009": "sabotpod"}
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0003": "pdlaser",
-                "WS0004": "pdlaser"
+                "WS0003": "lrpdlaser",
+                "WS0004": "lrpdlaser"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0001": "vanidad_laere_small",
-                "WS0002": "vanidad_laere_small"
+                "WS0001": "vanidad_estarayo_light",
+                "WS0002": "vanidad_estarayo_light"
             }
         },
         {
@@ -52,7 +49,7 @@
     ],
     "wings": [
         "vanidad_lenador",
-        "vanidad_abogado_fighter",
-        "vanidad_abogado_fighter"
+        "vanidad_lenador",
+        "vanidad_lenador"
     ]
 }

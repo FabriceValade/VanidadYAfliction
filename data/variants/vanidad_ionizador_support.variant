@@ -1,32 +1,33 @@
 {
     "displayName": "Support",
-    "fluxCapacitors": 12,
+    "fluxCapacitors": 6,
     "fluxVents": 20,
     "goalVariant": true,
     "hullId": "vanidad_ionizador",
     "hullMods": [
         "targetingunit",
-        "fluxbreakers"
+        "advancedoptics"
     ],
     "permaMods": [],
+    "sMods": [],
     "variantId": "vanidad_ionizador_support",
     "weaponGroups": [
         {
             "autofire": true,
             "mode": "LINKED",
-            "weapons": {"WS0006": "tachyonlance"}
+            "weapons": {"WS0006": "vanidad_estarayo_heavy"}
         },
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0005": "heavyneedler"}
+            "weapons": {"WS0005": "hveldriver"}
         },
         {
             "autofire": false,
             "mode": "LINKED",
             "weapons": {
-                "WS0001": "irpulse",
-                "WS0002": "irpulse"
+                "WS0001": "vanidad_laere_small",
+                "WS0002": "vanidad_laere_small"
             }
         },
         {

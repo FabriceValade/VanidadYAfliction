@@ -2,6 +2,7 @@
     "displayName": "Support",
     "fluxCapacitors": 14,
     "fluxVents": 2,
+    "goalVariant": true,
     "hullId": "vanidad_viajero",
     "hullMods": ["targetingunit"],
     "permaMods": [],

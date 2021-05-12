@@ -1,0 +1,58 @@
+{
+    "displayName": "Assault",
+    "fluxCapacitors": 8,
+    "fluxVents": 26,
+    "goalVariant": true,
+    "hullId": "vanidad_almadena",
+    "hullMods": [
+        "targetingunit",
+        "hardenedshieldemitter",
+        "unstable_injector"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "vanidad_almadena_assault",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "arbalest",
+                "WS0002": "arbalest"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "reaper",
+                "WS0004": "reaper"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "ALTERNATING",
+            "weapons": {"WS0007": "vanidad_laere_heavy"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "vanidad_laere_medium",
+                "WS0006": "vanidad_laere_medium"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0008": "pdlaser",
+                "WS0009": "pdlaser",
+                "WS0010": "pdlaser",
+                "WS0011": "pdlaser",
+                "WS0012": "pdlaser",
+                "WS0013": "pdlaser"
+            }
+        }
+    ]
+}

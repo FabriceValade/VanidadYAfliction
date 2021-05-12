@@ -1,25 +1,25 @@
 {
-    "displayName": "Explorer",
-    "fluxCapacitors": 5,
-    "fluxVents": 8,
+    "displayName": "Support",
+    "fluxCapacitors": 1,
+    "fluxVents": 10,
     "goalVariant": true,
     "hullId": "vanidad_forrajeador",
-    "hullMods": ["efficiency_overhaul"],
+    "hullMods": [],
     "permaMods": [],
     "sMods": [],
-    "variantId": "vanidad_forrajeador_explorer",
+    "variantId": "vanidad_forrajeador_support",
     "weaponGroups": [
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0001": "heavyac"}
+            "weapons": {"WS0001": "hveldriver"}
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0002": "taclaser",
-                "WS0003": "taclaser"
+                "WS0002": "lrpdlaser",
+                "WS0003": "lrpdlaser"
             }
         },
         {

@@ -2,28 +2,40 @@
 	# should be a copy of "combatSmall", minus variants that are annoying to fight in low numbers
 	# for example, no Hyperions or fast beam-based kiting loadouts, or ships with damper field
 	"combatSmallForSmallFleet":{
-		"vanidad_cazador_hunter":10,
+		"vanidad_cazador_hunter":3,
+		"vanidad_cazador_elite":1,
+		"vanidad_pazjoya_guardian":10,
+		"vanidad_pazjoya_interceptor":10,
 	},
 	"combatSmall":{
-		"vanidad_cazador_hunter":10,
+		"vanidad_cazador_hunter":8,
+		"vanidad_cazador_elite":5,
+		"vanidad_pazjoya_guardian":10,
+		"vanidad_pazjoya_interceptor":10,
+		"vanidad_halcon_leader":6,
 	},
 	"combatMedium":{
 		"vanidad_halcon_leader":10,
+		"vanidad_halcon_pd":5,
 		"vanidad_ionizador_support":10,
 		"vanidad_viajero_default":5,
 	},
 	"combatLarge":{
 		"vanidad_viajero_default":10,
 		"vanidad_almadena_support":10,
+		"vanidad_almadena_assault":5,
 	},
 
 	"combatFreighterSmall":{
-		"vanidad_forrajeador_explorer":10,	
+		"vanidad_forrajeador_explorer":10,
+		"vanidad_forrajeador_support":5,		
 	},
 
 	# carriers
 	"carrierMedium":{
 		"vanidad_viajero_default":10,
+		"vanidad_invasor_standard":10,
+		"vanidad_invasor_pursuit":5,
 	},
 
 	

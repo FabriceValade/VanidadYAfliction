@@ -1,33 +1,33 @@
 {
-    "displayName": "Guardian",
-    "fluxCapacitors": 7,
+    "displayName": "Interceptor",
+    "fluxCapacitors": 2,
     "fluxVents": 10,
     "goalVariant": true,
     "hullId": "vanidad_pazjoya",
     "hullMods": [],
     "permaMods": [],
     "sMods": [],
-    "variantId": "vanidad_pazjoya_guardian",
+    "variantId": "vanidad_pazjoya_interceptor",
     "weaponGroups": [
         {
             "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0005": "vanidad_laere_medium"}
+            "weapons": {"WS0005": "vanidad_estarayo_medium"}
         },
         {
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0003": "atropos_single",
-                "WS0004": "atropos_single"
+                "WS0003": "hammer_single",
+                "WS0004": "hammer_single"
             }
         },
         {
             "autofire": true,
-            "mode": "LINKED",
+            "mode": "ALTERNATING",
             "weapons": {
-                "WS0001": "lightac",
-                "WS0002": "lightac"
+                "WS0001": "lightneedler",
+                "WS0002": "lightneedler"
             }
         },
         {

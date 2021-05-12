@@ -1,28 +1,28 @@
 {
-    "displayName": "Leader",
-    "fluxCapacitors": 13,
+    "displayName": "Point Defense",
+    "fluxCapacitors": 18,
     "fluxVents": 20,
     "goalVariant": true,
     "hullId": "vanidad_halcon",
     "hullMods": [],
     "permaMods": [],
     "sMods": [],
-    "variantId": "vanidad_halcon_leader",
+    "variantId": "vanidad_halcon_pd",
     "weaponGroups": [
         {
             "autofire": false,
             "mode": "LINKED",
             "weapons": {
-                "WS0001": "vanidad_laere_medium",
-                "WS0002": "vanidad_laere_medium"
+                "WS0001": "vanidad_estarayo_medium",
+                "WS0002": "vanidad_estarayo_medium"
             }
         },
         {
             "autofire": false,
             "mode": "ALTERNATING",
             "weapons": {
-                "WS0009": "sabot",
-                "WS0010": "sabot"
+                "WS0009": "swarmer",
+                "WS0010": "swarmer"
             }
         },
         {
@@ -34,22 +34,22 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0003": "lightneedler",
-                "WS0004": "lightneedler"
+                "WS0003": "lightac",
+                "WS0004": "lightac"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0005": "pdlaser",
-                "WS0006": "pdlaser"
+                "WS0005": "pdburst",
+                "WS0006": "pdburst"
             }
         },
         {
-            "autofire": true,
+            "autofire": false,
             "mode": "LINKED",
-            "weapons": {"WS0007": "pdlaser"}
+            "weapons": {"WS0007": "lrpdlaser"}
         }
     ]
 }

@@ -1,12 +1,12 @@
 {
     "displayName": "Support",
-    "fluxCapacitors": 1,
+    "fluxCapacitors": 8,
     "fluxVents": 30,
+    "goalVariant": true,
     "hullId": "vanidad_almadena",
     "hullMods": [
         "targetingunit",
-        "advancedoptics",
-        "stabilizedshieldemitter"
+        "advancedoptics"
     ],
     "permaMods": [],
     "sMods": [],
@@ -21,8 +21,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0005": "vanidad_estarayo_medium",
-                "WS0006": "vanidad_estarayo_medium"
+                "WS0005": "heavyburst",
+                "WS0006": "heavyburst"
             }
         },
         {
