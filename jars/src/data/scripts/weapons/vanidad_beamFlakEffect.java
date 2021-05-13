@@ -11,6 +11,7 @@ import com.fs.starfarer.api.combat.CollisionClass;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
+import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 import com.fs.starfarer.api.util.Misc;
 import java.awt.Color;
@@ -23,7 +24,7 @@ import org.lwjgl.util.vector.Vector2f;
  */
 public class vanidad_beamFlakEffect implements BeamEffectPlugin {
     private final Color PARTICLE_COLOR = new Color(215, 225, 255, 255);
-    private final float EXPLOSION_DAMAGE = 40f;
+    private final float EXPLOSION_DAMAGE = 90f;
     private final float EXPLOSION_RANGE = 250f;
     private boolean hasFired = false;
 
@@ -61,11 +62,12 @@ public class vanidad_beamFlakEffect implements BeamEffectPlugin {
                     Color explosionColor = Misc.interpolateColor(beamCore, Color.white, 0.4f);
                     Color riftColor = Misc.interpolateColor(beamCore, Color.black, 0.4f);
                     riftColor = Misc.setAlpha(beamCore,50);
+                    float damageRatio = 0.5f*(distanceRatio + 1f);
                     DamagingExplosionSpec explosionSpec = new DamagingExplosionSpec(0.1f,
                             EXPLOSION_RANGE*distanceRatio, //radius
                             EXPLOSION_RANGE*distanceRatio*0.5f, //core radius
-                            EXPLOSION_DAMAGE, //max damage
-                            EXPLOSION_DAMAGE*0.5f, //min damage
+                            EXPLOSION_DAMAGE*damageRatio, //max damage
+                            EXPLOSION_DAMAGE*damageRatio, //min damage
                             CollisionClass.PROJECTILE_FF,
                             CollisionClass.PROJECTILE_FIGHTER,
                             25f, //particlesize min
@@ -77,6 +79,9 @@ public class vanidad_beamFlakEffect implements BeamEffectPlugin {
                     explosionSpec.setDamageType(DamageType.HIGH_EXPLOSIVE);
                     explosionSpec.setShowGraphic(false);
                     DamagingProjectileAPI boom = engine.spawnDamagingExplosion(explosionSpec, beam.getSource(), end);
+                    engine.applyDamageModifiersToSpawnedProjectileWithNullWeapon(
+                            beam.getSource(), WeaponAPI.WeaponType.ENERGY, false,
+                            boom.getDamage());
                     engine.spawnExplosion(end,
                             new Vector2f(0,0),
                             explosionColor,
