@@ -24,7 +24,7 @@ import org.lwjgl.util.vector.Vector2f;
  */
 public class vanidad_beamFlakEffectSmall implements BeamEffectPlugin {
     private final Color PARTICLE_COLOR = new Color(215, 225, 255, 255);
-    private final float EXPLOSION_DAMAGE = 1000f;
+    private final float EXPLOSION_DAMAGE = 30f;
     private final float EXPLOSION_RANGE = 150f;
     private boolean hasFired = false;
 

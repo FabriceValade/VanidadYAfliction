@@ -2,7 +2,7 @@ id,type,text1,text2,text3,notes
 #---- frigate,,,,,
 vanidad_cazador,SHIP,"One of the early blueprint retrieved by archeoengineer from the massive space station  orbiting Kristo. The peculiar engine disposion allow it to reach surprising speed and agility. It is expensive to make and to maintain, but it is desired by those that desire speed and firepower.",,,
 vanidad_forrajeador,SHIP,"The Forrajeador is a neat logistic package wrapped in an efficient defense platform. It is unlikely to win by itself against the more dedicated frigate, it is armed enought to justify is presence in small engagment. The iconic shape of the container, betraying the source of the blueprint, are a bit of an annoyance for port workers in most of the persean sector as they do not match standard domain specification.",,,
-vanidad_pazjoya,SHIP,This frigate is a nice all-rounder.,,,
+vanidad_pazjoya,SHIP,"This frigate is a nice all-rounder. Captain liek to use it as an escort, but its gun mount allow it to do grievous damage.",,,
 #---- destroyer,,,,,
 vanidad_halcon,SHIP,"An agressive destroyer frame, it seems to have been one of the latest developed before the gate system was shut off. Prized by captains for is ability to get in the face of other ship and fight it off. It, however, has poor coverage and dubious defensive abilities.",,,
 vanidad_ionizador,SHIP,"Similar to the domain Sunder, some inner system are surprisingly similar leading a consensus about domain cooperation with whatever entity was responsible for the VAO project. Its turreted mount allow it to have remarcable coverage and to support engagement around it with ease. Crew are often worried about the front facing bridge, but the orange cristaline material that seems to be unique to VAO design is quite robust.",,,
@@ -11,7 +11,9 @@ vanidad_almadena,SHIP,"Often used as fleet anchor by fleet commander, it was one
 vanidad_viajero,SHIP,"A standard carrier of VAO design. Usefull in an escort role, it is one of the few ship that will carry lenador with them.",,,
 vanidad_invasor,SHIP,Late VAO design. Very poor logistic profile as every part of the ship is focused on combat. With decend weapon position it prefers suporting closely a fighter complement over sending bombardment from afar.,,,
 #---- fighter,,,,,
-vanidad_abogado,SHIP,"It is a marvel of engineering to have sloted a fully functional light estarayo on a fighter frame. The dual barrel system manage to maintain the same per beam efficiency as the standard weapon. Inneficient vs larger vessel, it excell at hunting down frigate and light destroyers.",,,
+vanidad_abogado_fighter,SHIP,"Multi purpose fighter able to damage fighters and frigates, quite sturdy. Has a hard time overcoming shield by themselves since they deal beam damage with small explosion. Cannot act as PD because of the intrinsect inacuracy of estarayo's weapons.
+
+ It is a marvel of engineering to have sloted a fully functional light estarayo on a fighter frame. The dual barrel system manage to maintain the same per beam efficiency as the standard weapon. Inneficient vs larger vessel",,,
 vanidad_lenador,SHIP,"The mining operation of Kristos contains many unique device to help the worker. The lenador is one of them, a massive mechanised suit meant to tear down transplutonic material. Inventive mind of the VAO noticed they were able to operate in space however. Small modification to their design allow them to participate in dismantling ennemy vessel. The civilian origin is easy to see however as they are very vulnerable to counter fire.",,,
 #---- gun_estarayo,,,,,
 vanidad_estarayo_light,WEAPON,"It is a self-focused ray produced by exploding capacitor. If given sufficient distance the short burst of energy creates large explosion. The peculiar charging mechanism rattle the optical focusing device however and the weapon is quite innacurate.
@@ -39,6 +41,8 @@ vanidad_laere_heavy,WEAPON,"General multi purpose energy weapon. Better at pierc
 
 The laere seems to be an acronym for some physical phenomena. It perform quite similarly to convention pulse weaponry but it is unsure how the underlaying technology is similar. The original producer seems to have experimented with stronger form of copy protection and most part explode violently if dismanteled.",,,
 ,,,,,
+#ship systems,,,,,
+vanidad_redirect_power,SHIP_SYSTEM,"A special flux system cut down acceleration by 75% and top speed by 50% but The rate of fire of energy weapon doubles, their damage increase by 50% and their flux cost is halved.",,,
 #Campaign,,,,,
 #---- faction,,,,,
 vanidad,FACTION,"Some time before the collapse, an undetermined faction started an operation in the Citlali system called Vanidad y Afliction. A large research station was built around a planet that was decided not to terraform and unique technologies were used to allow workers to stay on the planet and harvest the bountiful resources found there. The collapse ensured a quick end to it as it was isolated from normal domain colonies and wasn't self sufficient.

@@ -1,0 +1,13 @@
+{
+	"id":"vanidad_redirect_power",
+	"type":"STAT_MOD",
+	"aiType":"WEAPON_BOOST",
+	
+	"statsScript":"data.scripts.shipsystems.vanidad_redirectPower",
+	
+	"weaponGlowColor":[255,200,0,155],
+	"weaponTypes":[ENERGY],
+	
+	"useSound":"system_ammo_feeder",
+	"outOfUsesSound":"gun_out_of_ammo",
+}
