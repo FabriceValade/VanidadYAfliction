@@ -60,7 +60,7 @@ public class vanidad_alternatingBeamLarge implements EveryFrameWeaponEffectPlugi
         
         //we run all this stuff when the weapon fire. set offset, color, proper counter
         if (weapon.getChargeLevel() > 0f && !firingStarted) {
-            firingStarted = true;
+            
             
             
             int counterForBeams = 0;
@@ -73,8 +73,9 @@ public class vanidad_alternatingBeamLarge implements EveryFrameWeaponEffectPlugi
                     }
                 }
             }
-            
-            
+            if(counterForBeams==0)
+                return;
+            firingStarted = true;
 
             Color finalColor=vanidad_Color.GenRandomColor(LowerColor,UpperColor);
             Color fringe = vanidad_Color.GenFringeColor(finalColor);
