@@ -10,6 +10,8 @@ vanidad_ionizador,SHIP,"Similar to the domain Sunder, some inner system are surp
 vanidad_almadena,SHIP,"Often used as fleet anchor by fleet commander, it was one of the most valuable blueprint recovered from the Debajodelsol stationa round Kristos. Powerfull front facing batteries joined to a strong generator allow a blistering offense and a ship that can hardly do wrong.",,,
 vanidad_viajero,SHIP,"A standard carrier of VAO design. Usefull in an escort role, it is one of the few ship that will carry lenador with them.",,,
 vanidad_invasor,SHIP,Late VAO design. Very poor logistic profile as every part of the ship is focused on combat. With decend weapon position it prefers suporting closely a fighter complement over sending bombardment from afar.,,,
+#---- capital,,,,,
+vanidad_comandante,SHIP,"The largest ship blueprint found in the debajodelsol station. Spectacular forward firepower and surprising mobility for a ship of this size. While impressive, it has a steep logistic cost and lack the flux to keep all its weapon firing for very long.",,,
 #---- fighter,,,,,
 vanidad_abogado_fighter,SHIP,"Multi purpose fighter able to damage fighters and frigates, quite sturdy. Has a hard time overcoming shield by themselves since they deal beam damage with small explosion. Cannot act as PD because of the intrinsect inacuracy of estarayo's weapons.
 

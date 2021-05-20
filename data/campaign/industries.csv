@@ -1,0 +1,6 @@
+id,name,cost mult,build time,income,upkeep,downgrade,upgrade,tags,data,image,plugin,desc,order
+vanidad_autarky,Autarky Habitat,80,180,,4,,,structure,,graphics/icons/industry/battlestation.png,data.scripts.campaign.vanidad_autarky_industry,Vast subterranean chambers supported by complex machinery. Included are hydroponic farm and custom nanoforge to ensure total survival as long as sufficient raw and refined material is procured.,2030
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,

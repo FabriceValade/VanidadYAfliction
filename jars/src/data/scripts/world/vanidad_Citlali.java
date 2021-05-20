@@ -83,7 +83,8 @@ public class vanidad_Citlali {
                                 Industries.HEAVYBATTERIES,
                                 Industries.ORBITALWORKS,
                                 Industries.HIGHCOMMAND,
-                                Industries.REFINING
+                                Industries.REFINING,
+                                "vanidad_autarky"
                         )
                 ),
                 true,

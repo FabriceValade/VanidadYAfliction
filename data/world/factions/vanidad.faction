@@ -38,12 +38,13 @@
 	"shipsWhenImporting":{
 		"tags":["base_bp", "lowtech_bp", "vanidad_bp"],
 		"hulls":[
+			"vanidad_comandante",
 		],
 	},
 	"knownShips":{
 		"tags":["base_bp", "lowtech_bp", "midline_bp", "vanidad_bp"],
 		"hulls":[
-			"onslaught",
+			"vanidad_comandante",
 			"eagle",
 		],
 	},
@@ -51,11 +52,11 @@
 	"priorityShips":{
 		"tags":["vanidad_bp"],
 		"hulls":[
-			"onslaught",
+			"vanidad_comandante",
 		],
 	},
 	"knownFighters":{
-		"tags":["base_bp", "lowtech_bp"],
+		"tags":["base_bp", "lowtech_bp","vanidad_bp"],
 		"fighters":[
 			"hoplon_wing",
 		],
@@ -66,7 +67,7 @@
 		],
 	},
 	"knownWeapons":{
-		"tags":["base_bp", "lowtech_bp", "midline_bp", "hightech_bp", "missile_bp", "vanidad_bp"],
+		"tags":["base_bp", "hightech_bp", "missile_bp", "vanidad_bp"],
 		"weapons":[
 			"railgun",
 			"dualflak",
@@ -81,7 +82,7 @@
 		],
 	},
 	"priorityWeapons":{
-		"tags":["vanidad_bp"],
+		"tags":["vanidad_bp","hightech_bp"],
 		"weapons":[
 		],
 	},

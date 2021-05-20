@@ -4,7 +4,7 @@
 	"author":"Lethargie",
 	"version":"1.0",
 	"gameVersion":"0.95a-RC12",
-	"description":"A singular ship added to neutral and high tech faction",
+	"description":"A strange faction having access to blueprint of advanced ship, they are officially subserviant to the Hegemony",
 	"jars":["jars/distribution/ProjectVao.jar"],
 	"modPlugin":"data.scripts.vanidad_aflictionModPlugin",
 }

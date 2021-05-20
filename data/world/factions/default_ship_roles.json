@@ -24,6 +24,7 @@
 		"vanidad_viajero_default":10,
 		"vanidad_almadena_support":10,
 		"vanidad_almadena_assault":5,
+		"vanidad_comandante_offensive":5,
 	},
 
 	"combatFreighterSmall":{

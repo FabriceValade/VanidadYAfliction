@@ -40,6 +40,10 @@ public class MissionDefinition implements MissionDefinitionPlugin {
                 api.addToFleet(FleetSide.PLAYER, "vanidad_viajero_default", FleetMemberType.SHIP, true);
                 api.addToFleet(FleetSide.PLAYER, "vanidad_forrajeador_explorer", FleetMemberType.SHIP, true);
                 api.addToFleet(FleetSide.PLAYER, "vanidad_almadena_support", FleetMemberType.SHIP, true);
+				api.addToFleet(FleetSide.PLAYER, "vanidad_pazjoya_guardian", FleetMemberType.SHIP, true);
+				api.addToFleet(FleetSide.PLAYER, "vanidad_invasor_standard", FleetMemberType.SHIP, true);
+				api.addToFleet(FleetSide.PLAYER, "vanidad_comandante_offensive", FleetMemberType.SHIP, true);
+				
 
 		
 		// Set up the enemy fleet.
