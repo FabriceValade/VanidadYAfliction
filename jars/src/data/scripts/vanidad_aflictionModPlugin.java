@@ -11,7 +11,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 
 
-import data.scripts.world.vanidad_Citlali;
+import data.scripts.world.vanidad_Gen;
 /**
  *
  * @author lethargie
@@ -33,9 +33,10 @@ public class vanidad_aflictionModPlugin extends BaseModPlugin {
     public void onNewGame() {
         
         SharedData.getData().getPersonBountyEventData().addParticipatingFaction("vanidad");
-        (new vanidad_Citlali()).generate(Global.getSector());
-		//
-
+	initVanidad();
     }
     
+     private static void initVanidad() {
+        new vanidad_Gen().generate(Global.getSector());
+    }
 }
