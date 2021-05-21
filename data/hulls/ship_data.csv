@@ -14,7 +14,7 @@ Granfrio,vanidad_granfrio,Explorer,Vanidad y Afliction,flarelauncher_active,16,9
 Almadena,vanidad_almadena,Cruiser,Vanidad y Afliction,plasmajets,17,8000,900,11000,16000,700,175,,60,50,25,25,25,1800,OMNI,,180,0.4,0.85,,,75,200,150,90,3,30,8,200000,4,20,420,0.25,30,30,,"vanidad_bp, vanidad_base_hull_bp",,0.5,2,3,307
 Invasor,vanidad_invasor,Battle carrier,Vanidad y Afliction,damper,18,6000,750,5000,6000,400,135,3,70,60,40,20,25,800,OMNI,,180,0.4,0.8,,,150,250,90,60,3,20,8,120000,3,12,360,0.25,24,24,"CARRIER, COMBAT, NO_AUTO_ESCORT","vanidad_bp, vanidad_base_hull_bp",,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Comandante,vanidad_comandante,Battleship,Vanidad y Afliction,temporalshell,27,11000,1200,18000,31250,1100,330,2,50,40,30,7,9,3000,OMNI,,240,0.4,0.8,,,350,600,250,350,10,30,7,400000,4,16,720,0.25,50,50,,vanidad_bp,,,,,
+Comandante,vanidad_comandante,Battleship,Vanidad y Afliction,temporalshell,27,11000,1200,18000,31250,1100,330,2,40,30,30,7,9,3000,OMNI,,240,0.4,0.8,,,350,600,250,350,10,30,7,400000,4,16,720,0.25,50,50,,vanidad_bp,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 A firing platform,vanidad_firingplatform,Battleship,VAO,fortressshield,30,18000,1500,25000,31250,1250,370,,30,15,10,5,5,3500,OMNI,,360,0.6,0.6,,,400,1000,300,300,10,30,7,500000,4,20,720,0.25,50,50,,,,,,,

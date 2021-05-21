@@ -9,6 +9,7 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
+import com.fs.starfarer.api.impl.campaign.ids.Entities;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
 import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
 import com.fs.starfarer.api.impl.campaign.ids.Terrain;
@@ -21,6 +22,7 @@ import com.fs.starfarer.api.util.Misc;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Arrays;
+import org.lazywizard.lazylib.MathUtils;
 /**
  *
  * @author Fabrice Valade
@@ -90,19 +92,27 @@ public class vanidad_Citlali {
                 true,
                 false);
         JumpPointAPI jumpPointKrystos = Global.getFactory().createJumpPoint("vanidad_citlali_jump", "Forgotten path");
-        jumpPointKrystos.setCircularOrbit(citlali_star, krystos_angle+15, 8000, 300);
+        jumpPointKrystos.setCircularOrbit(citlali_star, krystos_angle+15, krystos_distance, 500f);
         jumpPointKrystos.setRelatedPlanet(krystos);
+        
+        SectorEntityToken relay = system.addCustomEntity("citlali_relay", // unique id
+		"Citlali Relay", // name - if null, defaultName from custom_entities.json will be used
+		"comm_relay_makeshift", // type of object, defined in custom_entities.json
+		"vanidad"); // faction
+	relay.setCircularOrbit( citlali_star, MathUtils.clampAngle(krystos_angle - 45), krystos_distance, 500f);
+        
         system.addEntity(jumpPointKrystos);
         
-        
+        float arida_angle= 360 * (float) Math.random();
+        float arida_days = 140;
         PlanetAPI arida = system.addPlanet("arida", 
                 citlali_star, 
                 "Arida", 
                 "arid",
-                360 * (float) Math.random() ,
+                arida_angle ,
                 90, 
                 arida_distance,
-                140);
+                arida_days);
         arida.setCustomDescriptionId("vanidad_planet_arida"); //reference descriptions.csv
         MarketAPI arida_market = vanidad_AddMarketplace.addMarketplace("vanidad", arida, null,
                 "Arida",
@@ -136,7 +146,12 @@ public class vanidad_Citlali {
                 ),
                 true,
                 false);
-        
+        // puerta Gate - counter-orbit to Arida
+        SectorEntityToken gate = system.addCustomEntity("citlali_gate", // unique id
+                "Citlali puerta Gate", // name - if null, defaultName from custom_entities.json will be used
+                Entities.INACTIVE_GATE, // type of object, defined in custom_entities.json
+                null); // faction
+        gate.setCircularOrbit(citlali_star, MathUtils.clampAngle(arida_angle+180),arida_distance, arida_days);
        PlanetAPI metzli = system.addPlanet("metzli", //unique id
                 krystos, //orbiting target
                 "Metzli", //name
