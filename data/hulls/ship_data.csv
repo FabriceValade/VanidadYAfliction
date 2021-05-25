@@ -1,6 +1,6 @@
 name,id,designation,tech/manufacturer,system id,fleet pts,hitpoints,armor rating,max flux,8/6/5/4%,flux dissipation,ordnance points,fighter bays,max speed,acceleration,deceleration,max turn rate,turn acceleration,mass,shield type,defense id,shield arc,shield upkeep,shield efficiency,phase cost,phase upkeep,min crew,max crew,cargo,fuel,fuel/ly,range,max burn,base value,cr %/day,CR to deploy,peak CR sec,CR loss/sec,supplies/rec,supplies/mo,hints,tags,rarity,breakProb,minPieces,maxPieces,number
-Abogado,vanidad_abogado_fighter,,Vanidad y Afliction,flarelauncher_fighter,,750,100,300,,150,0,,200,400,350,90,180,30,NONE,,0,0,0,,,2,2,,,,,,,,,,,,,,"vanidad_bp, vanidad_base_hull_bp",,0,,,104
-Lenador,vanidad_lenador,,Vanidad y Afliction,flarelauncher_fighter,,900,250,300,,100,0,,180,300,275,80,170,50,NONE,,0,0,0,,,1,1,,,,,,,,,,,,,,"vanidad_bp, vanidad_base_hull_bp",,0,,,302
+Abogado,vanidad_abogado_fighter,,Vanidad y Afliction,flarelauncher_fighter,,750,100,300,,150,0,,200,400,350,90,180,30,NONE,,0,0,0,,,2,2,,,,,,,,,,,,,,,,0,,,104
+Lenador,vanidad_lenador,,Vanidad y Afliction,flarelauncher_fighter,,900,250,300,,100,0,,180,300,275,80,170,50,NONE,,0,0,0,,,1,1,,,,,,,,,,,,,,,,0,,,302
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Forrajeador,vanidad_forrajeador,Combat Freighter,Vanidad y Afliction,burndrive,5,1500,200,2000,1875,150,42,,110,100,75,60,120,300,OMNI,,180,0.4,1,,,20,50,100,40,1,40,10,9000,8,10,240,0.25,4,4,,"vanidad_bp, vanidad_base_hull_bp",,,,,
 Pazjoya,vanidad_pazjoya,Frigate,Vanidad y Afliction,flarelauncher_active,6,2500,300,2200,1750,175,45,,120,110,90,60,90,200,FRONT,,210,0.4,1,,,25,50,40,25,1,25,10,18000,8,10,240,0.25,4,4,,"vanidad_bp, vanidad_base_hull_bp",,,,,
