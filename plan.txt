@@ -1,63 +1,16 @@
+planet description (outside and interaction)
 
-ships:
+sprite to redo:
+ionizador
+halcon
+viajero estellar
 
-2 frigates
-	cazador
-		description 0%
-		sprite 100%
-		stats 50%
-	Forrajeador
-		description 0%
-		sprite 100%
-		stats 50%
-2 destroyer
-	ionizador
-		description 0%
-		sprite 100%
-		stats 50%
-	halcon
-		description 0%
-		sprite 100%
-		stats 50%
-2 cruiser
-	Almadena 
-		description 0%
-		sprite 75%
-		stats 50%
-	Carrier
-		description 0%
-		sprite 25%
-		stats 0%
-		
-		
-weapon and fighters
-	2 fighters
-		Lenador bomber
-			sprite 50%
-			loadout 50%
-			description 0%
-			custom system 0%
-		Abogado heavy fighter
-			sprite 100%
-			loadout 100%
-			description 0%
-			custom system 0%
-			balance 0%
-	1 laser flak line
-		sound 0%
-		need to do proper hardpoint versions
-		need bigger muzzle flash
-		integrate script
-		description 50%
-		custom effect 100%
-		balance 50%
-		
-Campaign stuff
-	Blueprint availability 0%
-	custom system 50%
-	custom mission 0%
-	faction flag 100%
-	Nerexelin integration 0%
-	Commisioned crew integration 0%
-	Industrial evolution integration 0%
-	Lore 33%
+potential sprite:
+phase ship
+
+could use a new fighter
+could use a strike energy
+
+
+
+Industrial evolution integration 0%

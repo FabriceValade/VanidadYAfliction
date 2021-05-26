@@ -10,7 +10,9 @@ import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Conditions;
 import com.fs.starfarer.api.impl.campaign.ids.Entities;
+import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
+import com.fs.starfarer.api.impl.campaign.ids.Items;
 import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
 import com.fs.starfarer.api.impl.campaign.ids.Terrain;
 import com.fs.starfarer.api.impl.campaign.procgen.NebulaEditor;
@@ -37,7 +39,7 @@ public class vanidad_Citlali {
                 900, //set radius, 900 is a typical radius size
                 1000); //radius of corona terrain around star
         
-        final float arida_distance = 5000;
+        final float arida_distance = 3500;
         final float ice_ring_distance = 5500;
         final float krystos_distance = 8000;
         final float gaseoso_distance = 6000;
@@ -83,7 +85,6 @@ public class vanidad_Citlali {
                                 Industries.MINING,
                                 Industries.BATTLESTATION_HIGH,
                                 Industries.HEAVYBATTERIES,
-                                Industries.ORBITALWORKS,
                                 Industries.HIGHCOMMAND,
                                 Industries.REFINING,
                                 "vanidad_autarky"
@@ -91,15 +92,12 @@ public class vanidad_Citlali {
                 ),
                 true,
                 false);
+        krystos_market.addIndustry(Industries.ORBITALWORKS,new ArrayList<String>(Arrays.asList(Items.CORRUPTED_NANOFORGE)));
         JumpPointAPI jumpPointKrystos = Global.getFactory().createJumpPoint("vanidad_citlali_jump", "Forgotten path");
         jumpPointKrystos.setCircularOrbit(citlali_star, krystos_angle+15, krystos_distance, 500f);
         jumpPointKrystos.setRelatedPlanet(krystos);
         
-        SectorEntityToken relay = system.addCustomEntity("citlali_relay", // unique id
-		"Citlali Relay", // name - if null, defaultName from custom_entities.json will be used
-		"comm_relay_makeshift", // type of object, defined in custom_entities.json
-		"vanidad"); // faction
-	relay.setCircularOrbit( citlali_star, MathUtils.clampAngle(krystos_angle - 45), krystos_distance, 500f);
+
         
         system.addEntity(jumpPointKrystos);
         
@@ -146,12 +144,7 @@ public class vanidad_Citlali {
                 ),
                 true,
                 false);
-        // puerta Gate - counter-orbit to Arida
-        SectorEntityToken gate = system.addCustomEntity("citlali_gate", // unique id
-                "Citlali puerta Gate", // name - if null, defaultName from custom_entities.json will be used
-                Entities.INACTIVE_GATE, // type of object, defined in custom_entities.json
-                null); // faction
-        gate.setCircularOrbit(citlali_star, MathUtils.clampAngle(arida_angle+180),arida_distance, arida_days);
+        
        PlanetAPI metzli = system.addPlanet("metzli", //unique id
                 krystos, //orbiting target
                 "Metzli", //name
@@ -168,14 +161,32 @@ public class vanidad_Citlali {
                 "Gaseoso", //name
                 "gas_giant", //set planet type, the type IDs come from starsector-core/data/campaign/procgen/planet_gen_data.csv
                 360 * (float) Math.random(), //angle
-                150f, //radius
+                350f, //radius
                 gaseoso_distance, //distance from orbiting target
                 250f); //orbit days
         PlanetConditionGenerator.generateConditionsForPlanet(gaseoso, StarAge.AVERAGE);
         
-        StarSystemGenerator.addOrbitingEntities(system, gaseoso, StarAge.ANY, 1, 3,400, 600, true);
+        StarSystemGenerator.addOrbitingEntities(system, gaseoso, StarAge.YOUNG, 1, 3,400, 600, false);
         // generates hyperspace destinations for in-system jump points
         system.autogenerateHyperspaceJumpPoints(true, true);
+        /*
+        -----------------------this is for non planet entities
+        */
+                SectorEntityToken relay = system.addCustomEntity("citlali_relay", // unique id
+		"Citlali Relay", // name - if null, defaultName from custom_entities.json will be used
+		"comm_relay_makeshift", // type of object, defined in custom_entities.json
+		"vanidad"); // faction
+	relay.setCircularOrbit( citlali_star, MathUtils.clampAngle(krystos_angle - 65), krystos_distance, 500f);
+        // puerta Gate - counter-orbit to Arida
+        SectorEntityToken gate = system.addCustomEntity("citlali_gate", // unique id
+                "Citlali puerta Gate", // name - if null, defaultName from custom_entities.json will be used
+                Entities.INACTIVE_GATE, // type of object, defined in custom_entities.json
+                null); // faction
+        gate.setCircularOrbit(citlali_star, MathUtils.clampAngle(arida_angle+180),arida_distance, arida_days);
+        
+        
+        
+        
         
         //set up hyperspace editor plugin
         HyperspaceTerrainPlugin hyperspaceTerrainPlugin = (HyperspaceTerrainPlugin) Misc.getHyperspaceTerrain().getPlugin(); //get instance of hyperspace terrain
@@ -189,5 +200,7 @@ public class vanidad_Citlali {
         nebulaEditor.clearArc(system.getLocation().x, system.getLocation().y, 0, minHyperspaceRadius + maxHyperspaceRadius, 0f, 360f, 0.25f);
 
     }
+
+
 
 }
