@@ -1,47 +1,45 @@
 {
-    "displayName": "Support",
-    "fluxCapacitors": 6,
-    "fluxVents": 20,
-    "goalVariant": true,
-    "hullId": "vanidad_ionizador",
-    "hullMods": [
-        "targetingunit",
-        "advancedoptics"
-    ],
-    "permaMods": [],
-    "sMods": [],
-    "variantId": "vanidad_ionizador_support",
-    "weaponGroups": [
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {"WS0006": "vanidad_estarayo_heavy"}
-        },
-        {
-            "autofire": false,
-            "mode": "LINKED",
-            "weapons": {"WS0005": "hveldriver"}
-        },
-        {
-            "autofire": false,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0001": "vanidad_laere_small",
-                "WS0002": "vanidad_laere_small"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {"WS0007": "heavyburst"}
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0003": "pdlaser",
-                "WS0004": "pdlaser"
-            }
-        }
-    ]
+  "variantId": "vanidad_ionizador_support",
+  "hullId": "vanidad_ionizador",
+  "displayName": "Support",
+  "goalVariant": true,
+  "fluxCapacitors": 6,
+  "fluxVents": 20,
+  "quality": 1,
+  "permaMods": [],
+  "hullMods": [
+    "targetingunit",
+    "advancedoptics"
+  ],
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "pulselaser"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    }
+  ],
+  "modules": [],
+  "wings": []
 }

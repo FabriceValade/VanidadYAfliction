@@ -45,6 +45,8 @@ The laere seems to be an acronym for some physical phenomena. It perform quite s
 ,,,,,
 #ship systems,,,,,
 vanidad_redirect_power,SHIP_SYSTEM,"A special flux system cut down acceleration by 75% and top speed by 50% but The rate of fire of energy weapon doubles, their damage increase by 50% and their flux cost is halved.",,,
+vanidad_hyper_stabiliser,SHIP_SYSTEM,"Flux Capacitor hypercharge the ship stabilitators, thus allowing all weapon range to be increased by 200 SU",,,
+,,,,,
 #Campaign,,,,,
 #---- faction,,,,,
 vanidad,FACTION,"Some time before the collapse, an undetermined faction started an operation in the Citlali system called Vanidad y Afliction. A large research station was built around a planet that was decided not to terraform and unique technologies were used to allow workers to stay on the planet and harvest the bountiful resources found there. The collapse ensured a quick end to it as it was isolated from normal domain colonies and wasn't self sufficient.

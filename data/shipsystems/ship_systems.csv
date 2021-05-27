@@ -1,2 +1,4 @@
 name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u (base cap),cr/u,max uses,regen,charge up,active,down,cooldown,toggle,noDissipation,noHardDissipation,hardFlux,noFiring,noTurning,noStrafing,noAccel,noShield,noVent,isPhaseCloak,tags,icon
 Reactor reconfiguration,vanidad_redirect_power,,,,,,,,,,0.1,3,0.5,10,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+Hyper stabiliser,vanidad_hyper_stabiliser,,,,,,,,,,1,6,0.7,4,,,,,,,,,,,,,graphics/icons/hullsys/ammo_feeder.png
+,,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,12 @@
+{
+	"id":"vanidad_hyper_stabiliser",
+	"type":"STAT_MOD",
+	"aiType":"WEAPON_BOOST",
+	
+	"statsScript":"data.scripts.shipsystems.vanidad_hyperStabilizer",
+	
+
+	
+	"useSound":"system_ammo_feeder",
+	"outOfUsesSound":"gun_out_of_ammo",
+}
