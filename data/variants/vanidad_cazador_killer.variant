@@ -1,0 +1,31 @@
+{
+    "displayName": "Killer",
+    "fluxCapacitors": 10,
+    "fluxVents": 6,
+    "goalVariant": true,
+    "hullId": "vanidad_cazador",
+    "hullMods": [],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "vanidad_cazador_killer",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "amblaster",
+                "WS0004": "amblaster"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0005": "vanidad_laere_medium"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0006": "pdlaser"}
+        }
+    ]
+}

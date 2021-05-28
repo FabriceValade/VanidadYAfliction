@@ -1,7 +1,7 @@
 {
     "displayName": "Pursuit",
-    "fluxCapacitors": 9,
-    "fluxVents": 9,
+    "fluxCapacitors": 7,
+    "fluxVents": 20,
     "goalVariant": true,
     "hullId": "vanidad_invasor",
     "hullMods": ["targetingunit"],
@@ -27,29 +27,23 @@
             "mode": "LINKED",
             "weapons": {
                 "WS0003": "lrpdlaser",
-                "WS0004": "lrpdlaser"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
-                "WS0001": "vanidad_estarayo_light",
-                "WS0002": "vanidad_estarayo_light"
-            }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {
+                "WS0004": "lrpdlaser",
                 "WS0005": "lrpdlaser",
                 "WS0006": "lrpdlaser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "pdlaser",
+                "WS0002": "pdlaser"
             }
         }
     ],
     "wings": [
         "vanidad_lenador",
-        "vanidad_lenador",
-        "vanidad_lenador"
+        "vanidad_abogado_fighter",
+        "vanidad_abogado_fighter"
     ]
 }

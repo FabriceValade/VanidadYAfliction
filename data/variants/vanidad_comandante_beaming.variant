@@ -1,0 +1,83 @@
+{
+    "displayName": "Beaming",
+    "fluxCapacitors": 7,
+    "fluxVents": 50,
+    "goalVariant": true,
+    "hullId": "vanidad_comandante",
+    "hullMods": [
+        "targetingunit",
+        "advancedoptics"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "vanidad_comandante_beaming",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "sabotpod",
+                "WS0006": "sabotpod"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "phasebeam",
+                "WS0004": "phasebeam",
+                "WS0021": "phasebeam"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0019": "vanidad_estarayo_heavy",
+                "WS0020": "vanidad_estarayo_heavy"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0014": "guardian",
+                "WS0016": "vanidad_estarayo_medium"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0013": "guardian",
+                "WS0015": "vanidad_estarayo_medium"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "vanidad_laere_small",
+                "WS0008": "vanidad_laere_small"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "mininglaser",
+                "WS0002": "mininglaser",
+                "WS0009": "mininglaser",
+                "WS0010": "mininglaser",
+                "WS0011": "mininglaser",
+                "WS0012": "mininglaser",
+                "WS0017": "pdburst",
+                "WS0018": "pdburst"
+            }
+        }
+    ],
+    "wings": [
+        "xyphos_wing",
+        "vanidad_abogado_fighter"
+    ]
+}

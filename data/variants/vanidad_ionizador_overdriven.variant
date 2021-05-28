@@ -1,0 +1,36 @@
+{
+    "displayName": "Overdriven",
+    "fluxCapacitors": 16,
+    "fluxVents": 12,
+    "goalVariant": true,
+    "hullId": "vanidad_ionizador",
+    "hullMods": ["safetyoverrides"],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "vanidad_ionizador_overdriven",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0006": "vanidad_laere_heavy"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0005": "ionpulser"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "lightdualmg",
+                "WS0002": "lightdualmg"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0007": "heavyburst"}
+        }
+    ]
+}

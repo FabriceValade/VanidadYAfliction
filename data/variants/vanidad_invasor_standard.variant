@@ -1,7 +1,7 @@
 {
     "displayName": "Standard",
     "fluxCapacitors": 0,
-    "fluxVents": 9,
+    "fluxVents": 10,
     "goalVariant": true,
     "hullId": "vanidad_invasor",
     "hullMods": [
@@ -37,8 +37,8 @@
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0001": "vanidad_laere_small",
-                "WS0002": "vanidad_laere_small"
+                "WS0001": "vanidad_estarayo_light",
+                "WS0002": "vanidad_estarayo_light"
             }
         },
         {

@@ -5,8 +5,11 @@
 	
 	"statsScript":"data.scripts.shipsystems.vanidad_hyperStabilizer",
 	
-
+	"weaponGlowColor":[255,100,7,100],
+	"weaponTypes":[ENERGY, BALLISTIC],
 	
-	"useSound":"system_ammo_feeder",
+	"useSound":"system_high_energy_focus_activate",
+	"deactivateSound":"system_high_energy_focus_deactivate",
 	"outOfUsesSound":"gun_out_of_ammo",
+	"loopSound":"system_high_energy_focus_loop",	
 }
