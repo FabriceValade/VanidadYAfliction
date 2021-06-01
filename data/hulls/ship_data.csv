@@ -3,7 +3,7 @@ Abogado,vanidad_abogado_fighter,,Vanidad y Afliction,flarelauncher_fighter,,750,
 Lenador,vanidad_lenador,,Vanidad y Afliction,flarelauncher_fighter,,900,250,300,,100,0,,180,300,275,80,170,50,NONE,,0,0,0,,,1,1,,,,,,,,,,,,,,,,0,,,302
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Forrajeador,vanidad_forrajeador,Combat Freighter,Vanidad y Afliction,burndrive,5,1500,200,2000,1875,150,42,,110,100,75,60,120,300,OMNI,,180,0.4,1,,,20,50,100,40,1,40,10,9000,8,10,240,0.25,4,4,,"vanidad_bp, vanidad_base_hull_bp",,,,,
-Pazjoya,vanidad_pazjoya,Frigate,Vanidad y Afliction,flarelauncher_active,6,2500,300,2200,1750,175,45,,120,130,110,60,90,200,FRONT,,210,0.4,1,,,25,50,40,25,1,25,10,18000,8,10,240,0.25,4,4,,"vanidad_bp, vanidad_base_hull_bp",,,,,
+Pazjoya,vanidad_pazjoya,Frigate,Vanidad y Afliction,flarelauncher_active,6,2500,300,2300,1750,195,45,,120,130,110,60,90,200,FRONT,,210,0.4,0.9,,,25,50,40,25,1,25,10,18000,8,10,240,0.25,4,4,,"vanidad_bp, vanidad_base_hull_bp",,,,,
 Cazador,vanidad_cazador,Frigate,Vanidad y Afliction,vanidad_redirect_power,10,2500,200,3500,2813,225,50,,180,230,230,90,270,200,OMNI,,120,0.2,0.8,,,15,25,30,20,1,20,11,36000,10,20,180,0.25,8,8,,vanidad_bp,0.75,0.5,2,2,206
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Halcon,vanidad_halcon,Destroyer,Vanidad y Afliction,plasmajets,11,3000,400,6000,6667,350,95,,90,80,60,35,90,300,OMNI,,180,0.4,0.7,,,35,50,50,40,2,20,9,60000,5,20,300,0.25,12,12,,"vanidad_bp, vanidad_base_hull_bp",,,,,
