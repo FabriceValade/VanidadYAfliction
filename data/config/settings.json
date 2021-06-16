@@ -1,4 +1,7 @@
 {
+	"plugins":{
+		"SpiralPlugin":"data.scripts.plugins.vanidadSpiralPlugin",
+	},
 	"designTypeColors":{
             "Vanidad y Afliction":[45,57,242,255],
     },
@@ -12,6 +15,11 @@
 			"vanidad_cadenaVioAnim5":"graphics/vanidad/weapons/chainsaw/vanidad_cadenavioanim5.png",
 			"vanidad_cadenaVioAnim6":"graphics/vanidad/weapons/chainsaw/vanidad_cadenavioanim6.png",
 			"vanidad_cadenaVioAnim7":"graphics/vanidad/weapons/chainsaw/vanidad_cadenavioanim7.png"
-		}
+		},
+		"fx":{
+			"vanidad_trail_smooth":"graphics/vanidad/fx/trails_smooth.png",
+			"vanidad_lighning":"graphics/vanidad/fx/lighningfx.png",
+			"vanidad_shockwave":"graphics/vanidad/fx/shockwave.png",
+		},
 	}
 }

@@ -1,0 +1,203 @@
+{
+  "hullName": "Cargador",
+  "hullId": "vanidad_cargador",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/vanidad/ships/cargador/vanidad_cargador.png",
+  "style": "HIGH_TECH",
+  "height": 223,
+  "width": 240,
+  "center": [120, 111.5],
+  "collisionRadius": 187.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 167.5,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "DECOCENTER": "vanidad_cargador_deco_center",
+    "DECOCLAMP": "vanidad_cargador_deco_clamp",
+    "DECOOFFSET1": "vanidad_cargador_deco_offset",
+    "DECOOFFSET2": "vanidad_cargador_deco_offset",
+    "WS0005": "vanidad_cargador_deco_cover",
+    "WS0006": "vanidad_cargador_deco_glow"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": -1,
+      "locations": [65.5, -57]
+    },
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 1,
+      "locations": [65.5, 57]
+    },
+    {
+      "id": "DECOOFFSET2",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-28, -0]
+    },
+    {
+      "id": "DECOCENTER",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-9.5, -0]
+    },
+    {
+      "id": "DECOCLAMP",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-22.5, -0]
+    },
+    {
+      "id": "DECOOFFSET1",
+      "size": "MEDIUM",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [9, -0]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 194,
+      "angle": -38,
+      "locations": [29.5, -54],
+      "renderOrderMod": 2000
+    },
+    {
+      "id": "WS0004",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 194,
+      "angle": 38,
+      "locations": [29.5, 54],
+      "renderOrderMod": 2000
+    },
+    {
+      "id": "WS0005",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [57.5, -0],
+      "renderOrderMod": 1000
+    },
+    {
+      "id": "WS0006",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [62.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-29.5, 82],
+      "length": 30,
+      "width": 10,
+      "angle": 178,
+      "contrailSize": 30,
+      "style": "CUSTOM",
+      "styleId": "VanidadFlare"
+    },
+    {
+      "location": [-29.5, -82],
+      "length": 30,
+      "width": 10,
+      "angle": -178,
+      "contrailSize": 30,
+      "style": "CUSTOM",
+      "styleId": "VanidadFlare"
+    },
+    {
+      "location": [-19.5, -92],
+      "length": 22.993774,
+      "width": 13.496126,
+      "angle": -173,
+      "contrailSize": 13.496126,
+      "style": "CUSTOM",
+      "styleId": "VanidadFlare"
+    },
+    {
+      "location": [-19.5, 92],
+      "length": 22.993774,
+      "width": 13.496126,
+      "angle": 173,
+      "contrailSize": 13.496126,
+      "style": "CUSTOM",
+      "styleId": "VanidadFlare"
+    },
+    {
+      "location": [-46.5, -69.5],
+      "length": 72.08992,
+      "width": 14.28892,
+      "angle": 168,
+      "contrailSize": 14.28892,
+      "style": "CUSTOM",
+      "styleId": "VanidadFlare"
+    },
+    {
+      "location": [-46.5, 69.5],
+      "length": 72.08992,
+      "width": 14.28892,
+      "angle": -168,
+      "contrailSize": 14.28892,
+      "style": "CUSTOM",
+      "styleId": "VanidadFlare"
+    }
+  ],
+  "bounds": [
+    -79.5, 17.5,
+    -90.5, 33,
+    -65.5, 55,
+    -34, 59.5,
+    -31.5, 71,
+    -5, 90,
+    -7.5, 99.5,
+    28.5, 106.5,
+    92.5, 98.5,
+    69.5, 64,
+    70.5, 40.5,
+    85.5, 40,
+    51.5, 22.5,
+    85, 18,
+    85, -18,
+    51.5, -22.5,
+    85.5, -40,
+    70.5, -40.5,
+    69.5, -64,
+    92.5, -98.5,
+    28.5, -106.5,
+    -7.5, -99.5,
+    -5, -90,
+    -31.5, -71,
+    -34, -59.5,
+    -65.5, -55,
+    -90.5, -33,
+    -79.5, -17.5
+  ]
+}

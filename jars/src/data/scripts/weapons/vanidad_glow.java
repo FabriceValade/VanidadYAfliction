@@ -35,11 +35,16 @@ public class vanidad_glow implements EveryFrameWeaponEffectPlugin {
             runOnce= true;
             chargeUpDur = system.getChargeUpDur();
             chargeDownDur = system.getChargeDownDur();
+            if(chargeDownDur == 0)
+                chargeDownDur = 1f;
         }
         
         if (state == State.off){
-            if (system.isChargeup())
-                state = State.up;
+            if (system.getState() == ShipSystemAPI.SystemState.ACTIVE)
+                state = State.on;
+            else if (system.getState() == ShipSystemAPI.SystemState.IN) {
+                state = state.up;
+            }
             else
                 toSet=transparent;
         }
@@ -56,24 +61,23 @@ public class vanidad_glow implements EveryFrameWeaponEffectPlugin {
         }
         
         if (state == State.on){
-            if (system.isChargedown())
+            if (system.isChargedown() || system.getState() == ShipSystemAPI.SystemState.COOLDOWN)
                 state = State.down;
             else{
                 toSet = opaque;
             }
                 
         }
-        
-        if (state == State.down){
-            if (!system.isActive()){
-                timer = 0;
+
+        if (state == State.down) {
+
+            timer += amount;
+            float level = 1 - timer / chargeDownDur;
+            level = Math.max(level, 0);
+            toSet = new Color(1, 1, 1, level);
+            if (level <= 0) {
                 state = State.off;
-                toSet=transparent;
-            }else{
-                timer+=amount;
-                float level = 1- timer/chargeDownDur;
-                level = Math.max(level, 0);
-                toSet = new Color(1,1,1,level); 
+                timer = 0;
             }
         }
 
