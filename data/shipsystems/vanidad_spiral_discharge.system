@@ -1,10 +1,11 @@
 {
 	"id":"vanidad_spiraldischarge_system",
 	"type":"STAT_MOD",
-	"aiType":"WEAPON_BOOST",
+	"aiType":"CUSTOM",
 	"weaponDataId":"vanidad_spiraldischarge",
 	"canUseWhileRightClickSystemOn":true,
 	
+	"aiScript":"data.scripts.shipsystems.ai.vanidad_spiralSytemAi",
 	"statsScript":"data.scripts.shipsystems.vanidadSpiralLauncher",
 	#"useSound":"system_flare_launcher_active",
 	"outOfUsesSound":"gun_out_of_ammo",

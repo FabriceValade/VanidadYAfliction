@@ -11,8 +11,10 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipSystemAIScript;
 import com.fs.starfarer.api.combat.ShipSystemAPI;
 import com.fs.starfarer.api.combat.ShipwideAIFlags;
+import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.loading.WeaponSpecAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
+import data.scripts.util.MagicRender;
 import java.awt.Color;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
@@ -44,20 +46,37 @@ public class vanidad_spiralSytemAi implements ShipSystemAIScript{
         timer.advance(amount);
         //just so we dotn call that stuff all the time
         if (!timer.intervalElapsed()) {
-            return;
+            //return;
         }
+        
         if (!AIUtils.canUseSystemThisFrame(ship)) {
                 return;
             }
         float firingScore =0;
+        if (target==null){
+            return;
+        }
+        SpriteAPI shock = Global.getSettings().getSprite("fx", "vanidad_shockwave");
+        MagicRender.singleframe(shock,target.getLocation(),new Vector2f(200,200),0,Color.WHITE,true);
         Vector2f pointToAim = AIUtils.getBestInterceptPoint(ship.getLocation(), projSpeed, target.getLocation(),
                                       target.getVelocity());
+        float angleShouldAim = 0;
+        boolean inRange = false;
+        if (pointToAim != null) {
+            Vector2f separation = Vector2f.sub(pointToAim, ship.getLocation(),
+                                               null);
+            inRange = MathUtils.getDistanceSquared(pointToAim,
+                                                           ship.getLocation()) < (range * range);
+            angleShouldAim = VectorUtils.getFacing(separation);
+            SpriteAPI target_sprite = Global.getSettings().getSprite("fx",
+                                                                     "vanidad_target");
+            MagicRender.singleframe(shock,pointToAim,new Vector2f(200,200),angleShouldAim,Color.WHITE,true);
+            
+        }
         
-        Vector2f separation = Vector2f.sub(pointToAim,ship.getLocation(),null);
-        boolean inRange =  MathUtils.getDistanceSquared(pointToAim, ship.getLocation()) < (range*range);
-        float angleShouldAim = VectorUtils.getFacing(separation);
         if(Math.abs(angleShouldAim-ship.getFacing())< 10 && inRange){
             firingScore+=11;
+            
         }
         
         if (firingScore >= 10f){
