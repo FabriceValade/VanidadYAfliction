@@ -9,9 +9,12 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.ShipSystemAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
+import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
+import static data.scripts.shipsystems.vanidad_hyperStabilizer.RANGE_BONUS_FLAT;
 import data.scripts.util.MagicRender;
 import java.awt.Color;
 import org.lazywizard.lazylib.MathUtils;
@@ -40,10 +43,10 @@ public class vanidadSpiralLauncher extends BaseShipSystemScript{
             engine.spawnProjectile(ship, null, "vanidad_spiraldischarge", origin, ship.getFacing(), ship.getVelocity());
             SpriteAPI shock = Global.getSettings().getSprite("fx", "vanidad_shockwave");
             float angle = MathUtils.clampAngle(ship.getFacing()+180);
-            MagicRender.objectspace(shock, ship, new Vector2f(60,0), new Vector2f(200, 0), new Vector2f(50,50), new Vector2f(800,800),
+            MagicRender.objectspace(shock, ship, new Vector2f(60,0), new Vector2f(150, 0), new Vector2f(50,50), new Vector2f(1400,1400),
                                     180, 0, true,
                                     Color.cyan, true, 0,
-                                    0.2f, 0.5f, false);
+                                    0.1f, 0.2f, false);
             runOnce = true;
         }
     }
@@ -52,9 +55,36 @@ public class vanidadSpiralLauncher extends BaseShipSystemScript{
         runOnce=false;
         
     }
-    
+
     public StatusData getStatusData(int index, State state, float effectLevel) {
-        
+
+        if (state == State.IN || state == State.OUT || state == State.ACTIVE) {
+            if (index == 0) {
+                return new ShipSystemStatsScript.StatusData(
+                        "Despair: the spiral has abandoned us", true);
+            }
+        } else if (state == State.COOLDOWN) {
+            if (index == 0) {
+                return new ShipSystemStatsScript.StatusData(
+                        "Calm: the spiral is growing", false);
+            }
+        } else {
+            if (index == 0) {
+                return new ShipSystemStatsScript.StatusData(
+                        "Rejoice: the spiral is", false);
+            }
+            if (index == 1) {
+                return new ShipSystemStatsScript.StatusData(
+                        "Spiral launcher available", false);
+            }
+        }
+
+
         return null;
     }
+    
+    @Override
+    public String getInfoText(ShipSystemAPI system, ShipAPI ship) {
+		return "stuff";
+	}
 }
