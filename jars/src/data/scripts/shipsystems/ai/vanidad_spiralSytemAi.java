@@ -12,14 +12,18 @@ import com.fs.starfarer.api.combat.ShipSystemAIScript;
 import com.fs.starfarer.api.combat.ShipSystemAPI;
 import com.fs.starfarer.api.combat.ShipwideAIFlags;
 import com.fs.starfarer.api.graphics.SpriteAPI;
+import com.fs.starfarer.api.impl.campaign.missions.hub.BaseHubMission;
+import com.fs.starfarer.api.impl.campaign.skills.WolfpackTactics;
 import com.fs.starfarer.api.loading.WeaponSpecAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import data.scripts.util.MagicRender;
 import java.awt.Color;
+import java.util.ArrayList;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lwjgl.util.vector.Vector2f;
+import java.util.HashMap;
 
 /**
  *
@@ -31,13 +35,15 @@ public class vanidad_spiralSytemAi implements ShipSystemAIScript{
     private ShipSystemAPI system;
     private float projSpeed = 500; 
     private float range = 1000;
-    
+    ShipwideAIFlags localFlags;
+    String flagconcat = "";
+    ArrayList<String> flagValue = new ArrayList<String>();
     
     @Override
     public void init(ShipAPI ship, ShipSystemAPI system, ShipwideAIFlags flags, CombatEngineAPI engine) {
         this.ship = ship;
         this.system = system;
-        Global.getSettings().getWeaponSpec("vanidad_spiraldischarge");
+        this.localFlags = flags;
     }
 
     //we want to fire this thing when something is in range and is vulnerable
@@ -54,10 +60,34 @@ public class vanidad_spiralSytemAi implements ShipSystemAIScript{
             }
         float firingScore =0;
         if (target==null){
-            return;
+            //return;
         }
-        SpriteAPI shock = Global.getSettings().getSprite("fx", "vanidad_shockwave");
-        MagicRender.singleframe(shock,target.getLocation(),new Vector2f(200,200),0,Color.WHITE,true);
+        /*
+        if (timer.intervalElapsed()) {
+            String flagConcatNew = "";
+            ArrayList<String> flagValueNew = new ArrayList<String>();
+            for (ShipwideAIFlags.AIFlags flagKey : ShipwideAIFlags.AIFlags.values()) {
+                if (localFlags.hasFlag(flagKey)) {
+                    flagConcatNew = flagConcatNew + flagKey.toString();
+                    flagValueNew.add(flagKey.toString());
+                }
+
+            }
+            if (!flagConcatNew.equals(flagconcat)){
+                flagconcat = flagConcatNew;
+                flagValue = flagValueNew;
+                float offset = 0;
+                for(String key : flagValue){
+                    
+                    
+                    offset+=50;
+                }
+            }
+        
+        }
+*/
+        if(true)
+            return;
         Vector2f pointToAim = AIUtils.getBestInterceptPoint(ship.getLocation(), projSpeed, target.getLocation(),
                                       target.getVelocity());
         float angleShouldAim = 0;
@@ -70,12 +100,12 @@ public class vanidad_spiralSytemAi implements ShipSystemAIScript{
             angleShouldAim = VectorUtils.getFacing(separation);
             SpriteAPI target_sprite = Global.getSettings().getSprite("fx",
                                                                      "vanidad_target");
-            MagicRender.singleframe(shock,pointToAim,new Vector2f(200,200),angleShouldAim,Color.WHITE,true);
+            MagicRender.singleframe(target_sprite,pointToAim,new Vector2f(200,200),angleShouldAim,Color.blue,true);
             
         }
         
         if(Math.abs(angleShouldAim-ship.getFacing())< 10 && inRange){
-            firingScore+=11;
+            //firingScore+=11;
             
         }
         

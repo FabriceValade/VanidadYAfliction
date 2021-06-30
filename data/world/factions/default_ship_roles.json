@@ -18,12 +18,14 @@
 		"vanidad_halcon_leader":10,
 		"vanidad_halcon_pd":5,
 		"vanidad_ionizador_support":10,
-		"vanidad_viajero_default":5,
+		"vanidad_cargador_elite":2,
 	},
 	"combatLarge":{
-		"vanidad_viajero_default":10,
+		
 		"vanidad_almadena_support":10,
 		"vanidad_almadena_assault":5,
+		"vanidad_cargador_elite":2,
+		"vanidad_cargador_spiral":5,
 		"vanidad_comandante_offensive":5,
 	},
 
@@ -34,7 +36,6 @@
 
 	# carriers
 	"carrierMedium":{
-		"vanidad_viajero_default":10,
 		"vanidad_invasor_standard":10,
 		"vanidad_invasor_pursuit":5,
 	},

@@ -27,7 +27,7 @@
       "mount": "HARDPOINT",
       "arc": 10,
       "angle": -1,
-      "locations": [65.5, -57]
+      "locations": [68.5, -57]
     },
     {
       "id": "WS0002",
@@ -36,7 +36,7 @@
       "mount": "HARDPOINT",
       "arc": 10,
       "angle": 1,
-      "locations": [65.5, 57]
+      "locations": [68.5, 57]
     },
     {
       "id": "DECOOFFSET2",
@@ -81,7 +81,7 @@
       "mount": "TURRET",
       "arc": 194,
       "angle": -38,
-      "locations": [29.5, -54],
+      "locations": [28.5, -54],
       "renderOrderMod": 2000
     },
     {
@@ -91,7 +91,7 @@
       "mount": "TURRET",
       "arc": 194,
       "angle": 38,
-      "locations": [29.5, 54],
+      "locations": [28.5, 54],
       "renderOrderMod": 2000
     },
     {

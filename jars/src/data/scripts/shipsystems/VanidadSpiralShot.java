@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package data.scripts.plugins;
+package data.scripts.shipsystems;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEntityAPI;
@@ -13,6 +13,7 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
+import data.scripts.plugins.MagicTrailPlugin;
 import data.scripts.util.MagicRender;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -39,11 +40,13 @@ public class VanidadSpiralShot {
     public ShipAPI source;
     public float damagePerHit;
     public float empPerHit;
-
+    public float unPiercedShieldDamage;
+    public static float DAMAGEIFNOTPIERCING = 2000;
+            
     private float fadeTime = 1f;
 
     //this keeps the subpoints and allow us to act as a wave
-    private static final int NUMSUBPROJ = 10;
+    private static final int NUMSUBPROJ = 16;
 
     private class SubPoint {
 
@@ -86,6 +89,7 @@ public class VanidadSpiralShot {
         this.expired = false;
         this.damagePerHit = proj.getDamageAmount() / (NUMSUBPROJ + 1);
         this.empPerHit = proj.getEmpAmount() / (NUMSUBPROJ + 1);
+        this.unPiercedShieldDamage = DAMAGEIFNOTPIERCING / (NUMSUBPROJ + 1);
 
         Vector2f decoCenterInitial = new Vector2f();
         Vector2f decoOffsetInitial = new Vector2f();
@@ -244,7 +248,7 @@ public class VanidadSpiralShot {
             }
             Vector2f spaceP = p.getSubLocation(proj.getLocation(),
                                                proj.getFacing());
-            if (MathUtils.isWithinRange(target.getLocation(), spaceP, 50)) {
+            if (MathUtils.isWithinRange(target.getLocation(), spaceP, 10)) {
                 Impacts.add(new Impact(target.getLocation(), false));
                 p.affectedIds.add(entityId);
                 continue;
@@ -254,8 +258,10 @@ public class VanidadSpiralShot {
     }
 
     private boolean isShieldHit(Vector2f loc, CombatEntityAPI entity) {
-        return entity.getShield() != null && entity.getShield().isOn()
-                && entity.getShield().isWithinArc(loc);
+        boolean test = entity.getShield() != null && entity.getShield().isOn() && entity.getShield().isWithinArc(loc) && MathUtils.getDistance(entity.getShield().getLocation(),loc)<=entity.getShield().getRadius();
+        if(test)
+            return true;
+        return test;
     }
     
     

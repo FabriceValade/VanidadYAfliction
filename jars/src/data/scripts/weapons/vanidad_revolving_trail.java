@@ -63,7 +63,7 @@ public class vanidad_revolving_trail implements EveryFrameWeaponEffectPlugin {
                 MagicTrailPlugin.AddTrailMemberSimple(ship, trailID, trailSprite,
                         weapon.getLocation(),
                         1f,
-                        MathUtils.clamp(weapon.getCurrAngle(),0,180f),
+                        weapon.getCurrAngle(),
                         30f,
                         15f,
                         Color.orange,
