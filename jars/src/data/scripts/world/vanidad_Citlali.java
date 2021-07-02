@@ -42,7 +42,8 @@ public class vanidad_Citlali {
         final float arida_distance = 3500;
         final float ice_ring_distance = 5500;
         final float krystos_distance = 8000;
-        final float gaseoso_distance = 6000;
+        final float gaseoso_distance = 6500;
+        final float outer_ring_distance = 9000;
         
         system.addAsteroidBelt(citlali_star, 1000, ice_ring_distance, 700, 130, 170, Terrain.ASTEROID_BELT, "dark expanse");                
         system.addRingBand(citlali_star,"misc" , "rings_ice0" , 500, 0, Color.yellow, 500, ice_ring_distance-100, 150);
@@ -58,12 +59,17 @@ public class vanidad_Citlali {
                 krystos_distance, //distance from orbiting target
                 500f); //orbit days
         krystos.setCustomDescriptionId("vanidad_planet_kristos"); //reference descriptions.csv
-        MarketAPI krystos_market = vanidad_AddMarketplace.addMarketplace("vanidad", krystos, null,
+        
+        SectorEntityToken dds_station = system.addCustomEntity("vanidad_debajo_del_dol", "Debajo Del Sol", "station_debajo_del_dol", "vanidad");
+        dds_station.setCircularOrbitPointingDown(system.getEntityById("krystos"), 45, 400, 50);
+        dds_station.setCustomDescriptionId("vanidad_station_dds");
+        
+        MarketAPI krystos_market = vanidad_AddMarketplace.addMarketplace("vanidad", krystos, new ArrayList<>(Arrays.asList(dds_station)),
                 "Krystos",
                 6,
                 new ArrayList<>(
                         Arrays.asList(
-                                Conditions.POPULATION_7,
+                                Conditions.POPULATION_6,
                                 Conditions.ORE_ULTRARICH,
                                 Conditions.RARE_ORE_RICH,
                                 Conditions.DARK,
@@ -157,21 +163,36 @@ public class vanidad_Citlali {
         
         
         PlanetAPI gaseoso = system.addPlanet("gaseoso", //unique id
-                krystos, //orbiting target
+                citlali_star, //orbiting target
                 "Gaseoso", //name
                 "gas_giant", //set planet type, the type IDs come from starsector-core/data/campaign/procgen/planet_gen_data.csv
                 360 * (float) Math.random(), //angle
                 350f, //radius
                 gaseoso_distance, //distance from orbiting target
                 250f); //orbit days
-        PlanetConditionGenerator.generateConditionsForPlanet(gaseoso, StarAge.AVERAGE);
-        
-        StarSystemGenerator.addOrbitingEntities(system, gaseoso, StarAge.YOUNG, 1, 3,400, 600, false);
+        gaseoso.getMarket().addCondition(Conditions.VOLATILES_DIFFUSE);
+        gaseoso.getMarket().addCondition(Conditions.HIGH_GRAVITY);
+        system.addRingBand(gaseoso,"misc" , "rings_ice0" , 80, 0, Color.green, 90, 375, 10);
+        //PlanetConditionGenerator.generateConditionsForPlanet(gaseoso, StarAge.AVERAGE);
+        PlanetAPI zazannen = system.addPlanet("zazannen", //unique id
+                gaseoso, //orbiting target
+                "Zazanen", //name
+                "barren", //set planet type, the type IDs come from starsector-core/data/campaign/procgen/planet_gen_data.csv
+                360 * (float) Math.random(), //angle
+                20f, //radius
+                750f, //distance from orbiting target
+                10f); //orbit days
+        zazannen.getMarket().addCondition(Conditions.DARK);
+        zazannen.getMarket().addCondition(Conditions.LOW_GRAVITY);
+        zazannen.getMarket().addCondition(Conditions.ORE_SPARSE);
+        zazannen.getMarket().addCondition(Conditions.NO_ATMOSPHERE);
+        //StarSystemGenerator.addOrbitingEntities(system, gaseoso, StarAge.YOUNG, 1, 3,400, 600, false);
         // generates hyperspace destinations for in-system jump points
         system.autogenerateHyperspaceJumpPoints(true, true);
         /*
         -----------------------this is for non planet entities
         */
+        StarSystemGenerator.addSystemwideNebula(system, StarAge.OLD);
                 SectorEntityToken relay = system.addCustomEntity("citlali_relay", // unique id
 		"Citlali Relay", // name - if null, defaultName from custom_entities.json will be used
 		"comm_relay_makeshift", // type of object, defined in custom_entities.json
