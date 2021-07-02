@@ -11,6 +11,10 @@
   "shieldCenter": [0, 0],
   "shieldRadius": 167.5,
   "viewOffset": 0,
+  "builtInMods": [
+    "delicate",
+    "phasefield"
+  ],
   "builtInWeapons": {
     "DECOCENTER": "vanidad_cargador_deco_center",
     "DECOCLAMP": "vanidad_cargador_deco_clamp",
