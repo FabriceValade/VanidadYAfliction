@@ -2,7 +2,7 @@
 	"id":"vanidad",
 	"name":"Vanidad y Afliction Operation",
 	"author":"Lethargie",
-	"version":"1.0",
+	"version":"1.1.2",
 	"gameVersion":"0.95a-RC12",
 	"description":"A strange faction having access to blueprint of advanced ship, they are officially subserviant to the Hegemony",
 	"jars":["jars/distribution/ProjectVao.jar"],
