@@ -91,15 +91,16 @@ public class vanidad_Citlali {
                                 Industries.MINING,
                                 Industries.BATTLESTATION_HIGH,
                                 Industries.HEAVYBATTERIES,
-                                Industries.HIGHCOMMAND,
+                                Industries.MILITARYBASE,
                                 Industries.REFINING,
+                                Industries.WAYSTATION,
                                 "vanidad_autarky"
                         )
                 ),
                 true,
                 false);
         krystos_market.addIndustry(Industries.ORBITALWORKS,new ArrayList<String>(Arrays.asList(Items.CORRUPTED_NANOFORGE)));
-        JumpPointAPI jumpPointKrystos = Global.getFactory().createJumpPoint("vanidad_citlali_jump", "Forgotten path");
+        JumpPointAPI jumpPointKrystos = Global.getFactory().createJumpPoint("vanidad_citlali_jump", "Forgotten Path");
         jumpPointKrystos.setCircularOrbit(citlali_star, krystos_angle+15, krystos_distance, 500f);
         jumpPointKrystos.setRelatedPlanet(krystos);
         
@@ -200,7 +201,7 @@ public class vanidad_Citlali {
 	relay.setCircularOrbit( citlali_star, MathUtils.clampAngle(krystos_angle - 65), krystos_distance, 500f);
         // puerta Gate - counter-orbit to Arida
         SectorEntityToken gate = system.addCustomEntity("citlali_gate", // unique id
-                "Citlali puerta Gate", // name - if null, defaultName from custom_entities.json will be used
+                "Citlali Puerta Gate", // name - if null, defaultName from custom_entities.json will be used
                 Entities.INACTIVE_GATE, // type of object, defined in custom_entities.json
                 null); // faction
         gate.setCircularOrbit(citlali_star, MathUtils.clampAngle(arida_angle+180),arida_distance, arida_days);
