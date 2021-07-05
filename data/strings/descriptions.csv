@@ -4,8 +4,16 @@ vanidad_cazador,SHIP,"One of the early blueprint retrieved by archeoengineer fro
 vanidad_forrajeador,SHIP,"The Forrajeador is a neat logistic package wrapped in an efficient defense platform. It is unlikely to win by itself against the more dedicated frigate, it is armed enought to justify is presence in small engagment. The iconic shape of the container, betraying the source of the blueprint, are a bit of an annoyance for port workers in most of the persean sector as they do not match standard domain specification.",,,
 vanidad_pazjoya,SHIP,"This frigate is a nice all-rounder. Captain liek to use it as an escort, but its gun mount allow it to do grievous damage.",,,
 #---- destroyer,,,,,
-vanidad_halcon,SHIP,"An agressive destroyer frame, it seems to have been one of the latest developed before the gate system was shut off. Prized by captains for is ability to get in the face of other ship and fight it off. It, however, has poor coverage and dubious defensive abilities.",,,
-vanidad_ionizador,SHIP,"Similar to the domain Sunder, some inner system are surprisingly similar leading a consensus about domain cooperation with whatever entity was responsible for the VAO project. Its turreted mount allow it to have remarcable coverage and to support engagement around it with ease. Crew are often worried about the front facing bridge, but the orange cristaline material that seems to be unique to VAO design is quite robust.",,,
+vanidad_halcon,SHIP,"An aggressive destroyer frame, seemingly one of the last designs developed by VAO Project before the shutdown of the Gates. Prized by its captains for the ability to engage most enemies at its own terms due to its system. Its defensive capabilities are quite mediocre with barely any weapons covering its vulnerable engines and sides.",,,
+vanidad_ionizador,SHIP,"The Ionizador is a respectable opponent on the battlefield, not because of sheer amount of firepower it brings, but due to large energy mount with extremely good coverage as well as decent secondary mounts. Its system hypercharges weapon mountings and internal stabilizers, allowing the vessel to increase its weapon range for short time, which has been an end of many pirate vessels among others.
+
+
+
+The Ionizador shares a large number of components and engineering decisions with the widespread Sunder, giving credibility to the opinion that other corporations from the Domain of Man supported whatever entity was responsible for the VAO Project. 
+
+
+
+Crews assigned to this ship often complain about the position of the bridge at the very front of the ship, yet the bizarre orange crystalline material unique to VAO designs is durable enough to shrug off most weapon hits, sometimes even better than the rest of the hull. ",,,
 #---- cruiser,,,,,
 vanidad_almadena,SHIP,"Often used as fleet anchor by fleet commander, it was one of the most valuable blueprint recovered from the Debajodelsol stationa round Kristos. Powerfull front facing batteries joined to a strong generator allow a blistering offense and a ship that can hardly do wrong.",,,
 vanidad_viajero,SHIP,"A standard carrier of VAO design. Usefull in an escort role, it is one of the few ship that will carry lenador with them.",,,
@@ -23,34 +31,46 @@ vanidad_abogado_fighter,SHIP,"Multi purpose fighter able to damage fighters and 
  It is a marvel of engineering to have sloted a fully functional light estarayo on a fighter frame. The dual barrel system manage to maintain the same per beam efficiency as the standard weapon. Inneficient vs larger vessel",,,
 vanidad_lenador,SHIP,"The mining operation of Kristos contains many unique device to help the worker. The lenador is one of them, a massive mechanised suit meant to tear down transplutonic material. Inventive mind of the VAO noticed they were able to operate in space however. Small modification to their design allow them to participate in dismantling ennemy vessel. The civilian origin is easy to see however as they are very vulnerable to counter fire.",,,
 #---- gun_estarayo,,,,,
-vanidad_estarayo_light,WEAPON,"It is a self-focused ray produced by exploding capacitor. If given sufficient distance the short burst of energy creates large explosion. The peculiar charging mechanism rattle the optical focusing device however and the weapon is quite innacurate.
+vanidad_estarayo_light,WEAPON,"The Estarayo is a beam weapon created through detonating a flux charge inside of the weapon while firing, causing the beam to disperse in a violent explosion after reaching a certain distance. The peculiar charge loading mechanism does however cause rattling of the focusing lenses, which makes the beam quite inaccurate.
 
-The full blueprint name is Estallido rayo, but archeoengineer ignore the meaning of it. In practice most crew like to call them exploding rays. Many a veteran spacer will tell you stories of missing beam suddently exploding behind their ships. 
 
-The VA Operation uses this line of weapon extensively to supress ship trying to vent or to clear large group of fighters. This is the largest version found and the energy reached by the beam make the weapon surprisingly deadly, it is for this reason one of the most restricted weapon made by the VAO. ",,,
-vanidad_estarayo_medium,WEAPON,"It is a self-focused ray produced by exploding capacitor. If given sufficient distance the short burst of energy creates large explosion. The peculiar charging mechanism rattle the optical focusing device however and the weapon is quite innacurate.
 
-The full blueprint name is Estallido rayo, but archeoengineer ignore the meaning of it. In practice most crew like to call them exploding rays. Many a veteran spacer will tell you stories of missing beam suddently exploding behind their ships. 
+The full blueprint name is Estallido rayo, but the Archeoengineer did not manage to find a common translation among the natives of Kristos. Researchers are amazed at the ""vacuum based self-focusing"" that seemingly allow the beam to detonate, but no-one has yet been able to replicate it. Strangely however, the minimal distance required for this effect is unaffected by weapon settings, focus replacements, or any modern equipment that should alter the weapon range. In practice most crew like to call them exploding rays, and many a veteran spacer will tell you stories of a beam missing, only to suddenly explode behind their ships. 
 
-The VA Operation uses this line of weapon extensively to supress ship trying to vent or to clear large group of fighters. This is the largest version found and the energy reached by the beam make the weapon surprisingly deadly, it is for this reason one of the most restricted weapon made by the VAO. ",,,
-vanidad_estarayo_heavy,WEAPON,"It is a self-focused ray produced by exploding capacitor. If given sufficient distance the short burst of energy creates large explosion. The peculiar charging mechanism rattle the optical focusing device however and the weapon is quite innacurate.
 
-The full blueprint name is Estallido rayo, but archeoengineer ignore the meaning of it. In practice most crew like to call them exploding rays. Many a veteran spacer will tell you stories of missing beam suddently exploding behind their ships. 
 
-The VA Operation uses this line of weapon extensively to supress ship trying to vent or to clear large group of fighters. This is the largest version found and the energy reached by the beam make the weapon surprisingly deadly, it is for this reason one of the most restricted weapon made by the VAO. ",,,
-vanidad_laere_small,WEAPON,"General multi purpose energy weapon. Better at piercing armor than conventional pulse weapons, but lower overall damage and efficiency.
+The VA Operation uses this line of weapon extensively to suppress ships trying to vent, or to clear large groups of fighters. As it is deceptively deadly and poorly understood, it is one of the most restricted weapons manufactured by the VAO.",,,
+vanidad_estarayo_medium,WEAPON,"The Estarayo is a beam weapon created through detonating a flux charge inside of the weapon while firing, causing the beam to disperse in a violent explosion after reaching a certain distance. The peculiar charge loading mechanism does however cause rattling of the focusing lenses, which makes the beam quite inaccurate.
 
-The laere seems to be an acronym for some physical phenomena. It perform quite similarly to convention pulse weaponry but it is unsure how the underlaying technology is similar. The original producer seems to have experimented with stronger form of copy protection and most part explode violently if dismanteled.",,,
-vanidad_laere_medium,WEAPON,"General multi purpose energy weapon. Better at piercing armor than conventional pulse weapons, but lower overall damage and efficiency.
 
-The laere seems to be an acronym for some physical phenomena. It perform quite similarly to convention pulse weaponry but it is unsure how the underlaying technology is similar. The original producer seems to have experimented with stronger form of copy protection and most part explode violently if dismanteled.",,,
-vanidad_laere_heavy,WEAPON,"General multi purpose energy weapon. Better at piercing armor than conventional pulse weapons, but lower overall damage and efficiency.
 
-The laere seems to be an acronym for some physical phenomena. It perform quite similarly to convention pulse weaponry but it is unsure how the underlaying technology is similar. The original producer seems to have experimented with stronger form of copy protection and most part explode violently if dismanteled.",,,
+The full blueprint name is Estallido rayo, but the Archeoengineer did not manage to find a common translation among the natives of Kristos. Researchers are amazed at the ""vacuum based self-focusing"" that seemingly allow the beam to detonate, but no-one has yet been able to replicate it. Strangely however, the minimal distance required for this effect is unaffected by weapon settings, focus replacements, or any modern equipment that should alter the weapon range. In practice most crew like to call them exploding rays, and many a veteran spacer will tell you stories of a beam missing, only to suddenly explode behind their ships. 
+
+
+
+The VA Operation uses this line of weapon extensively to suppress ships trying to vent, or to clear large groups of fighters. As it is deceptively deadly and poorly understood, it is one of the most restricted weapons manufactured by the VAO.",,,
+vanidad_estarayo_heavy,WEAPON,"The Estarayo is a beam weapon created through detonating a flux charge inside of the weapon while firing, causing the beam to disperse in a violent explosion after reaching a certain distance. The peculiar charge loading mechanism does however cause rattling of the focusing lenses, which makes the beam quite inaccurate.
+
+
+
+The full blueprint name is Estallido rayo, but the Archeoengineer did not manage to find a common translation among the natives of Kristos. Researchers are amazed at the ""vacuum based self-focusing"" that seemingly allow the beam to detonate, but no-one has yet been able to replicate it. Strangely however, the minimal distance required for this effect is unaffected by weapon settings, focus replacements, or any modern equipment that should alter the weapon range. In practice most crew like to call them exploding rays, and many a veteran spacer will tell you stories of a beam missing, only to suddenly explode behind their ships. 
+
+
+
+The VA Operation uses this line of weapon extensively to suppress ships trying to vent, or to clear large groups of fighters. As it is deceptively deadly and poorly understood, it is one of the most restricted weapons manufactured by the VAO.",,,
+vanidad_laere_small,WEAPON,"General multipurpose energy weapon. While better against armor compared to similar weapons, it suffers from a lower rate of fire and worse efficiency.
+
+The LAERE seems to be an acronym for some physical phenomena, but most research data related to it was unrecoverable. The dual barrel design is quite disliked by maintenance crew, and does not at all follow conventional pulse weaponry despite performing quite similarly. Post-Collapse science is unable to prove if the underlying technology is similar at all. Researchers and historians alike seem to share the hypothesis that this line of weapons might have been created as an attempt to create a competitor to the venerable Pulse Laser and similar weaponry. An attempt that didn't work, seeing as it is not in use by most factions in the Sector.",,,
+vanidad_laere_medium,WEAPON,"General multipurpose energy weapon. While better against armor compared to similar weapons, it suffers from a lower rate of fire and worse efficiency.
+
+The LAERE seems to be an acronym for some physical phenomena, but most research data related to it was unrecoverable. The dual barrel design is quite disliked by maintenance crew, and does not at all follow conventional pulse weaponry despite performing quite similarly. Post-Collapse science is unable to prove if the underlying technology is similar at all. Researchers and historians alike seem to share the hypothesis that this line of weapons might have been created as an attempt to create a competitor to the venerable Pulse Laser and similar weaponry. An attempt that didn't work, seeing as it is not in use by most factions in the Sector.",,,
+vanidad_laere_heavy,WEAPON,"General multipurpose energy weapon. While better against armor compared to similar weapons, it suffers from a lower rate of fire and worse efficiency.
+
+The LAERE seems to be an acronym for some physical phenomena, but most research data related to it was unrecoverable. The dual barrel design is quite disliked by maintenance crew, and does not at all follow conventional pulse weaponry despite performing quite similarly. Post-Collapse science is unable to prove if the underlying technology is similar at all. Researchers and historians alike seem to share the hypothesis that this line of weapons might have been created as an attempt to create a competitor to the venerable Pulse Laser and similar weaponry. An attempt that didn't work, seeing as it is not in use by most factions in the Sector.",,,
 ,,,,,
 #ship systems,,,,,
-vanidad_redirect_power,SHIP_SYSTEM,"A special flux system cut down acceleration by 75% and top speed by 50% but The rate of fire of energy weapon doubles, their damage increase by 50% and their flux cost is halved.",,,
-vanidad_hyper_stabiliser,SHIP_SYSTEM,"Flux Capacitor hypercharge the ship stabilitators, thus allowing all weapon range to be increased by 200 SU",,,
+vanidad_redirect_power,SHIP_SYSTEM,"Sets the reactor into weapon overdrive mode, lowering acceleration and top speed of the ship, while increasing rate of fire and lowering the flux cost of all energy weapons.",,,
+vanidad_hyper_stabiliser,SHIP_SYSTEM,"Hypercharges weapon mounts, increasing maximum range of all weapons by 200 units.",,,
 vanidad_spiraldischarge_system,SHIP_SYSTEM,Project a large wave that creates EMP arc on anything it hit. Hits on shield that do not pierce create hard flux. Disable Phase for a short time.,,,
 ,,,,,
 #Campaign,,,,,

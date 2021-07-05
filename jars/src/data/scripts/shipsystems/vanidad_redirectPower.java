@@ -16,7 +16,7 @@ public class vanidad_redirectPower extends BaseShipSystemScript  {
     
     	public static final float ROF_BONUS = 100f;
 	public static final float FLUX_REDUCTION_MULT= 0.1f;
-        public static float DAMAGE_BONUS = 50f;
+        public static float DAMAGE_BONUS = 0f;
         public static float SPEED_MULT = 0.50f;
 	public static float ACCELERATION_MULT = 0.25f;
 	
