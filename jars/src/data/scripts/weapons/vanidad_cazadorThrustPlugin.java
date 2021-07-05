@@ -302,6 +302,7 @@ public class vanidad_cazadorThrustPlugin implements EveryFrameWeaponEffectPlugin
         length-=previousThrust;
         length*=smooth;
         length+=previousThrust;
+        length=Math.max(0, Math.min(1.5f, length));
         previousThrust=length;
         
         //engine wooble
