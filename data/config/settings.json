@@ -3,6 +3,12 @@
             "Vanidad y Afliction":[45,57,242,255],
     },
 	"graphics":{
+	"blueprint_packages":{
+			"vanidad_package":"graphics/vanidad/factions/vanidadflag.png",
+			"vanidad_laere_package":"graphics/vanidad/factions/vanidadflag.png",
+			"vanidad_estarayo_package":"graphics/vanidad/factions/vanidadflag.png",
+			"vanidad_base_hull_package":"graphics/vanidad/factions/vanidadflag.png",
+		},
 		"misc":{
 			"vanidad_cadenaVioHead":"graphics/vanidad/weapons/chainsaw/vanidad_cadenavio_sprite.png",
 			"vanidad_cadenaVioAnim1":"graphics/vanidad/weapons/chainsaw/vanidad_cadenavioanim1.png",
