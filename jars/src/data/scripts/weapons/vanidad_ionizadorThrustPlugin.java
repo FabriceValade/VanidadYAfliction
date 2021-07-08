@@ -302,6 +302,7 @@ public class vanidad_ionizadorThrustPlugin implements EveryFrameWeaponEffectPlug
         length-=previousThrust;
         length*=smooth;
         length+=previousThrust;
+        length=Math.max(0, Math.min(1.5f, length));
         previousThrust=length;
         
         //engine wooble
