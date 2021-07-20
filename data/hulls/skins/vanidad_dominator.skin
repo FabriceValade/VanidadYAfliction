@@ -1,0 +1,43 @@
+{
+  "baseHullId": "dominator",
+  "skinHullId": "vanidad_dominator",
+  "hullName": "Dominator (VAO)",
+  "descriptionId": "dominator",
+  "descriptionPrefix": "Used and maintained by the VAO for cycles, this ship has been repainted and modified using parts and paint produced by their nanoforges. Hull and original armor plates were hollowed to make space for improvement to the engine and to allow limited installation of energy weapons.",
+  "tags":["vanidad_base_hull_bp", "vanidad_bp"],
+  "style": "HIGH_TECH",
+  "fighterBays": 0,
+  "fleetPoints": 18,
+  "fpMod": 0,
+  "manufacturer": "Vanidad y Afliction",
+  "ordnancePoints": 195,
+  "restoreToBaseHull": false,
+  "spriteName": "graphics/vanidad/ships/vanidad_dominator.png",
+   "baseValueMult": 1.1,
+  "coversColor":[114,187,255,255],
+  "coversMatchShipBrightness":true,
+  #"slotCoverSmallTurret":"graphics/weapons/covers/cover_turret_hightech_small.png",
+  #"slotCoverSmallHardpoint":"graphics/weapons/covers/cover_hardpoint_hightech_small.png",
+  #"slotCoverMediumTurret":"graphics/weapons/covers/cover_turret_hightech_medium.png",
+  #"slotCoverMediumHardpoint":"graphics/weapons/covers/cover_hardpoint_hightech_medium.png",
+  #"slotCoverLargeTurret":"graphics/weapons/covers/cover_turret_hightech_large.png",
+  #"slotCoverLargeHardpoint":"graphics/weapons/covers/cover_hardpoint_hightech_large.png",
+  #"tech": "Vanidad y Afliction",
+  "weaponSlotChanges":{
+    	"WS 010":{
+			#"angle": 0,
+            #"arc": 210,
+            #"mount": "TURRET",
+            #"size": "SMALL",
+            "type": "HYBRID"
+		},	
+		"WS 011":{
+			#"angle": 0,
+            #"arc": 210,
+            #"mount": "TURRET",
+            #"size": "SMALL",
+            "type": "HYBRID"
+        },
+	},
+  "builtInMods":["vanidad_refit",],
+}

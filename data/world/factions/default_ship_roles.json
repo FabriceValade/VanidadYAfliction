@@ -19,6 +19,8 @@
 		"vanidad_halcon_pd":3,
 		"vanidad_ionizador_support":10,
 		"vanidad_cargador_elite":2,
+		"vanidad_enforcer_pd":5,
+		"vanidad_enforcer_escort":5,
 	},
 	"combatLarge":{
 		
@@ -27,6 +29,8 @@
 		"vanidad_cargador_elite":2,
 		"vanidad_cargador_spiral":5,
 		"vanidad_comandante_offensive":5,
+		"vanidad_dominator_balanced":3,
+		"vanidad_dominator_anchor":7,
 	},
 
 	"combatFreighterSmall":{

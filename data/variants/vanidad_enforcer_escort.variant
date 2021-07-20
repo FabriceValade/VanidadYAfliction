@@ -1,0 +1,44 @@
+{
+    "displayName": "Escort",
+    "fluxCapacitors": 18,
+    "fluxVents": 20,
+	"goalVariant": true,
+    "hullId": "vanidad_enforcer",
+    "hullMods": ["advancedoptics"],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "vanidad_enforcer_escort",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 002": "vanidad_estarayo_medium",
+                "WS 004": "vanidad_estarayo_medium"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS 006": "harpoon",
+                "WS 007": "harpoon",
+                "WS 008": "harpoon",
+                "WS 009": "harpoon"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS 003": "hveldriver"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS 001": "flak",
+                "WS 005": "flak"
+            }
+        }
+    ]
+}
