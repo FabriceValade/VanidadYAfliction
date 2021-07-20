@@ -15,7 +15,11 @@ The Ionizador shares a large number of components and engineering decisions with
 
 Crews assigned to this ship often complain about the position of the bridge at the very front of the ship, yet the bizarre orange crystalline material unique to VAO designs is durable enough to shrug off most weapon hits, sometimes even better than the rest of the hull. ",,,
 #---- cruiser,,,,,
-vanidad_almadena,SHIP,"Often used as fleet anchor by fleet commander, it was one of the most valuable blueprint recovered from the Debajodelsol stationa round Kristos. Powerfull front facing batteries joined to a strong generator allow a blistering offense and a ship that can hardly do wrong.",,,
+vanidad_almadena,SHIP,"The Almadena-class cruiser has a powerful frontal battery, a strong shield generator and the ability to boost its mobility when needed. As a general purpose ship it is always reliable at the center of a fleet.
+
+
+
+The Almadena blueprint was recovered from the Debajo Del Sol station and quickly produced once the nanoforge was brought back online. Its performance against early threats of the VAO gave it a good reputation, even amongst ex-hegemony traditionalists. It is however not a very fast cruiser as unless its system is active, its engine assembly is locked at low power settings, to the bewilderment of many engineers. It is theorised that this was done to minimize maintenance costs.",,,
 vanidad_viajero,SHIP,"A standard carrier of VAO design. Usefull in an escort role, it is one of the few ship that will carry lenador with them.",,,
 vanidad_invasor,SHIP,Late VAO design. Very poor logistic profile as every part of the ship is focused on combat. With decend weapon position it prefers suporting closely a fighter complement over sending bombardment from afar.,,,
 vanidad_cargador,SHIP,"The Cargador is an aggressive phase ship with a system that allows it to project a surprisingly potent wave of phase-adjacent energy, creating a significant EMP effect at the cost of its own dimension traversal capabilities. This ability allows it to prey on vulnerable ships or disable targets to help its allies in combat. It will falter without support however, as it lacks in point defense and most of its armament is focused on the front of the ship.
@@ -24,7 +28,11 @@ The Cargador is amongst the most advanced blueprints found in the decaying stati
 
 Native crewman of the planet below the station speak often with almost religious reverence of the spiral engine powering the ship, possibly due to its striking similarity to the underground reactors illuminating the ever darkness of their dwelling. Most other crewman tend to ask to be reaffected after more than a week on the Cargador for reason classified by the current hegemony backed authorities. This has made the ship a rare sight among the VAO's fleet.",,,
 #---- capital,,,,,
-vanidad_comandante,SHIP,"The largest ship blueprint found in the debajodelsol station. Spectacular forward firepower and surprising mobility for a ship of this size. While impressive, it has a steep logistic cost and lack the flux to keep all its weapon firing for very long.",,,
+vanidad_comandante,SHIP,"Comandante is the biggest ship found in the blueprint vault located on the Debajo Del Sol station. It has spectacular forward firepower and surprising mobility for ship of its size thanks to its temporal shell system. Unfortunately, this firepower cannot be sustained for long periods of time. 
+
+Crews praise the Commandante for its performance on the battlefield for its temporal shell and firepower. In the dock however, the same crews curse its high maintenance requirements and confusing internal structure. The try tachyon corporation made many attempt to obtain a functional copy of this ship because of its system. Local engineer of the VAO seems to have been surprisingly tight-lipped or incapable of understanding it themselves as no information on the subject has filtered out.
+
+Historian are unsure why such a large ship might have been designed yet unused by the Domain of man main military. Leading hypothesis is that it was used for a subfaction belonging to the domain but with different goals.",,,
 #---- fighter,,,,,
 vanidad_abogado_fighter,SHIP,"Multi purpose fighter able to damage fighters and frigates, quite sturdy. Has a hard time overcoming shield by themselves since they deal beam damage with small explosion. Cannot act as PD because of the intrinsect inacuracy of estarayo's weapons.
 
