@@ -14,7 +14,7 @@
 		{
             "id": "MagicLib",
             "name": "MagicLib",
-            "version": "0.33rc1"
+            #"version": "0.33rc1"
         },
     ],
 	"jars":["jars/distribution/ProjectVao.jar"],
