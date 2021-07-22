@@ -1,7 +1,7 @@
 {
 	id:"vanidad",
-	"color":[45,57,242,255],
-	"darkUIColor":[196,198,222,175],
+	"color":[88,121,255,255],
+	"darkUIColor":[39,72,207,100],
 	"secondaryUIColor":[247,100,7,255],
 	"secondarySegments":6,
 	
