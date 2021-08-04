@@ -1,0 +1,22 @@
+id,trigger,conditions,script,text,options,notes
+"#RULESET_NAME VAO",,,,,,
+,,,,,,
+# portside bar stuff,,,,,,
+bar_descVanidad,BarPrintDesc,"$faction.id == vanidad","ShowImageVisual space_bar","The bar has a low ceiling and is surprisingly dark. Natives of Kristos, in their striking habsuit, huddle close to a spining contraption emiting a faint orange light as they enjoy drink in a somber mood. Other spacers dicuss softly around tables. A couple of officers, wearing what reminds you of hegemony uniform, drink together expensive drinks.",,
+"#END portside bar stuff",,,,,,
+,,,,,,
+# Missions,,,,,,
+,,,,,,
+# Ressource Procurement,,,,,,
+vanidad_rpBlurb1,vanidad_rpBlurb,,,"""We offer very legal mission, do you want to get super legal stuff from somewhere else?""",,
+vanidad_rpOfferOption1,vanidad_rpOption,,,,"vanidad_rp_start:Ask about the getting legal stuff mission",
+vanidad_rpOfferTextContact1,DialogOptionSelected,"$option == vanidad_rp_start
+","$missionId = vanidad_rp
+","""Captain $playerName,"" $heOrShe says. ""As I said, we need the agent extracted from $extr_marketName. Command has authorized a payment of $extr_reward credits for a successful mission.""
+
+""The oppo may be expecting you. I suggest you go in quiet. We do have fair intel on their defensive capabilities,"" $personName says, fingers moving rapidly to transfer a datafile for your inspection - a very detailed intel report.
+","contact_accept:Accept
+contact_decline:Decline",
+"#END Ressource Procurement",,,,,,
+"#END Missions",,,,,,
+
