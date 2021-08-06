@@ -47,33 +47,34 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
 	}
 	
 	protected Variation variation;
-	protected MarketAPI market;
-	
+	protected MarketAPI goGetMarket;
+	protected PersonAPI goGetContact;
+        protected PersonAPI missionGiver;
 	@Override
 	protected boolean create(MarketAPI createdAt, boolean barEvent) {
 		//genRandom = Misc.random;
 
-		if (!"vanidad".equals(createdAt.getFaction().getId())) return false;
+		//if (!"vanidad".equals(createdAt.getFaction().getId())) return false;
 		
 		if (barEvent) {
 			setGiverRank(Ranks.CITIZEN);
 			setGiverPost(Ranks.POST_AGENT);
 			setGiverImportance(pickImportance());
 			setGiverTags(Tags.CONTACT_MILITARY);
-			findOrCreateGiver(createdAt, true, false);
+			findOrCreateGiver(createdAt, true, true);//put somone as personOveride;
 		}
 		
-		PersonAPI person = getPerson();
-		if (person == null) return false;
+		missionGiver = getPerson();//either return the personOveride or the hub.getperson
+		if (missionGiver == null) return false;
 		
-		if (!setPersonMissionRef(person, "$extr_ref")) {
+		if (!setPersonMissionRef(missionGiver, "$vanidad_rp_ref")) {
 			return false;
-		}
+		}//put something in memory? its confusing
 
 		
 
 		
-		if (market == null) {
+		if (goGetMarket == null) {
 			resetSearch();
 			requireMarketIsNot(createdAt);
 			requireMarketNotHidden();
@@ -81,28 +82,30 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
 			preferMarketSizeAtLeast(3);
 			preferMarketSizeAtMost(6);
 			preferMarketInDirectionOfOtherMissions();
-			market = pickMarket();
-		}
+			goGetMarket = pickMarket();
+		}//search for tarket market
 		
-		if (market == null) return false;
-		if (!setMarketMissionRef(market, "$extr_ref")) {
+		if (goGetMarket == null) return false;
+		if (!setMarketMissionRef(goGetMarket, "$vanidad_rp_ref")) {
 			return false;
 		}
 		
 
-		
-		makeImportant(market, "$extr_target", Stage.GOGET);
-		makeImportant(getPerson(), "$extr_returnHere", Stage.RETURN);
+		goGetContact = findOrCreateCriminal(goGetMarket, true);
+                ensurePersonIsInCommDirectory(goGetMarket, goGetContact);
+		makeImportant(goGetMarket, "$vanidad_rp_targetMarket", Stage.GOGET);
+                makeImportant(goGetContact, "$vanidad_rp_targetContact", Stage.GOGET);
+		makeImportant(missionGiver, "$vanidad_rp_returnHere", Stage.RETURN);
 		
 		setStartingStage(Stage.GOGET);
 		setSuccessStage(Stage.COMPLETED);
 		addFailureStages(Stage.FAILED);
 		
-		connectWithMemoryFlag(Stage.GOGET, Stage.RETURN, market, "$extr_needToReturn");
-		setStageOnMemoryFlag(Stage.COMPLETED, person, "$extr_completed");
+		connectWithMemoryFlag(Stage.GOGET, Stage.RETURN, goGetMarket, "$vanidad_rp_needToReturn");
+		setStageOnMemoryFlag(Stage.COMPLETED, missionGiver, "$vanidad_rp_completed");
 		
 		addNoPenaltyFailureStages(Stage.FAILED_DECIV);
-		connectWithMarketDecivilized(Stage.GOGET, Stage.FAILED_DECIV, market);
+		connectWithMarketDecivilized(Stage.GOGET, Stage.FAILED_DECIV, goGetMarket);
 		setStageOnMarketDecivilized(Stage.FAILED_DECIV, createdAt);
 		
 		setTimeLimit(Stage.FAILED, 10000, null);
@@ -118,20 +121,22 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
 		
 		return true;
 	}
-	
+        
+	@Override
 	protected void updateInteractionDataImpl() {
-		set("$extr_variation", variation);
+		set("$vanidad_rp_variation", variation);
 		
-		set("$extr_barEvent", isBarEvent());
-		set("$extr_manOrWoman", getPerson().getManOrWoman());
-		set("$extr_reward", Misc.getWithDGS(getCreditsReward()));
+		set("$vanidad_rp_barEvent", isBarEvent());
+		set("$vanidad_rp_manOrWoman", missionGiver.getManOrWoman());
+		set("$vanidad_rp_reward", Misc.getWithDGS(getCreditsReward()));
 		
-		set("$extr_systemName", market.getStarSystem().getNameWithLowercaseTypeShort());
-		set("$extr_marketName", market.getName());
-		set("$extr_marketOnOrAt", market.getOnOrAt());
-		set("$extr_dist", getDistanceLY(market));
+		set("$vanidad_rp_systemName", goGetMarket.getStarSystem().getNameWithLowercaseTypeShort());
+		set("$vanidad_rp_marketName", goGetMarket.getName());
+		set("$vanidad_rp_marketOnOrAt", goGetMarket.getOnOrAt());
+		set("$vanidad_rp_dist", getDistanceLY(goGetMarket));
 
-				
+		set("$vanidad_rp_goGetContactName", goGetContact.getNameString());
+		set("$vanidad_rp_goGetContactPost", goGetContact.getPost().toLowerCase());		
 	}
 	
 	@Override
@@ -140,20 +145,21 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
 		Color h = Misc.getHighlightColor();
 		if (currentStage == Stage.GOGET) {
 			info.addPara("Go get stuff located " +
-					 market.getOnOrAt() + " " + market.getName() + 
-					 " in the " + market.getStarSystem().getNameWithLowercaseTypeShort() + ".", opad);
+					 goGetMarket.getOnOrAt() + " " + goGetMarket.getName() + 
+					 " in the " + goGetMarket.getStarSystem().getNameWithLowercaseTypeShort() + "." +
+                                         " Ask for " + goGetContact.getNameString(), opad);
 
-				FactionAPI f = market.getFaction();
+				FactionAPI f = goGetMarket.getFaction();
 				LabelAPI label = info.addPara("The target location is a size %s " +
 								"colony controlled by " + f.getDisplayNameWithArticle() + ".",
 							 opad, f.getBaseUIColor(),
-							 "" + market.getSize(), f.getDisplayNameWithArticleWithoutArticle());
-				label.setHighlight("" + market.getSize(), f.getDisplayNameWithArticleWithoutArticle());
+							 "" + goGetMarket.getSize(), f.getDisplayNameWithArticleWithoutArticle());
+				label.setHighlight("" + goGetMarket.getSize(), f.getDisplayNameWithArticleWithoutArticle());
 				label.setHighlightColors(h, f.getBaseUIColor());
 				
 			
 		} else if (currentStage == Stage.RETURN) {
-			info.addPara(getReturnText(getPerson().getMarket().getName()) + ".", opad);
+			info.addPara(getReturnText(missionGiver.getMarket().getName()) + ".", opad);
 		}
 	}
 
@@ -162,12 +168,12 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
 		Color h = Misc.getHighlightColor();
 		if (currentStage == Stage.GOGET) {
 				info.addPara("Go get stuff from " +
-							 market.getName() + 
-							 " in the " + market.getStarSystem().getNameWithLowercaseTypeShort() + ".", pad, tc,
-							 market.getFaction().getBaseUIColor(), market.getName());
+							 goGetMarket.getName() + 
+							 " in the " + goGetMarket.getStarSystem().getNameWithLowercaseTypeShort() + ".", pad, tc,
+							 goGetMarket.getFaction().getBaseUIColor(), goGetMarket.getName());
 				return true;
 		} else if (currentStage == Stage.RETURN) {
-			info.addPara(getReturnTextShort(getPerson().getMarket().getName()), tc, pad);
+			info.addPara(getReturnTextShort(missionGiver.getMarket().getName()), tc, pad);
 			return true;
 		}
 		return false;

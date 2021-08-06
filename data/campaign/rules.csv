@@ -8,15 +8,32 @@ bar_descVanidad,BarPrintDesc,"$faction.id == vanidad","ShowImageVisual space_bar
 # Missions,,,,,,
 ,,,,,,
 # Ressource Procurement,,,,,,
+vanidad_rpBlurbBar1,vanidad_rp_blurbBar,,,"A $manOrWoman in a habsuit look at you funny. A brightly colored ""!"" in his hand.",,
+vanidad_rpOfferOptionBar1,vanidad_rp_optionBar,,,,"vanidad_rp_startBar: Go toward the obvious questgiver",
+vanidad_rpOfferTextBar1,DialogOptionSelected,"$option == vanidad_rp_startBar","$missionId= vanidad_rp
+Highlight $vanidad_rp_dist $vanidad_rp_fuel $vanidad_rp_reward ","""Captain $playerName,"" $heOrShe says.""
+
+$HeOrShe  taps $hisOrHer datapad; a privacy field blurs and muffles the surroundings.
+
+""I need stuff from $vanidad_rp_marketName, $vanidad_rp_dist light-years away. If I get stuff, $vanidad_rp_reward credits could be routed to your account.""
+
+ ""Are you in?""","contact_acceptBar:Yea sure
+contact_declineBarNoContinue: I don't think so",
 vanidad_rpBlurb1,vanidad_rpBlurb,,,"""We offer very legal mission, do you want to get super legal stuff from somewhere else?""",,
 vanidad_rpOfferOption1,vanidad_rpOption,,,,"vanidad_rp_start:Ask about the getting legal stuff mission",
 vanidad_rpOfferTextContact1,DialogOptionSelected,"$option == vanidad_rp_start
 ","$missionId = vanidad_rp
-","""Captain $playerName,"" $heOrShe says. ""As I said, we need the agent extracted from $extr_marketName. Command has authorized a payment of $extr_reward credits for a successful mission.""
+","""Captain $playerName,"" $heOrShe says.""
 
-""The oppo may be expecting you. I suggest you go in quiet. We do have fair intel on their defensive capabilities,"" $personName says, fingers moving rapidly to transfer a datafile for your inspection - a very detailed intel report.
-","contact_accept:Accept
+$HeOrShe  taps $hisOrHer datapad; a privacy field blurs and muffles the surroundings.
+
+""I need stuff from $vanidad_rp_marketName, $vanidad_rp_dist light-years away. If I get stuff, $vanidad_rp_reward credits could be routed to your account.""
+
+ ""this part of the dialog, you shouldnt see, since we are in a bar. But are you in?""","contact_accept:Accept
 contact_decline:Decline",
+vanidad_rpContactGreeting,PickGreeting,"$vanidad_rp_targetContact score:1000","ShowPersonVisual","""Ah, you must be $playerName. We've been expecting you."" $personName reads a datapad, ""You are the captain picking up stuff for $market.vanidad_rp_returnHere am I right? Don't ya worry, stuff is being delivered right now""","vanidad_rp_getRessource:Ok, just bring it in",
+vanidad_rpContactDelivery,DialogOptionSelected,"$option == vanidad_rp_getRessource score:1000","$market.vanidad_rp_needToReturn = true
+Call $market.vanidad_rp_ref updateStage","A small shuttle deliver you a couple boxes of material, it dosn't take much space. Some of your tech officers look into the stuff it contains, it's mostly specialised supply for machine none of them know.","cutCommLink: Cut the com link",
 "#END Ressource Procurement",,,,,,
 "#END Missions",,,,,,
 
