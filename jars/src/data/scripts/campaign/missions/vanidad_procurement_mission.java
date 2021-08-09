@@ -61,6 +61,7 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
 			setGiverPost(Ranks.POST_AGENT);
 			setGiverImportance(pickImportance());
 			setGiverTags(Tags.CONTACT_MILITARY);
+                        setGiverFaction("vanidad_liberador");
 			findOrCreateGiver(createdAt, true, true);//put somone as personOveride;
 		}
 		
@@ -128,6 +129,7 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
 		
 		set("$vanidad_rp_barEvent", isBarEvent());
 		set("$vanidad_rp_manOrWoman", missionGiver.getManOrWoman());
+                set("$vanidad_rp_missionGiverName", missionGiver.getNameString());
 		set("$vanidad_rp_reward", Misc.getWithDGS(getCreditsReward()));
 		
 		set("$vanidad_rp_systemName", goGetMarket.getStarSystem().getNameWithLowercaseTypeShort());
@@ -136,7 +138,7 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
 		set("$vanidad_rp_dist", getDistanceLY(goGetMarket));
 
 		set("$vanidad_rp_goGetContactName", goGetContact.getNameString());
-		set("$vanidad_rp_goGetContactPost", goGetContact.getPost().toLowerCase());		
+		set("$vanidad_rp_goGetContactPost", goGetContact.getPost().toLowerCase());
 	}
 	
 	@Override

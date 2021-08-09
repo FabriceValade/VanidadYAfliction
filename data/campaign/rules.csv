@@ -31,9 +31,21 @@ $HeOrShe  taps $hisOrHer datapad; a privacy field blurs and muffles the surround
 
  ""this part of the dialog, you shouldnt see, since we are in a bar. But are you in?""","contact_accept:Accept
 contact_decline:Decline",
-vanidad_rpContactGreeting,PickGreeting,"$vanidad_rp_targetContact score:1000","ShowPersonVisual","""Ah, you must be $playerName. We've been expecting you."" $personName reads a datapad, ""You are the captain picking up stuff for $market.vanidad_rp_returnHere am I right? Don't ya worry, stuff is being delivered right now""","vanidad_rp_getRessource:Ok, just bring it in",
+,,,,,,
+# contact interaction,,,,,,
+vanidad_rpContactGreeting,PickGreeting,"$vanidad_rp_targetContact score:1000
+Call $market.vanidad_rp_ref updateData","ShowPersonVisual","""I was expecting someone to contact me soon enough."" $personName reads a datapad, ""You are captain $playerName picking up stuff for $vanidad_rp_missionGiverName am I right? Don't ya worry, we can deliver it, in fact i'm quite happy I don't have to keep it around anymore"". $personFirstName send you coordinate for a delivery point on your datapad, it seems reasonably close.","vanidad_rp_getRessource:Ok, let's get this",
 vanidad_rpContactDelivery,DialogOptionSelected,"$option == vanidad_rp_getRessource score:1000","$market.vanidad_rp_needToReturn = true
-Call $market.vanidad_rp_ref updateStage","A small shuttle deliver you a couple boxes of material, it dosn't take much space. Some of your tech officers look into the stuff it contains, it's mostly specialised supply for machine none of them know.","cutCommLink: Cut the com link",
+Call $market.vanidad_rp_ref updateStage","At the dropoff point a small shuttle deliver you a couple boxes of material, it doesn't take much space. Some of your tech officers look into the ""stuff"" it contains, it's mostly specialised supply for machine none of them are familiar with. There is also a couple items of food that are quite expensive anywhere in the Core world.","cutCommLink: Go back to your ship",
+"#END contact interaction",,,,,,
+,,,,,,
+# return interaction,,,,,,
+vanidad_rpMissionReturn1,PickGreeting,"$vanidad_rp_returnHere score:1000
+Call $vanidad_rp_ref updateData
+FireBest GenericMissionReturn","ShowPersonVisual
+$vanidad_rp_completed = true
+Call $vanidad_rp_ref updateStage","""Oh yeah, thats the stuff. Thanks for getting this for us."" $PersonName says. ""Authorities here can be so bothersome when a local citizen want to work on some personal project. I say we keep in touch, maybe I can find some other work for a captain like you""","contact_pickAnotherGreeting: Continue",
+"#END return interaction",,,,,,
 "#END Ressource Procurement",,,,,,
 "#END Missions",,,,,,
 
