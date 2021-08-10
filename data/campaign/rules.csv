@@ -32,11 +32,18 @@ $HeOrShe  taps $hisOrHer datapad; a privacy field blurs and muffles the surround
  ""this part of the dialog, you shouldnt see, since we are in a bar. But are you in?""","contact_accept:Accept
 contact_decline:Decline",
 ,,,,,,
+# vanidad_rpInt,,,,,,
+vanidad_rpAuthorityHail,vanidad_rpAuthorityHail,,"$entity.ignorePlayerCommRequests = true","""Oh, captain,"" the pirate $personRank looks almost apologetic. ""It's about the material you went and got. A minor matter,"" $heOrShe waggles a hand as if it's not quite important enough to explain, but $heOrShe will indulge you, ""The one asking you this wanst exactly an element we like seeing helped.""","cutCommLink:Say nothing.",
+vanidad_rpAuthorityEncounter,BeginFleetEncounter,"$vanidad_rp_authority score:1000
+!$ignorePlayerCommRequests","AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor",,,
+"#END vanidad_rpInt",,,,,,
+,,,,,,
 # contact interaction,,,,,,
 vanidad_rpContactGreeting,PickGreeting,"$vanidad_rp_targetContact score:1000
 Call $market.vanidad_rp_ref updateData","ShowPersonVisual","""I was expecting someone to contact me soon enough."" $personName reads a datapad, ""You are captain $playerName picking up stuff for $vanidad_rp_missionGiverName am I right? Don't ya worry, we can deliver it, in fact i'm quite happy I don't have to keep it around anymore"". $personFirstName send you coordinate for a delivery point on your datapad, it seems reasonably close.","vanidad_rp_getRessource:Ok, let's get this",
 vanidad_rpContactDelivery,DialogOptionSelected,"$option == vanidad_rp_getRessource score:1000","$market.vanidad_rp_needToReturn = true
-Call $market.vanidad_rp_ref updateStage","At the dropoff point a small shuttle deliver you a couple boxes of material, it doesn't take much space. Some of your tech officers look into the ""stuff"" it contains, it's mostly specialised supply for machine none of them are familiar with. There is also a couple items of food that are quite expensive anywhere in the Core world.","cutCommLink: Go back to your ship",
+Call $market.vanidad_rp_ref updateStage
+Call $market.vanidad_rp_ref authorityAction","At the dropoff point a small shuttle deliver you a couple boxes of material, it doesn't take much space. Some of your tech officers look into the ""stuff"" it contains, it's mostly specialised supply for machine none of them are familiar with. There is also a couple items of food that are quite expensive anywhere in the Core world.","cutCommLink: Go back to your ship",
 "#END contact interaction",,,,,,
 ,,,,,,
 # return interaction,,,,,,

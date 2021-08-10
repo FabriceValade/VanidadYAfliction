@@ -8,14 +8,18 @@ package data.scripts.campaign.missions;
 import java.awt.Color;
 
 import com.fs.starfarer.api.campaign.FactionAPI;
+import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.PersonImportance;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
+import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
+import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.intel.bases.LuddicPathBaseIntel;
 import com.fs.starfarer.api.impl.campaign.intel.bases.PirateBaseIntel;
+import com.fs.starfarer.api.impl.campaign.missions.DelayedFleetEncounter;
 import com.fs.starfarer.api.impl.campaign.missions.hub.BaseHubMission;
 import static com.fs.starfarer.api.impl.campaign.missions.hub.BaseHubMission.getRoundNumber;
 import com.fs.starfarer.api.impl.campaign.missions.hub.HubMissionWithBarEvent;
@@ -23,6 +27,9 @@ import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.MarketCMD.RaidDangerLe
 import com.fs.starfarer.api.ui.LabelAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import java.util.List;
+import java.util.Map;
+import org.lwjgl.util.vector.Vector2f;
 /**
  *
  * @author Lethargie
@@ -184,6 +191,31 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
 	@Override
 	public String getBaseName() {
 		return "Procure material";
+	}
+        
+        @Override
+	protected boolean callAction(String action, String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params,
+								 Map<String, MemoryAPI> memoryMap) {
+		if (action.equals("authorityAction")) {
+			DelayedFleetEncounter e = new DelayedFleetEncounter(genRandom, getMissionId());
+			e.setDelayNone();
+                        e.setLocationAnywhere(true, "vanidad");
+			e.setEncounterInHyper();
+                        e.beginCreate();
+                        Vector2f loc = goGetMarket.getLocationInHyperspace();
+			e.triggerCreateFleet(FleetSize.LARGE, FleetQuality.DEFAULT, "vanidad", FleetTypes.PATROL_MEDIUM, loc);
+                        e.triggerAutoAdjustFleetStrengthModerate();
+			e.triggerFleetSetFaction("vanidad");
+                        e.triggerFleetSetName("Peace keeper");
+			e.triggerFleetMakeFaster(true, 2, true);
+			e.triggerSetFleetFlag("$vanidad_rp_authority");
+			e.triggerMakeNoRepImpact();
+			e.triggerSetStandardAggroInterceptFlags();
+                        e.triggerSetFleetGenericHailPermanent("vanidad_rpAuthorityHail");
+			e.endCreate();
+			return true;
+		}
+		return false;
 	}
 }
 
