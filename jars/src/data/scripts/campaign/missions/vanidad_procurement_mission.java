@@ -39,11 +39,7 @@ import org.lwjgl.util.vector.Vector2f;
 
 public class vanidad_procurement_mission extends HubMissionWithBarEvent {
 
-
-	public static enum Variation {
-		FOOD,
-		WEAPON,
-	}
+        public static float AUTHORITY_ACTION_PROB = 1f;
 	
 	public static enum Stage {
 		GOGET,
@@ -53,10 +49,15 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
 		FAILED_DECIV,
 	}
 	
-	protected Variation variation;
 	protected MarketAPI goGetMarket;
 	protected PersonAPI goGetContact;
         protected PersonAPI missionGiver;
+        @Override
+        public boolean shouldShowAtMarket(MarketAPI market) {
+            return market.getFactionId().equals("vanidad");
+	}
+        
+        
 	@Override
 	protected boolean create(MarketAPI createdAt, boolean barEvent) {
 		//genRandom = Misc.random;
@@ -65,9 +66,9 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
 		
 		if (barEvent) {
 			setGiverRank(Ranks.CITIZEN);
-			setGiverPost(Ranks.POST_AGENT);
-			setGiverImportance(pickImportance());
-			setGiverTags(Tags.CONTACT_MILITARY);
+			setGiverPost(Ranks.POST_TRADER);
+			setGiverImportance(PersonImportance.LOW);
+			setGiverTags(Tags.CONTACT_UNDERWORLD);
                         setGiverFaction("vanidad_liberador");
 			findOrCreateGiver(createdAt, true, true);//put somone as personOveride;
 		}
@@ -88,7 +89,7 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
 			requireMarketNotHidden();
 			requireMarketNotInHyperspace();
 			preferMarketSizeAtLeast(3);
-			preferMarketSizeAtMost(6);
+			requireMarketFactionNot("vanidad");
 			preferMarketInDirectionOfOtherMissions();
 			goGetMarket = pickMarket();
 		}//search for tarket market
@@ -125,14 +126,13 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
 //		setCreditReward(10000 + sizeModifier, 30000 + sizeModifier);
 
 		setCreditReward(BaseHubMission.CreditReward.AVERAGE, 10);
-		
+		setupFleetEncounter();
 		
 		return true;
 	}
         
 	@Override
 	protected void updateInteractionDataImpl() {
-		set("$vanidad_rp_variation", variation);
 		
 		set("$vanidad_rp_barEvent", isBarEvent());
 		set("$vanidad_rp_manOrWoman", missionGiver.getManOrWoman());
@@ -196,30 +196,43 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
         @Override
 	protected boolean callAction(String action, String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params,
 								 Map<String, MemoryAPI> memoryMap) {
-		if (action.equals("authorityAction")) {
-			DelayedFleetEncounter e = new DelayedFleetEncounter(genRandom, getMissionId());
-			e.setDelayNone();
-                        e.setLocationAnywhere(true, "vanidad");
-			e.setEncounterInHyper();
-                        e.beginCreate();
-                        Vector2f loc = goGetMarket.getLocationInHyperspace();
-			e.triggerCreateFleet(FleetSize.LARGE, FleetQuality.DEFAULT, "vanidad", FleetTypes.PATROL_MEDIUM, loc);
-                        e.triggerAutoAdjustFleetStrengthModerate();
-			e.triggerFleetSetFaction("vanidad");
-                        e.triggerFleetSetName("Peace keeper");
-			e.triggerFleetMakeFaster(true, 2, true);
-			e.triggerSetFleetFlag("$vanidad_rp_authority");
-			e.triggerMakeNoRepImpact();
-			e.triggerSetStandardAggroInterceptFlags();
-                        e.triggerSetFleetGenericHailPermanent("vanidad_rpAuthorityHail");
-			e.endCreate();
-			return true;
+		if (action.equals("betrayal")) {
+                    setStageOnCustomCondition(Stage.FAILED, new AlwaysTrueChecker());
+                    return true;
 		}
 		return false;
 	}
+
+    private void setupFleetEncounter() {
+        if (rollProbability(AUTHORITY_ACTION_PROB)) {
+            beginWithinHyperspaceRangeTrigger(goGetMarket, 3f, false,
+                                              Stage.RETURN);
+            Vector2f loc = goGetMarket.getLocationInHyperspace();
+
+            //fleet setup
+            triggerCreateFleet(FleetSize.LARGE, FleetQuality.DEFAULT,
+                               "vanidad", FleetTypes.PATROL_MEDIUM, loc);
+            triggerAutoAdjustFleetStrengthModerate();
+            triggerSetFleetFaction("vanidad");
+            triggerMakeHostileAndAggressive();
+            triggerMakeFleetIgnoredByOtherFleets();
+            triggerFleetSetName("Peace keeper");
+            triggerFleetMakeFaster(true, 2, true);
+            triggerMakeLowRepImpact();
+
+            triggerPickLocationTowardsPlayer(
+                    goGetMarket.getStarSystem().getHyperspaceAnchor(), 90f, 0);
+            triggerSpawnFleetAtPickedLocation("$vanidad_rpauthority",
+                                              "$vanidad_rp_ref");
+            triggerOrderFleetInterceptPlayer();
+            triggerFleetMakeImportant(null, Stage.RETURN);
+            triggerFleetStopPursuingPlayerUnlessInStage(Stage.RETURN);
+            triggerFleetAllowLongPursuit();
+
+            endTrigger();
+        }
+    }
 }
-
-
 
 
 

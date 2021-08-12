@@ -8,19 +8,8 @@ bar_descVanidad,BarPrintDesc,"$faction.id == vanidad","ShowImageVisual space_bar
 # Missions,,,,,,
 ,,,,,,
 # Ressource Procurement,,,,,,
-vanidad_rpBlurbBar1,vanidad_rp_blurbBar,,,"A $manOrWoman in a habsuit look at you funny. A brightly colored ""!"" in his hand.",,
-vanidad_rpOfferOptionBar1,vanidad_rp_optionBar,,,,"vanidad_rp_startBar: Go toward the obvious questgiver",
-vanidad_rpOfferTextBar1,DialogOptionSelected,"$option == vanidad_rp_startBar","$missionId= vanidad_rp
-Highlight $vanidad_rp_dist $vanidad_rp_fuel $vanidad_rp_reward ","""Captain $playerName,"" $heOrShe says.""
-
-$HeOrShe  taps $hisOrHer datapad; a privacy field blurs and muffles the surroundings.
-
-""I need stuff from $vanidad_rp_marketName, $vanidad_rp_dist light-years away. If I get stuff, $vanidad_rp_reward credits could be routed to your account.""
-
- ""Are you in?""","contact_acceptBar:Yea sure
-contact_declineBarNoContinue: I don't think so",
-vanidad_rpBlurb1,vanidad_rpBlurb,,,"""We offer very legal mission, do you want to get super legal stuff from somewhere else?""",,
-vanidad_rpOfferOption1,vanidad_rpOption,,,,"vanidad_rp_start:Ask about the getting legal stuff mission",
+vanidad_rpBlurb1,,,,"""We offer very legal mission, do you want to get super legal stuff from somewhere else?""",,
+vanidad_rpOfferOption1,,,,,"vanidad_rp_start:Ask about the getting legal stuff mission",
 vanidad_rpOfferTextContact1,DialogOptionSelected,"$option == vanidad_rp_start
 ","$missionId = vanidad_rp
 ","""Captain $playerName,"" $heOrShe says.""
@@ -33,17 +22,42 @@ $HeOrShe  taps $hisOrHer datapad; a privacy field blurs and muffles the surround
 contact_decline:Decline",
 ,,,,,,
 # vanidad_rpInt,,,,,,
-vanidad_rpAuthorityHail,vanidad_rpAuthorityHail,,"$entity.ignorePlayerCommRequests = true","""Oh, captain,"" the pirate $personRank looks almost apologetic. ""It's about the material you went and got. A minor matter,"" $heOrShe waggles a hand as if it's not quite important enough to explain, but $heOrShe will indulge you, ""The one asking you this wanst exactly an element we like seeing helped.""","cutCommLink:Say nothing.",
-vanidad_rpAuthorityEncounter,BeginFleetEncounter,"$vanidad_rp_authority score:1000
-!$ignorePlayerCommRequests","AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor",,,
+vanidad_rpAuthorityHail,OpenCommLink,"$isPerson
+$entity.vanidad_rpauthority score:100
+","$entity.ignorePlayerCommRequests = true
+FireAll vanidad_rp_authorityHail","""Captain"" the $personRank looks tired and speak with little emotion. ""You went and got material you should not have"" $heOrShe raise a hand but stops, as if it was too much effort. ""We will now proceed to destroy your fleet""",,
+vanidad_rpAuthorityEncounter,BeginFleetEncounter,"$vanidad_rpauthority score:1000
+!$ignorePlayerCommRequests","AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor
+$hailing = true 0",,,
+vanidad_rpAuthorityHailOpt1a,vanidad_rp_authorityHail,"!$vanidad_rpauthorityWhyf
+",,,"0:vanidad_rpAuthorityWhy:Wait! Why are you doing this?",
+vanidad_rpAuthorityHailAns1a,DialogOptionSelected,"$option == vanidad_rpAuthorityWhy","$vanidad_rpauthorityWhyf = true 0
+FireAll vanidad_rp_authorityHail","$heOrShe straighten a bit and scoff a little. ""Well, some people would like that these material did not go and help terrorists. Some people would also like that legal commerce be not stopped unless theres an official investigation. So here we are."" 
+
+The $personRank sit back in his chair, as if saying this had drained all $hisOrHer energy.",,
+vanidad_rpAuthorityHailOpt1b,vanidad_rp_authorityHail,"$vanidad_rpauthorityWhyf
+!$vanidad_rpauthorityAvoidf",,,"0:vanidad_rpAuthorityAvoid:Why are you telling me this, can we avoid fighting?",
+vanidad_rpAuthorityHailAns1b,DialogOptionSelected,"$option == vanidad_rpAuthorityAvoid","$vanidad_rpauthorityAvoidf = true 0
+FireAll vanidad_rp_authorityHail","The $personRank stay silent for a couple second. 
+
+""Well "" $heOrShe says in a depressed voice.
+""Maybe if you were to give us whatever you went to pick, we might decide that its less paperwork that way."" $HimOrHer voice picks up a little bit.
+""yeah, let one of our shuttle board you and give us access to whatever you were asked to bring and I wont have the paperwork needed to record your untimely demise and to explain how we were not related""",,
+vanidad_rpAuthorityHailOpt1c,vanidad_rp_authorityHail,"$vanidad_rpauthorityWhyf
+$vanidad_rpauthorityAvoidf",,,"0:vanidad_rpAuthorityBetrayal:Allow a shuttle to come and pick up the package.",
+vanidad_rpAuthorityHailBetrayal,DialogOptionSelected,"$option == vanidad_rpAuthorityBetrayal","MakeOtherFleetNonHostile vanidad_rp true
+MakeOtherFleetGoAway true
+Call $entity.vanidad_rp_ref betrayal
+Call $entity.vanidad_rp_ref updateStage","You send the signal and let a shuttle come board one of your ship. Inspector take sight of the things you were supposed to bring back and pick it up quickly. You get the feeling they do not care much about what it contains, but they do seem to know what they are looking for. Soon the shuttle depart and the fleet leaves.","cutCommLink:Continue",
+vanidad_rpAuthorityHailOptCut,vanidad_rp_authorityHail,,,,"cutCommLink:Say nothing.",
 "#END vanidad_rpInt",,,,,,
 ,,,,,,
 # contact interaction,,,,,,
 vanidad_rpContactGreeting,PickGreeting,"$vanidad_rp_targetContact score:1000
-Call $market.vanidad_rp_ref updateData","ShowPersonVisual","""I was expecting someone to contact me soon enough."" $personName reads a datapad, ""You are captain $playerName picking up stuff for $vanidad_rp_missionGiverName am I right? Don't ya worry, we can deliver it, in fact i'm quite happy I don't have to keep it around anymore"". $personFirstName send you coordinate for a delivery point on your datapad, it seems reasonably close.","vanidad_rp_getRessource:Ok, let's get this",
+Call $market.vanidad_rp_ref updateData","ShowPersonVisual","""I was expecting someone to contact me soon enough."" $personName reads a datapad, ""You are captain $playerName picking up stuff for $vanidad_rp_missionGiverName am I right? Don't ya worry, we can deliver it, in fact I'm quite happy I don't have to keep it around anymore"". $personFirstName send you coordinate for a delivery point on your datapad, it seems reasonably close.","vanidad_rp_getRessource:Ok, let's get this",
 vanidad_rpContactDelivery,DialogOptionSelected,"$option == vanidad_rp_getRessource score:1000","$market.vanidad_rp_needToReturn = true
 Call $market.vanidad_rp_ref updateStage
-Call $market.vanidad_rp_ref authorityAction","At the dropoff point a small shuttle deliver you a couple boxes of material, it doesn't take much space. Some of your tech officers look into the ""stuff"" it contains, it's mostly specialised supply for machine none of them are familiar with. There is also a couple items of food that are quite expensive anywhere in the Core world.","cutCommLink: Go back to your ship",
+","At the dropoff point a small shuttle deliver you a couple boxes of material, it doesn't take much space. Some of your tech officers look into the ""stuff"" it contains, it's mostly specialised supply for machines none of them are familiar with. There is also a couple items of food that are quite expensive anywhere in the Core world.","cutCommLink: Go back to your ship",
 "#END contact interaction",,,,,,
 ,,,,,,
 # return interaction,,,,,,
@@ -53,6 +67,31 @@ FireBest GenericMissionReturn","ShowPersonVisual
 $vanidad_rp_completed = true
 Call $vanidad_rp_ref updateStage","""Oh yeah, thats the stuff. Thanks for getting this for us."" $PersonName says. ""Authorities here can be so bothersome when a local citizen want to work on some personal project. I say we keep in touch, maybe I can find some other work for a captain like you""","contact_pickAnotherGreeting: Continue",
 "#END return interaction",,,,,,
+,,,,,,
+# bar intro,,,,,,
+vanidad_rpBlurbBar1,vanidad_rp_blurbBar,,,"A $manOrWoman in a native habsuit look at you and seem to invite you to $hisorHer booth.",,
+vanidad_rpOfferOptionBar1,vanidad_rp_optionBar,,,,"vanidad_rp_startBar: Go sit in the booth with the VAO native.",
+vanidad_rpOfferTextBar1,DialogOptionSelected,"$option == vanidad_rp_startBar","$missionId= vanidad_rp
+Highlight $vanidad_rp_dist $vanidad_rp_fuel $vanidad_rp_reward 
+FireAll vanidad_rp_OfferBar","""Captain $playerName,"" $heOrShe says.""
+
+$HeOrShe  taps $hisOrHer datapad; a privacy field blurs and muffles the surroundings. The booth is maintained in a low orange light by a turning lamp, the kind VAO spacers are often fond of.
+""I happen to know you by reputation"" $HeOrShe pass you a glass of a strange slimy drink. ""To fruitfull even if pointless deals!""
+
+$HeOrShe drink from $himOrHer cup quickly. Then $heOrShe says:
+ I need some stuff that is stashed on $vanidad_rp_marketName, $vanidad_rp_dist light-years away. If I get that stuff, $vanidad_rp_reward credits could fint their way to your account.""
+
+ ""Do we have a deal?""",,
+vanidad_rpOfferBarHubAD,vanidad_rp_OfferBar,,,,"0:contact_acceptBar:Yea sure
+1:contact_declineBarNoContinue: I don't think so",
+vanidad_rpOfferBarHubWhat1,vanidad_rp_OfferBar,"!$vanidad_rpOfferBarWhat",,,"3:vanidad_rpOfferBarWhat:Wait, what is ""stuff""?",
+vanidad_rpOfferBarHubWhat2,DialogOptionSelected,"$option == vanidad_rpOfferBarWhat","$vanidad_rpOfferBarWhat = true 0
+FireAll vanidad_rp_OfferBar","The $manOrWoman lean a bit on the table toward you and speak with a slow reassuring voice. ""Oh, nothing illegal. Do not worry, it's mostly parts to maintain the machines around here. Maybe a bit of food, to keep moral. I reckon It wouldn't take much space in your ship.
+
+I'm not fond of flying, I know you should look out for pirates and anything that could bother you. I pay generously that you may take the risk instead of me. But you don't look like the kind of person that is worried by that.""
+
+There's a pause that linger in the air for an instant, as $heOrShe expects an answer from you.",,
+"#END bar intro",,,,,,
 "#END Ressource Procurement",,,,,,
 "#END Missions",,,,,,
 
