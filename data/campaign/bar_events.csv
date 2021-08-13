@@ -1,6 +1,6 @@
 bar event id,tags,freq,prob,min dur,max dur,min timeout,max timeout,min accepted timeout,max accepted timeout,plugin
 vanidad_rp,,100,100,30,40,15,20,60,90,data.scripts.campaign.missions.vanidad_procurement_mission
-,,,,,,,,,,
+vanidad_loe,,100,100,30,40,15,20,60,90,data.scripts.campaign.missions.vanidad_lostObject_mission
 ,,,,,,,,,,
 ,,,,,,,,,,
 ,,,,,,,,,,

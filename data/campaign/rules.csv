@@ -83,8 +83,8 @@ $HeOrShe drink from $himOrHer cup quickly. Then $heOrShe says:
 
  ""Do we have a deal?""",,
 vanidad_rpOfferBarHubAD,vanidad_rp_OfferBar,,,,"0:contact_acceptBar:Yea sure
-1:contact_declineBarNoContinue: I don't think so",
-vanidad_rpOfferBarHubWhat1,vanidad_rp_OfferBar,"!$vanidad_rpOfferBarWhat",,,"3:vanidad_rpOfferBarWhat:Wait, what is ""stuff""?",
+contact_declineBarNoContinue: I don't think so",
+vanidad_rpOfferBarHubWhat1,vanidad_rp_OfferBar,"!$vanidad_rpOfferBarWhat",,,"1:vanidad_rpOfferBarWhat:Wait, what is ""stuff""?",
 vanidad_rpOfferBarHubWhat2,DialogOptionSelected,"$option == vanidad_rpOfferBarWhat","$vanidad_rpOfferBarWhat = true 0
 FireAll vanidad_rp_OfferBar","The $manOrWoman lean a bit on the table toward you and speak with a slow reassuring voice. ""Oh, nothing illegal. Do not worry, it's mostly parts to maintain the machines around here. Maybe a bit of food, to keep moral. I reckon It wouldn't take much space in your ship.
 
@@ -93,5 +93,87 @@ I'm not fond of flying, I know you should look out for pirates and anything that
 There's a pause that linger in the air for an instant, as $heOrShe expects an answer from you.",,
 "#END bar intro",,,,,,
 "#END Ressource Procurement",,,,,,
+,,,,,,
+# Lost Object Exploration,,,,,,
+,,,,,,
+# loe authority conversation,,,,,,
+vanidad_loeAuthorityEncounter,BeginFleetEncounter,"$vanidad_loe_f_authority score:1000
+!$ignorePlayerCommRequests","AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor
+$hailing = true 0",,,
+vanidad_loeAuthorityComm,OpenCommLink,"$isPerson
+$vanidad_loe_f_authority score:100
+","FireAll vanidad_loe_authorityComm","""Captain"" the $personRank looks tired and speak with little emotion. ""You went and got material you should not have"" $heOrShe raise a hand but stops, as if it was too much effort. ""We will now proceed to destroy your fleet""",,
+vanidad_loeAuthorityCommOpt1,,,,,,
+vanidad_loeAuthorityCommOptCut,vanidad_loe_authorityComm,,,,"cutCommLink:Say nothing.",
+"#END loe authority conversation",,,,,,
+,,,,,,
+# loe bar intro,,,,,,
+vanidad_loeBlurbBar1,vanidad_loe_blurbBar,,,"A haggard spacer with pale and unhealthy skin sits down unsteadily beside you and mutters: ""A friend of mine might have a profitable proposition for an intrepid captain."". He points towards a booth drenched in orange lighting at the back of the bar before shifting his attention towards the barkeep in order to get himself a drink.",,
+vanidad_loeOfferOptionBar1,vanidad_loe_optionBar,,,,"vanidad_loeStartBar:Go sit in the orange-hued booth the spacer pointed out to you.",
+vanidad_loeOfferTextBar1,DialogOptionSelected,"$option == vanidad_loeStartBar","$missionId= vanidad_loe
+Highlight $vanidad_loe_dist $vanidad_loe_target_system $vanidad_loe_reward $vanidad_loe_target_text
+FireAll vanidad_loe_OfferBar","As you go and sit in the booth, it is immediately obvious to you that the light comes from one of those spinning light fixtures the VAO natives seem to plaster just about everywhere. In front of you sits a $manOrWoman with sickly white skin, wearing a VAO Habsuit decorated with a few discrete Luddic Church symbols. $HeOrShe doesn't stop looking at $hisOrHer datapad until you are fully seated.
+
+""It seems I might have found a Captain with an enterprising mind."" $heOrShe says as she pretends to notice your presence just now.$HeOrShe taps $hisOrHer datapad and isolates the dimly lit booth from the bustle of the bar. 
+
+""A friend of mine is an Archeo engineer on the Debajo Del Sol station and found some interesting data about the presumed location of $vanidad_loe_target_text from the pre collapse Vanidad y Afflication Operation. 
+If you were to go and grab the ship black box in the $vanidad_loe_target_system , $vanidad_loe_dist light-years away, and bring it here, I would be happy to forward $vanidad_loe_reward credits to your account.""
+
+ ""What do you think?""",,
+vanidad_loeOfferBarHubAD,vanidad_loe_OfferBar,,,,"0:contact_acceptBar:We have a deal.
+1:contact_declineBarNoContinue:I am quite busy, maybe another time.",
+vanidad_loeOfferBarHub_ODanger,vanidad_loe_OfferBar,"!$vanidad_loeOfferBar_ODanger ",,,"0:vanidad_loeOfferBarHub_ODanger: Seems a lot of money for some old info you know were to find.",
+vanidad_loeOfferBarHub_ADanger,DialogOptionSelected,"$option == vanidad_loeOfferBarHub_ODanger","$vanidad_loeOfferBar_ODanger = true 0
+FireAll vanidad_loe_OfferBar","$HeOrShe frowns a little before letting out a sigh with a fake smile on $hisOrHer face.
+
+""I do believe Ludd rewards the inquisitive mind, so I don't mind sharing a bit with you.""
+
+""First, you have to understand that we might not be the only party with this information. Second, we..I care very much about the past and the purpose of our VAO's ancestor. Some of those other parties care more about technologies and resources, so I'm paying to make sure this falls into the proper hands, no matter who or what gets in your way."" 
+$HeOrShe pauses a little.
+""With all that said, are you still willing to do it?""",,
+"#END loe bar intro",,,,,,
+,,,,,,
+# loe Object interaction,,,,,,
+vanidad_loeDerelictHostilesNear,OpenInteractionDialog,"$vanidad_loe_target score:1000
+HostileFleetNearbyAndAware
+Call $entity.vanidad_loe_ref updateData","ShowDefaultVisual
+SetShortcut defaultLeave ESCAPE","Your $shipOrFleet makes a pass by the derelict, allowing your sensors officer to give it a cursory scan. Identity of target is verified positive, but with hostiles nearby and you can't safely dispatch a salvage teams to investigate and the black box with information on the $vanidad_loe_targetNoArticle.","100:defaultLeave:Leave",
+vanidad_loeDerelictInteractions,OpenInteractionDialog,"$vanidad_loe_target score:1000
+!HostileFleetNearbyAndAware
+Call $vanidad_loe_ref updateData","ShowDefaultVisual
+FireBest vanidad_loeDerelictInteraction",,,
+vanidad_loeDerelictBasic1,vanidad_loeDerelictInteraction,,"$vanidad_loe_f_needToReturn = true
+Call $vanidad_loe_ref updateStage
+","Your $shipOrFleet advances to intercept the derelict. Your sensors officer runs a full-spectrum active scan. This ship has probably been stranded here since the collapse. You order telemetry logged to the mission report file, if nothing is found at least you can prove you found the ship.
+
+A salvage teams is dispatched in the ship. They quickly breach the hull and your operating screen fill with live report. Bodies are quickly found and probably belonged to the $vanidad_loe_targetNoArticle. Most onboard memories were scrubbed clean by time and the harsh stellar environment however these ship usually have a specially shielded container to store a black box recording. Once located, you order your crewman to take the entire container onboard.
+
+You discuss with your chief officer the securing on the container in your shuttle bay. Opening it risk damaging the content, and in most likelihood you are ill equipped to break whatever kind of encryption might have been used. All that remains is to bring it back to the core.","vanidad_loe_continueBasic:Leave",
+vanidad_loeDerelictContBasic,DialogOptionSelected,"$option == vanidad_loe_continueBasic","$vanidad_loe_target = false 0
+#FireBest OpenInteractionDialog
+DismissDialog",,,
+vanidad_loeDerelictScavengerStart,vanidad_loeDerelictInteraction,"$vanidad_loe_variation == SCAVENGER",,"You approach the derelict. Your sensors officer quickly points out signs that you're not the first to have found it: Outgassing and debris around the target�s hull match the profile of a recent salvage operation. ""... And they were professionals,"" growls your ops chief with more than a hint of respect. Whoever got here first made efficient breaching cuts at key access points, leaving only a neat net of lines secured to borer-pitons favoured by deep-space salvage rats.
+
+You send out a salvage team knowing what they'll find, and they perform their sweep with cautious efficiency. Your mission target is missing; you order the team's telemetry and holo feeds to be attached to the mission file as proof that you performed this job for the Academy to the best of your ability.","vanidad_loe_continueScav:Continue",
+vanidad_loeDerelictScavengerCont,DialogOptionSelected,"$option == vanidad_loe_continueScav","$global.vanidad_loe_scavengerTookIt = true
+Call $global.vanidad_loe_ref updateStage","""Captain."" Your operations chief calls attention to an active screen displaying the residual heat around the breaching cuts. ""They're still hot. We might be able to catch the scavengers who made these cuts.""
+
+Your mind races, putting a plan together. If you burn fast toward the closest jump-point - their logical destination, possibly after spending more time in-system - you might just catch the scavengers before they jump for hyperspace. Perhaps they can be persuaded to give up the piece you're looking for.","vanidad_loe_scavLeave:Leave",
+vanidad_loeDerelictScavengerLeave,DialogOptionSelected,"$option == vanidad_loe_scavLeave","#DespawnEntity
+DismissDialog",,,
+vanidad_loeDelrelictAuthorityStart,,,,,,
+"#END loe Object interaction",,,,,,
+,,,,,,
+# loe fleet complication,,,,,,
+"#END loe fleet complication",,,,,,
+,,,,,,
+# loe return interaction,,,,,,
+vanidad_loeMissionReturn,PickGreeting,"$vanidad_loe_f_needToReturn score:1000
+Call $vanidad_loe_ref updateData
+FireBest GenericMissionReturn","ShowPersonVisual
+$vanidad_loe_f_completed = true
+Call $vanidad_loe_ref updateStage","""I am happy that my faith in you was well placed."" $PersonName says. ""My team will now work on seeing if we can extract something useful out of there. If you want feel free to contact me again, I might have some more work for a reliable Captain like you.""","contact_pickAnotherGreeting: Continue",
+"#END loe return interaction",,,,,,
+"#END Lost Object Exploration",,,,,,
 "#END Missions",,,,,,
 
