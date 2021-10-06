@@ -1,0 +1,49 @@
+{
+    "displayName": "Comerciante",
+    "fluxCapacitors": 1,
+    "fluxVents": 7,
+    "goalVariant": true,
+    "hullId": "vanidad_fisgon",
+    "hullMods": ["militarized_subsystems"],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "vanidad_fisgon_comerciante",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0007": "vanidad_laere_medium"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0006": "gravitonbeam"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0008": "annihilatorpod"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "vanidad_laere_small",
+                "WS0002": "vanidad_laere_small"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "mininglaser",
+                "WS0004": "mininglaser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0005": "lightdualmg"}
+        }
+    ]
+}

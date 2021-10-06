@@ -23,6 +23,7 @@ import org.lwjgl.util.vector.Vector2f;
  */
 public class vanidad_beamRecoilHandler {
 
+    
     public float recoilDuration = 0.4f;
     public boolean spawnMuzzleFlash = true;
     public Color muzzleColor = new Color(255,255,0,0);
@@ -42,21 +43,27 @@ public class vanidad_beamRecoilHandler {
     private WeaponAPI weapon;
     private int numBarrelFrame;
     private boolean firingStarted = false;
+    private boolean initDone = false;
 
     public vanidad_beamRecoilHandler() {
 
     }
 
     public void init(CombatEngineAPI e, WeaponAPI w, int numBarrel) {
+        if(w.getSlot().isHidden())
+            return;
         engine = e;
         weapon = w;
         theAnim = weapon.getAnimation();
         int numFrame = theAnim.getNumFrames();
         numBarrelFrame = numFrame / numBarrel;
         interFrameDelay = recoilDuration / numBarrelFrame;
+        initDone = true;
     }
 
     public void advance(float amount) {
+        if (!initDone)
+            return;
         if (!firingStarted) {
             theAnim.setFrame(0);
             return;
@@ -79,6 +86,8 @@ public class vanidad_beamRecoilHandler {
 
     public void fire(int barrelIndex)
     {
+        if (!initDone)
+            return;
         currentBarrel = barrelIndex;
         firingStarted = true;
         frameNbr = barrelIndex*numBarrelFrame + 1;
@@ -94,6 +103,8 @@ public class vanidad_beamRecoilHandler {
     
     public void fire( int barrelIndex, Vector2f firePoint, Float fireAngle)
     {
+        if (!initDone)
+            return;
         currentBarrel = barrelIndex;
         firingStarted = true;
         frameNbr = barrelIndex*numBarrelFrame + 1;
@@ -106,6 +117,8 @@ public class vanidad_beamRecoilHandler {
     
     private void SpawnMuzzleFlash( Vector2f firePoint, Float fireAngle)
     {
+        if (!initDone)
+            return;
         for (int i = 0; i < 12; i++) {
                 float dist = MathUtils.getRandomNumberInRange(muzzleDistMin, muzzleDistMax);
                 float spreadedAngle = MathUtils.getRandomNumberInRange(muzzleAngleMin, muzzleAngleMax);

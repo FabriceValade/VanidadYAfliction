@@ -25,7 +25,7 @@
       "id": "WS0002",
       "size": "MEDIUM",
       "type": "UNIVERSAL",
-      "mount": "TURRET",
+      "mount": "HIDDEN",
       "arc": 65,
       "angle": 0,
       "locations": [5.5, -10.5]

@@ -62,9 +62,10 @@ public class vanidad_alternatingBeamFighter implements EveryFrameWeaponEffectPlu
         }
 
         //If we are firing, start the code and change variables
+        int counterForBeams = 0;
         if (weapon.getChargeLevel() > 0f && runOnce) {
             runOnce = false;
-            int counterForBeams = 0;
+            
             for (BeamAPI beam : engine.getBeams()) {
                 if (beam.getWeapon() == weapon) {
                     if (!beamMap.containsValue(beam)) {
@@ -76,7 +77,8 @@ public class vanidad_alternatingBeamFighter implements EveryFrameWeaponEffectPlu
         } else {
             return;
         }
-
+        if(counterForBeams==0)
+                return;
         int numOffset = 0;
 
 

@@ -2,7 +2,7 @@
 	"id":"vanidad",
 	"name":"Vanidad y Afliction Operation",
 	"author":"Lethargie",
-	"version":"1.1.3b",
+	"version":"1.1.3c",
 	"gameVersion":"0.95a-RC12",
 	"description":"A faction born of an ex-hegemony officer commandering the remnants of a space station and the isolated people living below.",
 	"dependencies": [
