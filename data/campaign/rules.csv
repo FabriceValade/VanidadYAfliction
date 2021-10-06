@@ -22,13 +22,13 @@ $HeOrShe  taps $hisOrHer datapad; a privacy field blurs and muffles the surround
 contact_decline:Decline",
 ,,,,,,
 # vanidad_rpInt,,,,,,
+vanidad_rpAuthorityEncounter,BeginFleetEncounter,"$vanidad_rpauthority score:1000
+!$ignorePlayerCommRequests","AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor
+$hailing = true 0",,,
 vanidad_rpAuthorityHail,OpenCommLink,"$isPerson
 $entity.vanidad_rpauthority score:100
 ","$entity.ignorePlayerCommRequests = true
 FireAll vanidad_rp_authorityHail","""Captain"" the $personRank looks tired and speak with little emotion. ""You went and got material you should not have"" $heOrShe raise a hand but stops, as if it was too much effort. ""We will now proceed to destroy your fleet""",,
-vanidad_rpAuthorityEncounter,BeginFleetEncounter,"$vanidad_rpauthority score:1000
-!$ignorePlayerCommRequests","AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor
-$hailing = true 0",,,
 vanidad_rpAuthorityHailOpt1a,vanidad_rp_authorityHail,"!$vanidad_rpauthorityWhyf
 ",,,"0:vanidad_rpAuthorityWhy:Wait! Why are you doing this?",
 vanidad_rpAuthorityHailAns1a,DialogOptionSelected,"$option == vanidad_rpAuthorityWhy","$vanidad_rpauthorityWhyf = true 0
@@ -97,15 +97,76 @@ There's a pause that linger in the air for an instant, as $heOrShe expects an an
 # Lost Object Exploration,,,,,,
 ,,,,,,
 # loe authority conversation,,,,,,
-vanidad_loeAuthorityEncounter,BeginFleetEncounter,"$vanidad_loe_f_authority score:1000
-!$ignorePlayerCommRequests","AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor
+vanidad_loeAuthorityEncounter,BeginFleetEncounter,"$vanidad_loe_authority score:100
+!$ignorePlayerCommRequests
+!$vanidad_loe_authority_silent","AddText ""You're being hailed by the $faction $otherShipOrFleet."" $faction.baseColor
 $hailing = true 0",,,
 vanidad_loeAuthorityComm,OpenCommLink,"$isPerson
-$vanidad_loe_f_authority score:100
-","FireAll vanidad_loe_authorityComm","""Captain"" the $personRank looks tired and speak with little emotion. ""You went and got material you should not have"" $heOrShe raise a hand but stops, as if it was too much effort. ""We will now proceed to destroy your fleet""",,
-vanidad_loeAuthorityCommOpt1,,,,,,
-vanidad_loeAuthorityCommOptCut,vanidad_loe_authorityComm,,,,"cutCommLink:Say nothing.",
+$entity.vanidad_loe_authority score:100
+!$entity.vanidad_loe_authority_silent","Call $entity.vanidad_loe_ref updateData
+FireAll vanidad_loe_authorityComm","A haggard $personRank of the VAO sit in the middle of the screen with what look look like a civilian scientist standing to its right. 
+""Captain, we are sorry to announce that according to the rules of scavenging this derelict has been claimed by us. We are not afraid to open fire should you try to temper with it."" ",,
+vanidad_loeAuthorityCommHub_d,DialogOptionSelected,"$option == vanidad_loeAuthorityCommHub","FireAll vanidad_loe_authorityComm",,,
+vanidad_loeAuthorityCommOptHostile,vanidad_loe_authorityComm,,,,"vanidad_loeAuthorityHostile: Well we really need that ship, and we are not afraid to use force.",
+vanidad_loeAuthorityCommOptPeacefull,vanidad_loe_authorityComm,,,,"vanidad_loeAuthorityPeacefull: I happen to really need that ship, maybe we can come to an arrangement?",
+vanidad_loeAuthorityCommOptCut,vanidad_loe_authorityComm,,,,"cutCommLink:We will be on our way then (cut the Comm Link)",
+vanidad_loeAuthorityComm_d_Hostile1,DialogOptionSelected,"$option == vanidad_loeAuthorityHostile
+","$entity.vanidad_loe_authority_silent = true","The $personRank slump back in $hisOrHer chair with an audible sigh. 
+""Well so do we. You are more than welcome to test our weapons if you want""
+$HeorShe then nonchalantly let $hisOrHer arm fall on the console the the comm is cut.","cutCommLinkNoText:Continue",
+vanidad_loeAuthorityComm_d_Hostile2,DialogOptionSelected,"$option == vanidad_loeAuthorityHostile
+$entity.relativeStrength < 0","Call $entity.vanidad_loe_ref clearedAuthority
+MakeOtherFleetGoAway true
+$entity.vanidad_loe_authority_silent = true","ok i guess","cutCommLinkNoText:Continue",
+vanidad_loeAuthorityComm_d_Peacefull,DialogOptionSelected,"$option == vanidad_loeAuthorityPeacefull","FireBest vanidad_loeAuthorityCommPeaceHub
+","""Well.. Captain"" the $personRank gives a dejected look towards the scientist standing beside him. ""we happen to be on some kind of official business, so unless you got some convincing arguments, I think we don't have much to say"".",,
+vanidad_loeAuthorityCommPeaceHub_d,DialogOptionSelected,"$option==vanidad_loeAuthorityCommPeaceHub","FireAll vanidad_loe_authorityCommPeace",,,
+vanidad_loeAuthorityCommPeaceHub,vanidad_loeAuthorityCommPeaceHub,,"FireAll vanidad_loe_authorityCommPeace",,,
+vanidad_loeAuthorityCommPeaceOptBack,vanidad_loe_authorityCommPeace,,,,"100:vanidad_loeAuthorityCommHub:Let's try something else then",
+vanidad_loeAuthorityCommPeaceOptOfferBribe,vanidad_loe_authorityCommPeace,"!$vanidad_loeBribeAsked",,,"vanidad_loeAuthorityAskPossibilityBribe:Maybe I could pay you an acceptable amount?",
+vanidad_loeAuthorityCommPeaceOptPayBribe,vanidad_loe_authorityCommPeace,"$vanidad_loeBribeAsked",,,"vanidad_loeAuthorityPayBribe: Pay the $vanidad_loe_authorityPayment credits",
+vanidad_loeAuthorityComm_d_OfferBribe,DialogOptionSelected,"$option == vanidad_loeAuthorityAskPossibilityBribe","$vanidad_loeBribeAsked = true
+SetTextHighlights $vanidad_loe_authorityPayment
+
+DoCanAffordCheck $vanidad_loe_authorityPayment vanidad_loeAuthorityPayBribe false","$HeOrShe stay silent, only typing some thing on the console, before answering in a soft voice.
+""That doesn't seem to be something we can do""
+While he sits there looking at you awkwardly, you receive a private channel comm message, where all that is written is: ""$vanidad_loe_authorityPayment credits and you can do whatever you want""","vanidad_loeAuthorityPayBribe: Transfer the amount to the linked account
+vanidad_loeAuthorityCommPeaceHub: Lets think about this",
+vanidad_loeAuthorityComm_d_PayBribe,DialogOptionSelected,"$option == vanidad_loeAuthorityPayBribe","Call $entity.vanidad_loe_ref clearedAuthority
+MakeOtherFleetGoAway true
+RemoveCommodity credits $vanidad_loe_authorityPayment
+$entity.vanidad_loe_authority_silent = true","You transfer the specified amount as quick as you can while the scientist looks puzzled at the silent communication. When you receive confirmation the comm cuts for 30 second.
+When the video feed comes back up, the $personRank is now alone in the screen.
+""Well, I think our work here is done, good luck out there captain""","cutCommLink: Continue",
+vanidad_loeAuthorityDefeat,vanidad_loe_t_defendingFleetDefeated,,"Call $vanidad_loe_ref clearedAuthority",,,
 "#END loe authority conversation",,,,,,
+,,,,,,
+# loe Object interaction,,,,,,
+vanidad_loeDerelictInteractions,OpenInteractionDialog,"$vanidad_loe_target score:1000
+
+","ShowDefaultVisual
+Call $entity.vanidad_loe_ref updateData
+FireBest vanidad_loeDerelictInteraction","You have interacted with the target",,
+vanidad_loeDerelictInteractionClean,vanidad_loeDerelictInteraction,,"SetShortcut defaultLeave ESCAPE","Your $shipOrFleet makes a pass by the derelict, allowing your sensors officer to give it a cursory scan. Identity of target is verified positive.","vanidad_loe_derelictSearch:Search for the black box
+100:defaultLeave:leave",
+vanidad_loeDerelictHostilesNear,vanidad_loeDerelictInteraction,"HostileFleetNearbyAndAware
+","SetShortcut defaultLeave ESCAPE","Your $shipOrFleet makes a pass by the derelict, allowing your sensors officer to give it a cursory scan. Identity of target is verified positive, but with hostiles nearby  you can't safely dispatch a salvage teams to investigate.","100:defaultLeave:leave",
+vanidad_loeDerelictInteractionWithAuthority,vanidad_loeDerelictInteraction,"$vanidad_loe_authority
+$vanidad_loe_hasProtectingFleet","SetShortcut defaultLeave ESCAPE","Your $shipOrFleet makes a pass by the derelict, allowing your sensors officer to give it a cursory scan. Identity of the target is verified positive, however the closely orbiting fleet sends comm warnings that you should not attempt to get any closer to the target. No one wants to try to interact with the derelict until this looming threat is dealt with.","100:defaultLeave:leave",
+vanidad_loeDerelictInteractionWithAuthorityBusy,vanidad_loeDerelictInteraction,"$vanidad_loe_authority
+$vanidad_loe_hasProtectingFleet
+$vanidad_loe_protectingFleetIsBusy==true","SetShortcut defaultLeave ESCAPE","Your $shipOrFleet makes a pass by the derelict, allowing your sensors officer to give it a cursory scan. Identity of target is verified positive, and while there is a fleet that seemed interested in this derelict, it is currently engaged in a battle. We have a small window to operate on the target, but if the other fleet survive their battle they are likely to turn hostile.","100:defaultLeave:leave",
+vanidad_loeDerelict_d_search,DialogOptionSelected,"$option == vanidad_loe_derelictSearch","$vanidad_loe_f_needToReturn = true
+Call $vanidad_loe_ref updateStage
+","Your $shipOrFleet intercepts the derelict and the sensors officer runs a full-spectrum active scan. This ship has probably been stranded here since the Collapse. You order telemetry logged to the mission report file so that if nothing is found, at least you can prove you found the ship.
+
+A salvage team is dispatched and they quickly breach the hull. The operating screen fills with camera feeds. Heavily decayed bodies are scattered across the ship, their jumpsuits bearing the insignia of the $vanidad_loe_targetNoArticle. Most onboard memory has been scrubbed clean by time and the harsh stellar environment; however, your info mentions a specially shielded black box containing the ship's telemetry up to its moment of demise. Once located, you order your crewman to take the entire container onboard and secure it in the shuttle bay.
+
+You consider trying to open it, but it would risk damaging the contents, and in any case they are most likely heavily encrypted. All that remains is to bring it back to your client.","vanidad_loe_derelictSearch2:Continue",
+vanidad_loeDerelict_d_search2,DialogOptionSelected,"$option == vanidad_loe_derelictSearch2","$vanidad_loe_target = false 0
+#FireBest OpenInteractionDialog
+DismissDialog",,,
+"#END loe Object interaction",,,,,,
 ,,,,,,
 # loe bar intro,,,,,,
 vanidad_loeBlurbBar1,vanidad_loe_blurbBar,,,"A haggard spacer with pale and unhealthy skin sits down unsteadily beside you and mutters: ""A friend of mine might have a profitable proposition for an intrepid captain."". He points towards a booth drenched in orange lighting at the back of the bar before shifting his attention towards the barkeep in order to get himself a drink.",,
@@ -133,46 +194,15 @@ $HeOrShe pauses a little.
 ""With all that said, are you still willing to do it?""",,
 "#END loe bar intro",,,,,,
 ,,,,,,
-# loe Object interaction,,,,,,
-vanidad_loeDerelictHostilesNear,OpenInteractionDialog,"$vanidad_loe_target score:1000
-HostileFleetNearbyAndAware
-Call $entity.vanidad_loe_ref updateData","ShowDefaultVisual
-SetShortcut defaultLeave ESCAPE","Your $shipOrFleet makes a pass by the derelict, allowing your sensors officer to give it a cursory scan. Identity of target is verified positive, but with hostiles nearby and you can't safely dispatch a salvage teams to investigate and the black box with information on the $vanidad_loe_targetNoArticle.","100:defaultLeave:Leave",
-vanidad_loeDerelictInteractions,OpenInteractionDialog,"$vanidad_loe_target score:1000
-!HostileFleetNearbyAndAware
-Call $vanidad_loe_ref updateData","ShowDefaultVisual
-FireBest vanidad_loeDerelictInteraction",,,
-vanidad_loeDerelictBasic1,vanidad_loeDerelictInteraction,,"$vanidad_loe_f_needToReturn = true
-Call $vanidad_loe_ref updateStage
-","Your $shipOrFleet advances to intercept the derelict. Your sensors officer runs a full-spectrum active scan. This ship has probably been stranded here since the collapse. You order telemetry logged to the mission report file, if nothing is found at least you can prove you found the ship.
-
-A salvage teams is dispatched in the ship. They quickly breach the hull and your operating screen fill with live report. Bodies are quickly found and probably belonged to the $vanidad_loe_targetNoArticle. Most onboard memories were scrubbed clean by time and the harsh stellar environment however these ship usually have a specially shielded container to store a black box recording. Once located, you order your crewman to take the entire container onboard.
-
-You discuss with your chief officer the securing on the container in your shuttle bay. Opening it risk damaging the content, and in most likelihood you are ill equipped to break whatever kind of encryption might have been used. All that remains is to bring it back to the core.","vanidad_loe_continueBasic:Leave",
-vanidad_loeDerelictContBasic,DialogOptionSelected,"$option == vanidad_loe_continueBasic","$vanidad_loe_target = false 0
-#FireBest OpenInteractionDialog
-DismissDialog",,,
-vanidad_loeDerelictScavengerStart,vanidad_loeDerelictInteraction,"$vanidad_loe_variation == SCAVENGER",,"You approach the derelict. Your sensors officer quickly points out signs that you're not the first to have found it: Outgassing and debris around the target�s hull match the profile of a recent salvage operation. ""... And they were professionals,"" growls your ops chief with more than a hint of respect. Whoever got here first made efficient breaching cuts at key access points, leaving only a neat net of lines secured to borer-pitons favoured by deep-space salvage rats.
-
-You send out a salvage team knowing what they'll find, and they perform their sweep with cautious efficiency. Your mission target is missing; you order the team's telemetry and holo feeds to be attached to the mission file as proof that you performed this job for the Academy to the best of your ability.","vanidad_loe_continueScav:Continue",
-vanidad_loeDerelictScavengerCont,DialogOptionSelected,"$option == vanidad_loe_continueScav","$global.vanidad_loe_scavengerTookIt = true
-Call $global.vanidad_loe_ref updateStage","""Captain."" Your operations chief calls attention to an active screen displaying the residual heat around the breaching cuts. ""They're still hot. We might be able to catch the scavengers who made these cuts.""
-
-Your mind races, putting a plan together. If you burn fast toward the closest jump-point - their logical destination, possibly after spending more time in-system - you might just catch the scavengers before they jump for hyperspace. Perhaps they can be persuaded to give up the piece you're looking for.","vanidad_loe_scavLeave:Leave",
-vanidad_loeDerelictScavengerLeave,DialogOptionSelected,"$option == vanidad_loe_scavLeave","#DespawnEntity
-DismissDialog",,,
-vanidad_loeDelrelictAuthorityStart,,,,,,
-"#END loe Object interaction",,,,,,
-,,,,,,
 # loe fleet complication,,,,,,
 "#END loe fleet complication",,,,,,
 ,,,,,,
 # loe return interaction,,,,,,
-vanidad_loeMissionReturn,PickGreeting,"$vanidad_loe_f_needToReturn score:1000
+vanidad_loeMissionReturn,PickGreeting,"$vanidad_loe_missionGiver score:1000
 Call $vanidad_loe_ref updateData
 FireBest GenericMissionReturn","ShowPersonVisual
 $vanidad_loe_f_completed = true
-Call $vanidad_loe_ref updateStage","""I am happy that my faith in you was well placed."" $PersonName says. ""My team will now work on seeing if we can extract something useful out of there. If you want feel free to contact me again, I might have some more work for a reliable Captain like you.""","contact_pickAnotherGreeting: Continue",
+Call $vanidad_loe_ref updateStage","""I am happy that my faith in you was well placed."" $PersonName says. ""My team will now work on seeing if we can extract something useful out of there. If you want, feel free to contact me again, I might have some more work for a reliable Captain like you.""","contact_pickAnotherGreeting: Continue",
 "#END loe return interaction",,,,,,
 "#END Lost Object Exploration",,,,,,
 "#END Missions",,,,,,
