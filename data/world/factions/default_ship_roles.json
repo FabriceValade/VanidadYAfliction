@@ -43,6 +43,8 @@
 		"vanidad_invasor_standard":7,
 		"vanidad_invasor_pursuit":3,
 	},
-
+	"freighterMedium":{
+		"vanidad_fisgon_comerciante":10,
+	},
 	
 }
