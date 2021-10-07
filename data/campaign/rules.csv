@@ -8,18 +8,6 @@ bar_descVanidad,BarPrintDesc,"$faction.id == vanidad","ShowImageVisual space_bar
 # Missions,,,,,,
 ,,,,,,
 # Ressource Procurement,,,,,,
-vanidad_rpBlurb1,,,,"""We offer very legal mission, do you want to get super legal stuff from somewhere else?""",,
-vanidad_rpOfferOption1,,,,,"vanidad_rp_start:Ask about the getting legal stuff mission",
-vanidad_rpOfferTextContact1,DialogOptionSelected,"$option == vanidad_rp_start
-","$missionId = vanidad_rp
-","""Captain $playerName,"" $heOrShe says.""
-
-$HeOrShe  taps $hisOrHer datapad; a privacy field blurs and muffles the surroundings.
-
-""I need stuff from $vanidad_rp_marketName, $vanidad_rp_dist light-years away. If I get stuff, $vanidad_rp_reward credits could be routed to your account.""
-
- ""this part of the dialog, you shouldnt see, since we are in a bar. But are you in?""","contact_accept:Accept
-contact_decline:Decline",
 ,,,,,,
 # vanidad_rpInt,,,,,,
 vanidad_rpAuthorityEncounter,BeginFleetEncounter,"$vanidad_rpauthority score:1000
@@ -86,7 +74,7 @@ $HeOrShe  taps $hisOrHer datapad; a privacy field blurs and muffles the surround
 ""I happen to know you by reputation"" $HeOrShe pass you a glass of a strange slimy drink. ""To fruitfull even if pointless deals!""
 
 $HeOrShe drink from $himOrHer cup quickly. Then $heOrShe says:
- I need some stuff that is stashed on $vanidad_rp_marketName, $vanidad_rp_dist light-years away. If I get that stuff, $vanidad_rp_reward credits could fint their way to your account.""
+ I need some stuff that is stashed on $vanidad_rp_marketName, $vanidad_rp_dist light-years away. $vanidad_rp_goGetContactName is holding it for me. If I get that stuff, $vanidad_rp_reward credits could fint their way to your account.""
 
  ""Do we have a deal?""",,
 vanidad_rpOfferBarHubAD,vanidad_rp_OfferBar,,,,"0:contact_acceptBar:Yea sure
@@ -99,6 +87,17 @@ I'm not fond of flying, I know you should look out for pirates and anything that
 
 There's a pause that linger in the air for an instant, as $heOrShe expects an answer from you.",,
 "#END bar intro",,,,,,
+,,,,,,
+# rp contact info,,,,,,
+vanidad_rpBlurb1,vanidad_rp_blurb,,,"""I need ""stuff""  stashed on $vanidad_rp_marketName brought here""
+OR
+""I need someone to go grab ""stuff"" stored on $vanidad_rp_marketName""",,
+vanidad_rpOfferOption1,vanidad_rp_option,,,,"vanidad_rp_start:Ask about the getting legal stuff mission",
+vanidad_rpOfferTextContact1,DialogOptionSelected,"$option == vanidad_rp_start
+","$missionId = vanidad_rp
+Highlight $vanidad_rp_dist $vanidad_rp_fuel $vanidad_rp_reward "," I need you to go grab some stuff that is stashed on $vanidad_rp_marketName, $vanidad_rp_dist light-years away. Contact $vanidad_rp_goGetContactName there, he should give you what I need. I'll pay you $vanidad_rp_reward credits for your troubles.","contact_accept:Accept
+contact_decline:Decline",
+"#END rp contact info",,,,,,
 "#END Ressource Procurement",,,,,,
 ,,,,,,
 # Lost Object Exploration,,,,,,
@@ -209,6 +208,19 @@ FireBest GenericMissionReturn","ShowPersonVisual
 $vanidad_loe_f_completed = true
 Call $vanidad_loe_ref updateStage","""I am happy that my faith in you was well placed."" $PersonName says. ""My team will now work on seeing if we can extract something useful out of there. If you want, feel free to contact me again, I might have some more work for a reliable Captain like you.""","contact_pickAnotherGreeting: Continue",
 "#END loe return interaction",,,,,,
+,,,,,,
+# loe contact intro,,,,,,
+vanidad_loeBlurb,vanidad_loe_blurb,,,"""I got some info about an interesting pre collapse derelict of the VAO""
+OR
+""I need someone to go grab info in a pre collapse VAO derelict""",,
+vanidad_loeOfferOption,vanidad_loe_option,,,,"vanidad_loe_start:Ask about the pre-collapse VAO derelict",
+vanidad_loeOfferTextContact,DialogOptionSelected,"$option == vanidad_loe_start","$missionId= vanidad_loe
+Highlight $vanidad_loe_dist $vanidad_loe_target_system $vanidad_loe_reward $vanidad_loe_target_text
+","""A contact on the Debajo Del Sol station found the location of $vanidad_loe_target_text for the pre collapse Vanidad y Affliction Operation. 
+I need you to find the derelict in the $vanidad_loe_target_system, $vanidad_loe_dist light-years away before anyone else grab it. Bring the black box with related info here. You will be paid $vanidad_loe_reward credits for this service.""
+","contact_accept:Accept
+contact_decline:Decline",
+"#END loe contact intro",,,,,,
 "#END Lost Object Exploration",,,,,,
 "#END Missions",,,,,,
 

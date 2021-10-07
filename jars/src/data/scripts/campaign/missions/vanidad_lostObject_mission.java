@@ -99,8 +99,8 @@ public class vanidad_lostObject_mission extends HubMissionWithBarEvent {
         //if (!"vanidad".equals(createdAt.getFaction().getId())) return false;
         if (barEvent) {
             setGiverRank(Ranks.CITIZEN);
-            setGiverPost(Ranks.POST_TRADER);
-            setGiverImportance(PersonImportance.LOW);
+            setGiverPost(pickOne(Ranks.POST_TRADER, Ranks.POST_ARMS_DEALER, Ranks.POST_SMUGGLER));
+            setGiverImportance(pickImportance());
             setGiverTags(Tags.CONTACT_UNDERWORLD);
             setGiverFaction("vanidad_liberador");
             findOrCreateGiver(createdAt, true, true);//put somone as personOveride;
@@ -114,7 +114,9 @@ public class vanidad_lostObject_mission extends HubMissionWithBarEvent {
         if (!setPersonMissionRef(missionGiver, "$vanidad_loe_ref")) {
             return false;
         }//put something in memory? its confusing
-
+        if (barEvent) {
+            setGiverIsPotentialContactOnSuccess();
+        }
         targetObject = pickOne("a team operating as scout",
                                "a team collecting experimental data",
                                "a team establishing diplomatic contact",
