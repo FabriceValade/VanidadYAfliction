@@ -1,9 +1,9 @@
 id,trigger,conditions,script,text,options,notes
-"#RULESET_NAME VAO",,,,,,
+#RULESET_NAME VAO,,,,,,
 ,,,,,,
 # portside bar stuff,,,,,,
-bar_descVanidad,BarPrintDesc,"$faction.id == vanidad","ShowImageVisual space_bar","The bar has a low ceiling and is surprisingly dark. Natives of Kristos, in their striking habsuit, huddle close to a spining contraption emiting a faint orange light as they enjoy drink in a somber mood. Other spacers dicuss softly around tables. A couple of officers, wearing what reminds you of hegemony uniform, drink together expensive drinks.",,
-"#END portside bar stuff",,,,,,
+bar_descVanidad,BarPrintDesc,$faction.id == vanidad,ShowImageVisual space_bar,"The bar has a low ceiling and is surprisingly dark. Natives of Kristos, in their striking habsuit, huddle close to a spining contraption emiting a faint orange light as they enjoy drink in a somber mood. Other spacers dicuss softly around tables. A couple of officers, wearing what reminds you of hegemony uniform, drink together expensive drinks.",,
+#END portside bar stuff,,,,,,
 ,,,,,,
 # Missions,,,,,,
 ,,,,,,
@@ -16,96 +16,96 @@ $hailing = true 0",,,
 vanidad_rpAuthorityHail,OpenCommLink,"$isPerson
 $entity.vanidad_rpauthority score:100
 ","$entity.ignorePlayerCommRequests = true
-","The tired face of a $personRank of the VAO appear on your comm channel.
-""Captain, your fleet has been flagged for a routine inspection as we are searching for fleet supporting known terrorist in our world. Please stand down as we scan your ships""
+","The tired face of a $personRank of the VAO appears on your comm channel.
+""Captain, your fleet has been flagged for a routine inspection as we are searching for fleet supporting a known terrorist in our system. Please stand down as we scan your ships""
 OR
-The smirking face of a VAO officer appear on your comm channel.
-""Please immobilize your fleet captain. We are searching for smugglers of terrorist goods and a quick scan of your cargo should remove you from the suspect list.""","vanidad_rpAuthorityHailCont: Ok I don't want any trouble.
+The smirking face of a VAO officer appears on your comm channel.
+""Please stop your fleet captain. We are searching for smugglers of terrorist goods and a quick scan of your cargo should clear any suspicion.""","vanidad_rpAuthorityHailCont: Ok I don't want any trouble.
 vanidad_rpAuthorityResist: I refuse, we are out of your jurisdiction here, I don't need to comply with such overreach.",
-vanidad_rpAuthorityHail2,DialogOptionSelected,"$option == vanidad_rpAuthorityHailCont","FireAll vanidad_rp_authorityHail","You wait a while for the scan to be performed while the VAO officer stays on the comm. $heOrShe gives a thorough impression of a bored $manOrWoman, reclining lazily in $hisOrHer seat . Finally A report is brought to the $manOrWoman on screen, but you are fairly sure she doesn't really read it before speaking.
-""Captain"" the $personRank looks tired and speak with little emotion. ""You went and got material you should not have"" $heOrShe raise a hand but stops, as if it was too much effort. ""We will now proceed to destroy your fleet""",,
-vanidad_rpAuthorityResist,DialogOptionSelected,"$option == vanidad_rpAuthorityResist",,"A faint smile creep on the $personRank face. 
+vanidad_rpAuthorityHail2,DialogOptionSelected,$option == vanidad_rpAuthorityHailCont,FireAll vanidad_rp_authorityHail,"You wait a while for the scan to be performed while the VAO officer stays on the comms. $heOrShe is the embodiment of boredom, splayed out in $hisOrHer seat. Finally, a report is brought to the $manOrWoman on screen, but you are fairly sure she doesn't really read it before speaking.
+""Captain"" the $personRank looks tired and speaks with little emotion. ""You shouldn't have gotten that material."" $heOrShe raises a hand but stops, as if it was too much effort. ""We will now proceed to destroy your fleet.""",,
+vanidad_rpAuthorityResist,DialogOptionSelected,$option == vanidad_rpAuthorityResist,,"A faint smile creeps across $personRank 's face. 
 ""Well, maybe? But then again, nobody will complain once I blow your fleet out of the sky. Thank you for sparing me the effort of pretending to scan your ship""
-Then the comms channel are cut and your tactical officers warns about multiple signatures of weapon system engaging.","cutCommLinkNoText:Continue",
+Then the comms channel are cut and your tactical officers warns about multiple signatures of weapon system engaging.",cutCommLinkNoText:Continue,
 vanidad_rpAuthorityHailOpt1a,vanidad_rp_authorityHail,"!$vanidad_rpauthorityWhyf
-",,,"0:vanidad_rpAuthorityWhy:Wait! Why are you doing this?",
-vanidad_rpAuthorityHailAns1a,DialogOptionSelected,"$option == vanidad_rpAuthorityWhy","$vanidad_rpauthorityWhyf = true 0
-FireAll vanidad_rp_authorityHail","$HeOrShe straighten a bit and scoff a little. ""Well, some people would like that these material did not go and help terrorists. Some people would also like that legal commerce be not stopped unless theres an official investigation. So here we are."" 
+",,,0:vanidad_rpAuthorityWhy:Wait! Why are you doing this?,
+vanidad_rpAuthorityHailAns1a,DialogOptionSelected,$option == vanidad_rpAuthorityWhy,"$vanidad_rpauthorityWhyf = true 0
+FireAll vanidad_rp_authorityHail","$HeOrShe straightens a bit and scoffs a little. ""Well, some people would like that this material did not go to help terrorists. Some people would also like that legal commerce won't be stopped unless there's an official investigation. So here we are."" 
 
-The $personRank sit back in $hisOrHer chair, as if saying this had drained all $hisOrHer energy.
+The $personRank sits back in $hisOrHer chair, as if saying this had drained all $hisOrHer energy.
 OR
-The officer look a bit puzzled by the question and think for a moment before answering. ""You are helping clear enemies of the VAO. Hegemony rules forbid us from hostile action without proof, but I think we have plenty of proof here""
+The officer look a bit puzzled by the question and thinks for a moment before answering. ""You are helping clear enemies of the VAO. Hegemony rules forbid us from hostile action without proof. Here we are""
 
-$HeOrShe recline back $hisOrHer chair, giving every look that $heOrShe would rather be sleeping than talking with you.",,
+$HeOrShe reclines back $hisOrHer chair, giving indication that $heOrShe would rather be sleeping than talking with you.",,
 vanidad_rpAuthorityHailOpt1b,vanidad_rp_authorityHail,"$vanidad_rpauthorityWhyf
 !$vanidad_rpauthorityAvoidf",,,"0:vanidad_rpAuthorityAvoid:Why are you telling me this, can we avoid fighting?",
-vanidad_rpAuthorityHailAns1b,DialogOptionSelected,"$option == vanidad_rpAuthorityAvoid","$vanidad_rpauthorityAvoidf = true 0
-FireAll vanidad_rp_authorityHail","The $personRank stay silent for a couple second. 
+vanidad_rpAuthorityHailAns1b,DialogOptionSelected,$option == vanidad_rpAuthorityAvoid,"$vanidad_rpauthorityAvoidf = true 0
+FireAll vanidad_rp_authorityHail","The $personRank stays silent for a couple seconds. 
 
-""Well "" $heOrShe says in a depressed voice.
-""Maybe if you were to give us whatever you went to pick, we might decide that its less paperwork that way."" $HimOrHer voice picks up a little bit.
-""yeah, let one of our shuttle board you and give us access to whatever you were asked to bring and I wont have to fill paperwork needed to record your untimely demise and to explain how my fleet was not related""",,
+""Well"" $heOrShe says in a depressed voice.
+""Maybe if you were to give us whatever you have, we might decide that it's less paperwork that way."" $HisOrHer voice picks up a little bit.
+""Yeah, let one of our shuttles board a ship in your fleet and give us access to whatever you were asked to bring and I won't have to fill paperwork needed to record your untimely demise and to explain how my fleet was not related""",,
 vanidad_rpAuthorityHailOpt1c,vanidad_rp_authorityHail,"$vanidad_rpauthorityWhyf
-$vanidad_rpauthorityAvoidf",,,"0:vanidad_rpAuthorityBetrayal:Allow a shuttle to come and pick up the package.",
-vanidad_rpAuthorityHailBetrayal,DialogOptionSelected,"$option == vanidad_rpAuthorityBetrayal","MakeOtherFleetNonHostile vanidad_rp true
+$vanidad_rpauthorityAvoidf",,,0:vanidad_rpAuthorityBetrayal:Allow a shuttle to come and pick up the package.,
+vanidad_rpAuthorityHailBetrayal,DialogOptionSelected,$option == vanidad_rpAuthorityBetrayal,"MakeOtherFleetNonHostile vanidad_rp true
 MakeOtherFleetGoAway true
 Call $entity.vanidad_rp_ref betrayal
-Call $entity.vanidad_rp_ref updateStage","You send the signal and let a shuttle come board one of your ship. Inspector take sight of the things you were supposed to bring back and pick it up quickly. You get the feeling they do not care much about what it contains, but they do seem to know what they are looking for. Soon the shuttle depart and the fleet leaves.","cutCommLink:Continue",
-vanidad_rpAuthorityHailOptCut,vanidad_rp_authorityHail,,,,"cutCommLink:Say nothing.",
-"#END vanidad_rpInt",,,,,,
+Call $entity.vanidad_rp_ref updateStage","You send the signal and let a shuttle dock on one of your ships. The inspector takes sight of the things you were supposed to bring back and picks it up quickly. You get the feeling they do not care much about what it contains, but they do seem to know what they are looking for. Soon the shuttle departs and the fleet leaves.",cutCommLink:Continue,
+vanidad_rpAuthorityHailOptCut,vanidad_rp_authorityHail,,,,cutCommLink:Say nothing.,
+#END vanidad_rpInt,,,,,,
 ,,,,,,
 # contact interaction,,,,,,
 vanidad_rpContactGreeting,PickGreeting,"$vanidad_rp_targetContact score:1000
-Call $market.vanidad_rp_ref updateData","ShowPersonVisual","""I was expecting someone to contact me soon enough."" $personName reads a datapad, ""You are captain $playerName picking up stuff for $vanidad_rp_missionGiverName am I right? Don't ya worry, we can deliver it, in fact I'm quite happy I don't have to keep it around anymore"". $personFirstName send you coordinate for a delivery point on your datapad, it seems reasonably close.","vanidad_rp_getRessource:Ok, let's get this",
-vanidad_rpContactDelivery,DialogOptionSelected,"$option == vanidad_rp_getRessource score:1000","$market.vanidad_rp_needToReturn = true
+Call $market.vanidad_rp_ref updateData",ShowPersonVisual,"""I was expecting someone to contact me soon enough."" $personName reads a datapad, ""You are captain $playerName picking up stuff for $vanidad_rp_missionGiverName, am I right? Don't ya worry, we can deliver it, in fact I'm quite happy I don't have to keep it around anymore"". $personFirstName send you coordinates for a delivery point on your datapad, it seems reasonably close.","vanidad_rp_getRessource:Ok, let's get this",
+vanidad_rpContactDelivery,DialogOptionSelected,$option == vanidad_rp_getRessource score:1000,"$market.vanidad_rp_needToReturn = true
 Call $market.vanidad_rp_ref updateStage
-","At the dropoff point a small shuttle deliver you a couple boxes of material, it doesn't take much space. Some of your tech officers look into the ""stuff"" it contains, it's mostly specialised supply for machines none of them are familiar with. There is also a couple items of food that are quite expensive anywhere in the Core world.","cutCommLink: Go back to your ship",
-"#END contact interaction",,,,,,
+","At the dropoff point a small shuttle delivers you a couple boxes of material, it isn't very large. Some of your tech officers look into the ""stuff"" it contains, it's mostly specialized supplies for machines none of them are familiar with. There is also a couple items of food that are quite expensive anywhere in the Core world.",cutCommLink: Go back to your ship,
+#END contact interaction,,,,,,
 ,,,,,,
 # return interaction,,,,,,
 vanidad_rpMissionReturn1,PickGreeting,"$vanidad_rp_returnHere score:1000
 Call $vanidad_rp_ref updateData
 FireBest GenericMissionReturn","ShowPersonVisual
 $vanidad_rp_completed = true
-Call $vanidad_rp_ref updateStage","""Oh yeah, thats the stuff. Thanks for getting this for us."" $PersonName says. ""Authorities here can be so bothersome when a local citizen want to work on some personal project. I say we keep in touch, maybe I can find some other work for a captain like you""","contact_pickAnotherGreeting: Continue",
-"#END return interaction",,,,,,
+Call $vanidad_rp_ref updateStage","""Oh yeah, thats the stuff. Thanks for getting this for us."" $PersonName says. ""Authorities here can be so bothersome when a local citizen wants to work on some personal project. I say we keep in touch, maybe I can find some other work for a captain like you?""",contact_pickAnotherGreeting: Continue,
+#END return interaction,,,,,,
 ,,,,,,
 # bar intro,,,,,,
-vanidad_rpBlurbBar1,vanidad_rp_blurbBar,,,"A $manOrWoman in a native habsuit look at you and seem to invite you to $hisorHer booth.",,
-vanidad_rpOfferOptionBar1,vanidad_rp_optionBar,,,,"vanidad_rp_startBar: Go sit in the booth with the VAO native.",
-vanidad_rpOfferTextBar1,DialogOptionSelected,"$option == vanidad_rp_startBar","$missionId= vanidad_rp
+vanidad_rpBlurbBar1,vanidad_rp_blurbBar,,,A $manOrWoman in a native habsuit look at you and seem to invite you to $hisorHer booth.,,
+vanidad_rpOfferOptionBar1,vanidad_rp_optionBar,,,,vanidad_rp_startBar: Go sit in the booth with the VAO native.,
+vanidad_rpOfferTextBar1,DialogOptionSelected,$option == vanidad_rp_startBar,"$missionId= vanidad_rp
 Highlight $vanidad_rp_dist $vanidad_rp_fuel $vanidad_rp_reward 
 FireAll vanidad_rp_OfferBar","""Captain $playerName,"" $heOrShe says.""
 
-$HeOrShe  taps $hisOrHer datapad; a privacy field blurs and muffles the surroundings. The booth is maintained in a low orange light by a turning lamp, the kind VAO spacers are often fond of.
-""I happen to know you by reputation"" $HeOrShe pass you a glass of a strange slimy drink. ""To fruitfull even if pointless deals!""
+$HeOrShe taps $hisOrHer datapad; a privacy field blurs and muffles the surroundings. The booth is maintained in a low orange light by a turning lamp, the kind VAO spacers are often fond of.
+""I happen to know you by reputation"" $HeOrShe pass you a glass of a strange slimy drink. ""To fruitful deals, even the pointless ones!""
 
-$HeOrShe drink from $himOrHer cup quickly. Then $heOrShe says:
- I need some stuff that is stashed on $vanidad_rp_marketName, $vanidad_rp_dist light-years away. $vanidad_rp_goGetContactName is holding it for me. If I get that stuff, $vanidad_rp_reward credits could fint their way to your account.""
+$HeOrShe drinks from $hisOrHer cup quickly. Then $heOrShe says:
+I need some stuff that is stashed on $vanidad_rp_marketName, $vanidad_rp_dist light-years away. $vanidad_rp_goGetContactName is holding it for me. If I get that stuff, $vanidad_rp_reward credits could find their way to your account.""
 
- ""Do we have a deal?""",,
+""Do we have a deal?""",,
 vanidad_rpOfferBarHubAD,vanidad_rp_OfferBar,,,,"0:contact_acceptBar:Yea sure
 contact_declineBarNoContinue: I don't think so",
-vanidad_rpOfferBarHubWhat1,vanidad_rp_OfferBar,"!$vanidad_rpOfferBarWhat",,,"1:vanidad_rpOfferBarWhat:Wait, what is ""stuff""?",
-vanidad_rpOfferBarHubWhat2,DialogOptionSelected,"$option == vanidad_rpOfferBarWhat","$vanidad_rpOfferBarWhat = true 0
-FireAll vanidad_rp_OfferBar","The $manOrWoman lean a bit on the table toward you and speak with a slow reassuring voice. ""Oh, nothing illegal. Do not worry, it's mostly parts to maintain the machines around here. Maybe a bit of food, to keep moral. I reckon It wouldn't take much space in your ship.
+vanidad_rpOfferBarHubWhat1,vanidad_rp_OfferBar,!$vanidad_rpOfferBarWhat,,,"1:vanidad_rpOfferBarWhat:Wait, what is ""stuff""?",
+vanidad_rpOfferBarHubWhat2,DialogOptionSelected,$option == vanidad_rpOfferBarWhat,"$vanidad_rpOfferBarWhat = true 0
+FireAll vanidad_rp_OfferBar","The $manOrWoman leans towards you a bit and speaks with a slow reassuring voice. ""Oh, nothing illegal. Do not worry, it's mostly parts to maintain the machines around here. Maybe a bit of food, to keep morale high. I reckon it wouldn't take up much space in your ship.
 
-I'm not fond of flying, I know you should look out for pirates and anything that could bother you. I pay generously that you may take the risk instead of me. But you don't look like the kind of person that is worried by that.""
+I'm not fond of flying, I know you could take care of pirates and anything else that could bother you. I pay generously so that you take the risk instead of me. But you don't look like the kind of person that is worried by that.""
 
-There's a pause that linger in the air for an instant, as $heOrShe expects an answer from you.",,
-"#END bar intro",,,,,,
+There's a pause that lingers in the air for an instant, as $heOrShe expects an answer from you.",,
+#END bar intro,,,,,,
 ,,,,,,
 # rp contact info,,,,,,
 vanidad_rpBlurb1,vanidad_rp_blurb,,,"""I need ""stuff""  stashed on $vanidad_rp_marketName brought here""
 OR
 ""I need someone to go grab ""stuff"" stored on $vanidad_rp_marketName""",,
-vanidad_rpOfferOption1,vanidad_rp_option,,,,"vanidad_rp_start:Ask about the getting legal stuff mission",
+vanidad_rpOfferOption1,vanidad_rp_option,,,,vanidad_rp_start:Ask about the getting legal stuff mission,
 vanidad_rpOfferTextContact1,DialogOptionSelected,"$option == vanidad_rp_start
 ","$missionId = vanidad_rp
 Highlight $vanidad_rp_dist $vanidad_rp_fuel $vanidad_rp_reward "," I need you to go grab some stuff that is stashed on $vanidad_rp_marketName, $vanidad_rp_dist light-years away. Contact $vanidad_rp_goGetContactName there, he should give you what I need. I'll pay you $vanidad_rp_reward credits for your troubles.","contact_accept:Accept
 contact_decline:Decline",
-"#END rp contact info",,,,,,
-"#END Ressource Procurement",,,,,,
+#END rp contact info,,,,,,
+#END Ressource Procurement,,,,,,
 ,,,,,,
 # Lost Object Exploration,,,,,,
 ,,,,,,
@@ -119,41 +119,41 @@ $entity.vanidad_loe_authority score:100
 !$entity.vanidad_loe_authority_silent","Call $entity.vanidad_loe_ref updateData
 FireAll vanidad_loe_authorityComm","A haggard $personRank of the VAO sits in the middle of the screen with what looks like a civilian scientist standing to their right. 
 ""Captain, we are sorry to announce that according to the rules of scavenging, this derelict is ours. We are not afraid to open fire should you try to tamper with it.""",,
-vanidad_loeAuthorityCommHub_d,DialogOptionSelected,"$option == vanidad_loeAuthorityCommHub","FireAll vanidad_loe_authorityComm",,,
+vanidad_loeAuthorityCommHub_d,DialogOptionSelected,$option == vanidad_loeAuthorityCommHub,FireAll vanidad_loe_authorityComm,,,
 vanidad_loeAuthorityCommOptHostile,vanidad_loe_authorityComm,,,,"vanidad_loeAuthorityHostile: We need that ship, and we are not afraid to use force to keep it.",
 vanidad_loeAuthorityCommOptPeaceful,vanidad_loe_authorityComm,,,,"vanidad_loeAuthorityPeaceful:  I happen to really need that ship, maybe we can come to an arrangement?",
-vanidad_loeAuthorityCommOptCut,vanidad_loe_authorityComm,,,,"cutCommLink:We will be on our way then (cut the Comm Link)",
+vanidad_loeAuthorityCommOptCut,vanidad_loe_authorityComm,,,,cutCommLink:We will be on our way then (cut the Comm Link),
 vanidad_loeAuthorityComm_d_Hostile1,DialogOptionSelected,"$option == vanidad_loeAuthorityHostile
-","$entity.vanidad_loe_authority_silent = true","The $personRank slumps back in $hisOrHer chair with an audible sigh. 
+",$entity.vanidad_loe_authority_silent = true,"The $personRank slumps back in $hisOrHer chair with an audible sigh. 
 ""Well so do we. You are more than welcome to test our weapons if you want""
-$HeOrShe then nonchalantly lets $hisOrHer arm fall on the console and the comms channel is cut.","cutCommLinkNoText:Continue",
+$HeOrShe then nonchalantly lets $hisOrHer arm fall on the console and the comms channel is cut.",cutCommLinkNoText:Continue,
 vanidad_loeAuthorityComm_d_Hostile2,DialogOptionSelected,"$option == vanidad_loeAuthorityHostile
 $entity.relativeStrength < 0","Call $entity.vanidad_loe_ref clearedAuthority
 MakeOtherFleetGoAway true
 $entity.vanidad_loe_authority_silent = true","""You are quite bold to threaten a fleet of the Vanidad y Afliction Operation that way"". $HeOrShe tries to look unmoved, but $hisorHer glance at the tactical display and the blood draining from $hisOrHer face makes it clear $heOrShe is worried by the current tactical position.
-""Maybe we could be generous..."" As $heOrShe speaks, the scientist tries to intervene and the comms close. After several long seconds, the screen opens again and you see the $personRank standing alone in the middle. ""As a sign of friendship, we are willing to let you have this derelict, which we have determined to not be that useful. The comms channel is cut abruptly.","cutCommLinkNoText:Continue",
-vanidad_loeAuthorityComm_d_Peaceful,DialogOptionSelected,"$option == vanidad_loeAuthorityPeaceful","FireBest vanidad_loeAuthorityCommPeaceHub
+""Maybe we could be generous..."" As $heOrShe speaks, the scientist tries to intervene and the comms close. After several long seconds, the screen opens again and you see the $personRank standing alone in the middle. ""As a sign of friendship, we are willing to let you have this derelict, which we have determined to not be that useful. The comms channel is cut abruptly.",cutCommLinkNoText:Continue,
+vanidad_loeAuthorityComm_d_Peaceful,DialogOptionSelected,$option == vanidad_loeAuthorityPeaceful,"FireBest vanidad_loeAuthorityCommPeaceHub
 ","""Well.. Captain"" the $personRank gives a dejected look towards the scientist standing beside him. ""we are on some kind of official business, so unless you got some convincing arguments, I think we don't have much to say"".",,
-vanidad_loeAuthorityCommPeaceHub_d,DialogOptionSelected,"$option==vanidad_loeAuthorityCommPeaceHub","FireAll vanidad_loe_authorityCommPeace",,,
-vanidad_loeAuthorityCommPeaceHub,vanidad_loeAuthorityCommPeaceHub,,"FireAll vanidad_loe_authorityCommPeace",,,
-vanidad_loeAuthorityCommPeaceOptBack,vanidad_loe_authorityCommPeace,,,,"100:vanidad_loeAuthorityCommHub:Let's try something else then",
-vanidad_loeAuthorityCommPeaceOptOfferBribe,vanidad_loe_authorityCommPeace,"!$vanidad_loeBribeAsked",,,"vanidad_loeAuthorityAskPossibilityBribe:Maybe I could pay you an acceptable amount?",
-vanidad_loeAuthorityCommPeaceOptPayBribe,vanidad_loe_authorityCommPeace,"$vanidad_loeBribeAsked",,,"vanidad_loeAuthorityPayBribe: Pay the $vanidad_loe_authorityPayment credits",
-vanidad_loeAuthorityComm_d_OfferBribe,DialogOptionSelected,"$option == vanidad_loeAuthorityAskPossibilityBribe","$vanidad_loeBribeAsked = true
+vanidad_loeAuthorityCommPeaceHub_d,DialogOptionSelected,$option==vanidad_loeAuthorityCommPeaceHub,FireAll vanidad_loe_authorityCommPeace,,,
+vanidad_loeAuthorityCommPeaceHub,vanidad_loeAuthorityCommPeaceHub,,FireAll vanidad_loe_authorityCommPeace,,,
+vanidad_loeAuthorityCommPeaceOptBack,vanidad_loe_authorityCommPeace,,,,100:vanidad_loeAuthorityCommHub:Let's try something else then,
+vanidad_loeAuthorityCommPeaceOptOfferBribe,vanidad_loe_authorityCommPeace,!$vanidad_loeBribeAsked,,,vanidad_loeAuthorityAskPossibilityBribe:Maybe I could pay you an acceptable amount?,
+vanidad_loeAuthorityCommPeaceOptPayBribe,vanidad_loe_authorityCommPeace,$vanidad_loeBribeAsked,,,vanidad_loeAuthorityPayBribe: Pay the $vanidad_loe_authorityPayment credits,
+vanidad_loeAuthorityComm_d_OfferBribe,DialogOptionSelected,$option == vanidad_loeAuthorityAskPossibilityBribe,"$vanidad_loeBribeAsked = true
 SetTextHighlights $vanidad_loe_authorityPayment
 
 DoCanAffordCheck $vanidad_loe_authorityPayment vanidad_loeAuthorityPayBribe false","$HeOrShe stays silent, only typing something on the console, before answering in a soft voice.
 ""That doesn't seem to be something we can do""
 While he sits there looking at you awkwardly, you receive a private channel comm message, where all that is written is: ""$vanidad_loe_authorityPayment credits and you can do whatever you want""","vanidad_loeAuthorityPayBribe: Transfer the amount to the linked account
 vanidad_loeAuthorityCommPeaceHub: Lets think about this",
-vanidad_loeAuthorityComm_d_PayBribe,DialogOptionSelected,"$option == vanidad_loeAuthorityPayBribe","Call $entity.vanidad_loe_ref clearedAuthority
+vanidad_loeAuthorityComm_d_PayBribe,DialogOptionSelected,$option == vanidad_loeAuthorityPayBribe,"Call $entity.vanidad_loe_ref clearedAuthority
 MakeOtherFleetGoAway true
 RemoveCommodity credits $vanidad_loe_authorityPayment
 $entity.vanidad_loe_authority_silent = true","You transfer the specified amount as quick as you can while the scientist looks puzzled at the silent communication. When you receive confirmation the comm cuts for 30 second.
 When the video feed comes back up, the $personRank is now alone in the screen.
-""Well, I think our work here is done, good luck out there captain""","cutCommLink: Continue",
-vanidad_loeAuthorityDefeat,vanidad_loe_t_defendingFleetDefeated,,"Call $vanidad_loe_ref clearedAuthority",,,
-"#END loe authority conversation",,,,,,
+""Well, I think our work here is done, good luck out there captain""",cutCommLink: Continue,
+vanidad_loeAuthorityDefeat,vanidad_loe_t_defendingFleetDefeated,,Call $vanidad_loe_ref clearedAuthority,,,
+#END loe authority conversation,,,,,,
 ,,,,,,
 # loe Object interaction,,,,,,
 vanidad_loeDerelictInteractions,OpenInteractionDialog,"$vanidad_loe_target score:1000
@@ -161,31 +161,31 @@ vanidad_loeDerelictInteractions,OpenInteractionDialog,"$vanidad_loe_target score
 ","ShowDefaultVisual
 Call $entity.vanidad_loe_ref updateData
 FireBest vanidad_loeDerelictInteraction",,,
-vanidad_loeDerelictInteractionClean,vanidad_loeDerelictInteraction,,"SetShortcut defaultLeave ESCAPE","Your $shipOrFleet passes by the derelict, allowing your sensors officer to give it a cursory scan. The identity of the target is verified.","vanidad_loe_derelictSearch:Search for the black box
+vanidad_loeDerelictInteractionClean,vanidad_loeDerelictInteraction,,SetShortcut defaultLeave ESCAPE,"Your $shipOrFleet passes by the derelict, allowing your sensors officer to give it a cursory scan. The identity of the target is verified.","vanidad_loe_derelictSearch:Search for the black box
 100:defaultLeave:leave",
 vanidad_loeDerelictHostilesNear,vanidad_loeDerelictInteraction,"HostileFleetNearbyAndAware
-","SetShortcut defaultLeave ESCAPE","Your $shipOrFleet passes by the derelict, allowing your sensors officer to give it a cursory scan. The identity of the target is verified, but with hostiles nearby you can't safely dispatch a salvage team to investigate.","100:defaultLeave:leave",
+",SetShortcut defaultLeave ESCAPE,"Your $shipOrFleet passes by the derelict, allowing your sensors officer to give it a cursory scan. The identity of the target is verified, but with hostiles nearby you can't safely dispatch a salvage team to investigate.",100:defaultLeave:leave,
 vanidad_loeDerelictInteractionWithAuthority,vanidad_loeDerelictInteraction,"$vanidad_loe_authority
-$vanidad_loe_hasProtectingFleet","SetShortcut defaultLeave ESCAPE","Your $shipOrFleet passes by the derelict, allowing your sensors officer to give it a cursory scan. The identity of the target is verified, however the closely orbiting fleet sends a warning that you should not attempt to get any closer to the target. No one wants to try to interact with the derelict until this looming threat is dealt with.","100:defaultLeave:leave",
+$vanidad_loe_hasProtectingFleet",SetShortcut defaultLeave ESCAPE,"Your $shipOrFleet passes by the derelict, allowing your sensors officer to give it a cursory scan. The identity of the target is verified, however the closely orbiting fleet sends a warning that you should not attempt to get any closer to the target. No one wants to try to interact with the derelict until this looming threat is dealt with.",100:defaultLeave:leave,
 vanidad_loeDerelictInteractionWithAuthorityBusy,vanidad_loeDerelictInteraction,"$vanidad_loe_authority
 $vanidad_loe_hasProtectingFleet
-$vanidad_loe_protectingFleetIsBusy==true","SetShortcut defaultLeave ESCAPE","Your $shipOrFleet passes by the derelict, allowing your sensors officer to give it a cursory scan. The identity of the target is verified, and while there is a fleet that seemed interested in this derelict, it is currently engaged in a battle. We have a small window to operate on the target, but if the fleet survives the battle they are likely to turn hostile.","100:defaultLeave:leave",
-vanidad_loeDerelict_d_search,DialogOptionSelected,"$option == vanidad_loe_derelictSearch","$vanidad_loe_f_needToReturn = true
+$vanidad_loe_protectingFleetIsBusy==true",SetShortcut defaultLeave ESCAPE,"Your $shipOrFleet passes by the derelict, allowing your sensors officer to give it a cursory scan. The identity of the target is verified, and while there is a fleet that seemed interested in this derelict, it is currently engaged in a battle. We have a small window to operate on the target, but if the fleet survives the battle they are likely to turn hostile.",100:defaultLeave:leave,
+vanidad_loeDerelict_d_search,DialogOptionSelected,$option == vanidad_loe_derelictSearch,"$vanidad_loe_f_needToReturn = true
 Call $vanidad_loe_ref updateStage
 ","Your $shipOrFleet intercepts the derelict and the sensors officer runs a full-spectrum active scan. This ship has probably been stranded here since the Collapse. You order telemetry logged to the mission report file so that if nothing is found, at least you can prove you found the ship.
 
 A salvage team is dispatched and they quickly breach the hull. The operating screen fills with camera feeds. Heavily decayed bodies are scattered across the ship, their jumpsuits bearing the insignia of the $vanidad_loe_targetNoArticle. Most onboard memory has been scrubbed clean by time and the harsh stellar environment; however, your info mentions a specially shielded black box containing the ship's telemetry up to its moment of demise. Once located, you order your crewman to take the entire container onboard and secure it in the shuttle bay.
 
-You consider trying to open it, but it would risk damaging the contents, and in any case they are most likely heavily encrypted. All that remains is to bring it back to your client.","vanidad_loe_derelictSearch2:Continue",
-vanidad_loeDerelict_d_search2,DialogOptionSelected,"$option == vanidad_loe_derelictSearch2","$vanidad_loe_target = false 0
+You consider trying to open it, but it would risk damaging the contents, and in any case they are most likely heavily encrypted. All that remains is to bring it back to your client.",vanidad_loe_derelictSearch2:Continue,
+vanidad_loeDerelict_d_search2,DialogOptionSelected,$option == vanidad_loe_derelictSearch2,"$vanidad_loe_target = false 0
 #FireBest OpenInteractionDialog
 DismissDialog",,,
-"#END loe Object interaction",,,,,,
+#END loe Object interaction,,,,,,
 ,,,,,,
 # loe bar intro,,,,,,
 vanidad_loeBlurbBar1,vanidad_loe_blurbBar,,,"A haggard spacer with pale and unhealthy skin sits down unsteadily beside you and mutters: ""A friend of mine might have a profitable proposition for an intrepid captain."". He points towards a booth drenched in orange lighting at the back of the bar before shifting his attention towards the barkeep in order to get himself a drink.",,
-vanidad_loeOfferOptionBar1,vanidad_loe_optionBar,,,,"vanidad_loeStartBar:Go sit in the orange-hued booth the spacer pointed out to you.",
-vanidad_loeOfferTextBar1,DialogOptionSelected,"$option == vanidad_loeStartBar","$missionId= vanidad_loe
+vanidad_loeOfferOptionBar1,vanidad_loe_optionBar,,,,vanidad_loeStartBar:Go sit in the orange-hued booth the spacer pointed out to you.,
+vanidad_loeOfferTextBar1,DialogOptionSelected,$option == vanidad_loeStartBar,"$missionId= vanidad_loe
 Highlight $vanidad_loe_dist $vanidad_loe_target_system $vanidad_loe_reward $vanidad_loe_target_text
 FireAll vanidad_loe_OfferBar","As you go and sit in the booth, it is immediately obvious to you that the light comes from one of those spinning light fixtures the VAO natives seem to plaster just about everywhere. In front of you sits a $manOrWoman with sickly white skin, wearing a VAO Habsuit decorated with a few discrete Luddic Church symbols. $HeOrShe doesn't stop looking at $hisOrHer datapad until you are fully seated.
 
@@ -197,8 +197,8 @@ If you were to go and grab the ship black box in the $vanidad_loe_target_system 
  ""What do you think?""",,
 vanidad_loeOfferBarHubAD,vanidad_loe_OfferBar,,,,"0:contact_acceptBar:We have a deal.
 1:contact_declineBarNoContinue:I am quite busy, maybe another time.",
-vanidad_loeOfferBarHub_ODanger,vanidad_loe_OfferBar,"!$vanidad_loeOfferBar_ODanger ",,,"0:vanidad_loeOfferBarHub_ODanger: Seems a lot of money for some old info you know were to find.",
-vanidad_loeOfferBarHub_ADanger,DialogOptionSelected,"$option == vanidad_loeOfferBarHub_ODanger","$vanidad_loeOfferBar_ODanger = true 0
+vanidad_loeOfferBarHub_ODanger,vanidad_loe_OfferBar,!$vanidad_loeOfferBar_ODanger ,,,0:vanidad_loeOfferBarHub_ODanger: Seems a lot of money for some old info you know were to find.,
+vanidad_loeOfferBarHub_ADanger,DialogOptionSelected,$option == vanidad_loeOfferBarHub_ODanger,"$vanidad_loeOfferBar_ODanger = true 0
 FireAll vanidad_loe_OfferBar","$HeOrShe frowns a little before letting out a sigh with a fake smile on $hisOrHer face.
 
 ""I do believe Ludd rewards the inquisitive mind, so I don't mind sharing a bit with you.""
@@ -206,28 +206,27 @@ FireAll vanidad_loe_OfferBar","$HeOrShe frowns a little before letting out a sig
 ""First, you have to understand that we might not be the only party with this information. Second, we...I care very much about the past and the purpose of our VAO's ancestor. Some of those other parties care more about technologies and resources, so I'm paying to make sure this falls into the proper hands, no matter who or what gets in your way.""
 $HeOrShe pauses a little.
 ""With all that said, are you still willing to do it?""",,
-"#END loe bar intro",,,,,,
+#END loe bar intro,,,,,,
 ,,,,,,
 # loe return interaction,,,,,,
 vanidad_loeMissionReturn,PickGreeting,"$vanidad_loe_missionGiver score:1000
 Call $vanidad_loe_ref updateData
 FireBest GenericMissionReturn","ShowPersonVisual
 $vanidad_loe_f_completed = true
-Call $vanidad_loe_ref updateStage","""I am happy that my faith in you was well placed."" $PersonName says. ""My team will now work on seeing if we can extract something useful out of there. If you want, feel free to contact me again, I might have some more work for a reliable Captain like you.""","contact_pickAnotherGreeting: Continue",
-"#END loe return interaction",,,,,,
+Call $vanidad_loe_ref updateStage","""I am happy that my faith in you was well placed."" $PersonName says. ""My team will now work on seeing if we can extract something useful out of there. If you want, feel free to contact me again, I might have some more work for a reliable Captain like you.""",contact_pickAnotherGreeting: Continue,
+#END loe return interaction,,,,,,
 ,,,,,,
 # loe contact intro,,,,,,
 vanidad_loeBlurb,vanidad_loe_blurb,,,"""I got some info about an interesting pre collapse derelict of the VAO""
 OR
 ""I need someone to go grab info in a pre collapse VAO derelict""",,
-vanidad_loeOfferOption,vanidad_loe_option,,,,"vanidad_loe_start:Ask about the pre-collapse VAO derelict",
-vanidad_loeOfferTextContact,DialogOptionSelected,"$option == vanidad_loe_start","$missionId= vanidad_loe
+vanidad_loeOfferOption,vanidad_loe_option,,,,vanidad_loe_start:Ask about the pre-collapse VAO derelict,
+vanidad_loeOfferTextContact,DialogOptionSelected,$option == vanidad_loe_start,"$missionId= vanidad_loe
 Highlight $vanidad_loe_dist $vanidad_loe_target_system $vanidad_loe_reward $vanidad_loe_target_text
 ","""A contact on the Debajo Del Sol station found the location of $vanidad_loe_target_text for the pre collapse Vanidad y Affliction Operation. 
 I need you to find the derelict in the $vanidad_loe_target_system, $vanidad_loe_dist light-years away before anyone else grab it. Bring the black box with related info here. You will be paid $vanidad_loe_reward credits for this service.""
 ","contact_accept:Accept
 contact_decline:Decline",
-"#END loe contact intro",,,,,,
-"#END Lost Object Exploration",,,,,,
-"#END Missions",,,,,,
-
+#END loe contact intro,,,,,,
+#END Lost Object Exploration,,,,,,
+#END Missions,,,,,,
