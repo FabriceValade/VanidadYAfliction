@@ -17,19 +17,26 @@ vanidad_rpAuthorityHail,OpenCommLink,"$isPerson
 $entity.vanidad_rpauthority score:100
 ","$entity.ignorePlayerCommRequests = true
 ","The tired face of a $personRank of the VAO appear on your comm channel.
-""Captain, your fleet has been flagged for a routine inspection as we are searching for fleet supporting known terrorist in our world. Please stand down as we scan your ships""","vanidad_rpAuthorityHailCont: Ok I don't want any trouble.
+""Captain, your fleet has been flagged for a routine inspection as we are searching for fleet supporting known terrorist in our world. Please stand down as we scan your ships""
+OR
+The smirking face of a VAO officer appear on your comm channel.
+""Please immobilize your fleet captain. We are searching for smugglers of terrorist goods and a quick scan of your cargo should remove you from the suspect list.""","vanidad_rpAuthorityHailCont: Ok I don't want any trouble.
 vanidad_rpAuthorityResist: I refuse, we are out of your jurisdiction here, I don't need to comply with such overreach.",
-vanidad_rpAuthorityHail2,DialogOptionSelected,"$option == vanidad_rpAuthorityHailCont","FireAll vanidad_rp_authorityHail","You wait a while for the scan to be performed while the VAO officer stays on the comm. $heOrShe gives a thorough impression of a bored $manOrWoman, reclining lazily in $hisOrHer seat . Finally A report is brought to the $manOrWoman on screen, who barely looks at it before speaking.
+vanidad_rpAuthorityHail2,DialogOptionSelected,"$option == vanidad_rpAuthorityHailCont","FireAll vanidad_rp_authorityHail","You wait a while for the scan to be performed while the VAO officer stays on the comm. $heOrShe gives a thorough impression of a bored $manOrWoman, reclining lazily in $hisOrHer seat . Finally A report is brought to the $manOrWoman on screen, but you are fairly sure she doesn't really read it before speaking.
 ""Captain"" the $personRank looks tired and speak with little emotion. ""You went and got material you should not have"" $heOrShe raise a hand but stops, as if it was too much effort. ""We will now proceed to destroy your fleet""",,
-vanidad_rpAuthorityResist,DialogOptionSelected,"$option == vanidad_rpAuthorityResist",,"A small smile creep on the $personRank face. 
-""Well, maybe? But then again, nobody will complain once I blow your fleet out of the sky. Thank you for sparing the effort of pretending to scan your ship""
+vanidad_rpAuthorityResist,DialogOptionSelected,"$option == vanidad_rpAuthorityResist",,"A faint smile creep on the $personRank face. 
+""Well, maybe? But then again, nobody will complain once I blow your fleet out of the sky. Thank you for sparing me the effort of pretending to scan your ship""
 Then the comms channel are cut and your tactical officers warns about multiple signatures of weapon system engaging.","cutCommLinkNoText:Continue",
 vanidad_rpAuthorityHailOpt1a,vanidad_rp_authorityHail,"!$vanidad_rpauthorityWhyf
 ",,,"0:vanidad_rpAuthorityWhy:Wait! Why are you doing this?",
 vanidad_rpAuthorityHailAns1a,DialogOptionSelected,"$option == vanidad_rpAuthorityWhy","$vanidad_rpauthorityWhyf = true 0
-FireAll vanidad_rp_authorityHail","$heOrShe straighten a bit and scoff a little. ""Well, some people would like that these material did not go and help terrorists. Some people would also like that legal commerce be not stopped unless theres an official investigation. So here we are."" 
+FireAll vanidad_rp_authorityHail","$HeOrShe straighten a bit and scoff a little. ""Well, some people would like that these material did not go and help terrorists. Some people would also like that legal commerce be not stopped unless theres an official investigation. So here we are."" 
 
-The $personRank sit back in his chair, as if saying this had drained all $hisOrHer energy.",,
+The $personRank sit back in $hisOrHer chair, as if saying this had drained all $hisOrHer energy.
+OR
+The officer look a bit puzzled by the question and think for a moment before answering. ""You are helping clear enemies of the VAO. Hegemony rules forbid us from hostile action without proof, but I think we have plenty of proof here""
+
+$HeOrShe recline back $hisOrHer chair, giving every look that $heOrShe would rather be sleeping than talking with you.",,
 vanidad_rpAuthorityHailOpt1b,vanidad_rp_authorityHail,"$vanidad_rpauthorityWhyf
 !$vanidad_rpauthorityAvoidf",,,"0:vanidad_rpAuthorityAvoid:Why are you telling me this, can we avoid fighting?",
 vanidad_rpAuthorityHailAns1b,DialogOptionSelected,"$option == vanidad_rpAuthorityAvoid","$vanidad_rpauthorityAvoidf = true 0
@@ -37,7 +44,7 @@ FireAll vanidad_rp_authorityHail","The $personRank stay silent for a couple seco
 
 ""Well "" $heOrShe says in a depressed voice.
 ""Maybe if you were to give us whatever you went to pick, we might decide that its less paperwork that way."" $HimOrHer voice picks up a little bit.
-""yeah, let one of our shuttle board you and give us access to whatever you were asked to bring and I wont have the paperwork needed to record your untimely demise and to explain how we were not related""",,
+""yeah, let one of our shuttle board you and give us access to whatever you were asked to bring and I wont have to fill paperwork needed to record your untimely demise and to explain how my fleet was not related""",,
 vanidad_rpAuthorityHailOpt1c,vanidad_rp_authorityHail,"$vanidad_rpauthorityWhyf
 $vanidad_rpauthorityAvoidf",,,"0:vanidad_rpAuthorityBetrayal:Allow a shuttle to come and pick up the package.",
 vanidad_rpAuthorityHailBetrayal,DialogOptionSelected,"$option == vanidad_rpAuthorityBetrayal","MakeOtherFleetNonHostile vanidad_rp true
