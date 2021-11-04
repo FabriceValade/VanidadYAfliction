@@ -36,12 +36,12 @@
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
 	"shipsWhenImporting":{
-		"tags":["base_bp", "lowtech_bp", "vanidad_bp"],
+		"tags":["base_bp", "vanidad_bp"],
 		"hulls":[
 		],
 	},
 	"knownShips":{
-		"tags":["base_bp", "lowtech_bp", "vanidad_bp"],
+		"tags":["base_bp", "vanidad_bp"],
 		"hulls":[
 		],
 	},
