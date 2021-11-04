@@ -25,6 +25,7 @@
 			"vanidad_shockwave":"graphics/vanidad/fx/shockwave.png",
 			"vanidad_shockwave2":"graphics/vanidad/fx/shockwave2.png",
 			"vanidad_target":"graphics/vanidad/fx/target.png",
+			"vanidad_dot":"graphics/vanidad/fx/vanidad_dot.png",
 		},
 	}
 }

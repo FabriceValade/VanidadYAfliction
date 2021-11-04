@@ -1,0 +1,8 @@
+you can use callAction to let rules.csv ask the mission whether the fleet is in combat
+
+but storing the fleet in a variable in the mission seems to be a bunch of work
+(best way I can think of is to give the fleet a memory key in the trigger, then have a listener check every fleet that spawns for the memory key) 
+
+the custom bounty mission seems to use a reportBattleOccured/reportFleetDespawnedToListener method to detect the bounty fleet being fought killed, in which case it sets a memory value on the issuing person
+connectWithMemoryFlag is used to make the mission stage change when this memory value is set
+in this case, your entity interaction (in rules.csv) could check if the mission is in the "fleet is gone" stage

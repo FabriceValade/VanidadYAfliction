@@ -6,6 +6,9 @@ Heavy Laere,vanidad_laere_heavy,3,0.9,7000,800,,300,100,0,15,25,,,,ENERGY,310,,0
 Medium Laere,vanidad_laere_medium,1,,1200,700,,200,75,0,20,12,,,,ENERGY,210,,0,0.8,,,0,10,2,10,,1500,,,,,,,"energy12, merc vanidad_bp, vanidad_laere_bp",,Vanidad y Afliction,,General,,,,,,,,,,71
 Small Laere,vanidad_laere_small,0,,200,650,,100,50,0,30,6,,,,ENERGY,110,,0,0.9,,,0,5,1,10,,1500,,,,,,,"energy8, merc, vanidad_bp, vanidad_laere_bp",,Vanidad y Afliction,,General,,,,,,,,,,72
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+#built in,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Vastorayo,vanidad_vastorayo,3,,7500,900,6000,,,10,15,27,,,,ENERGY,,300,0.1,0.7,,,,,,,500,,,,,,,"ANTI_FTR, FIRE_WHEN_INEFFICIENT",,,Vanidad y Afliction,,Anti Fighter,,,,,,,,,,20
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #fighter weapon,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Light Estarayo (fighter),vanidad_estarayo_fighter,5,,1500,400,100,,,0,30,7,,,,ENERGY,,110,0.1,0.1,0.5,0,,,,,3200,,,,,,,SYSTEM,,,,,General,,,,,,,,,,20
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
