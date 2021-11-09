@@ -43,6 +43,7 @@ public class vanidad_vastoRayo implements EveryFrameWeaponEffectPlugin {
     private boolean isDoneOnce = false;
 
     public SpriteAPI pointSprite = Global.getSettings().getSprite("fx","vanidad_dot");
+    public SpriteAPI trailSprite = Global.getSettings().getSprite("fx","vanidad_vastoBeam2");
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, WeaponAPI weapon) {
@@ -75,8 +76,20 @@ public class vanidad_vastoRayo implements EveryFrameWeaponEffectPlugin {
                                        true);*/
         /*engine.addNebulaSmokeParticle(wideBeams.coreBeam.getTo(), new Vector2f(0, 0), width, 5f, 0f, 0f,
                                       2f, Color.GREEN);*/
-        Vector2f velocity = wideBeams.getVectorAlongDirection(400);
-        engine.addSmokeParticle(wideBeams.coreBeam.getTo(), velocity, width, 0.1f, 0.1f, Color.yellow);
+        Vector2f velocity = wideBeams.getVectorAlongDirection(200);
+        //engine.addSmokeParticle(wideBeams.coreBeam.getTo(), velocity, width, 0.1f, 1f, Color.yellow);
+        MagicRender.battlespace(trailSprite, 
+                                wideBeams.coreBeam.getTo(), //loc
+                                velocity, //vel
+                                new Vector2f(150,75), //size
+                                new Vector2f(-150,-75), //growth
+                                0, //angle
+                                25, //spin
+                                Color.yellow, 
+                                true, 
+                                0.1f, //fadein
+                                0.5f,//full
+                                1f); //fadeout
 
         if (timer.intervalElapsed()) {
             if (wideBeams.IsExisting) {

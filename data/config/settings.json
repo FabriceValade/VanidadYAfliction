@@ -26,6 +26,7 @@
 			"vanidad_shockwave2":"graphics/vanidad/fx/shockwave2.png",
 			"vanidad_target":"graphics/vanidad/fx/target.png",
 			"vanidad_dot":"graphics/vanidad/fx/vanidad_dot.png",
+			"vanidad_vastoBeam2":"graphics/vanidad/ships/naveExplorar/vastobeam2.png"
 		},
 	}
 }
