@@ -7,7 +7,7 @@ Medium Laere,vanidad_laere_medium,1,,1200,700,,200,75,0,20,12,,,,ENERGY,210,,0,0
 Small Laere,vanidad_laere_small,0,,200,650,,100,50,0,30,6,,,,ENERGY,110,,0,0.9,,,0,5,1,10,,1500,,,,,,,"energy8, merc, vanidad_bp, vanidad_laere_bp",,Vanidad y Afliction,,General,,,,,,,,,,72
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #built in,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Vastorayo,vanidad_vastorayo,3,,7500,900,6000,,,10,45,27,,,,ENERGY,,300,0.1,0.7,,,,,,,500,,,,,,,"ANTI_FTR, FIRE_WHEN_INEFFICIENT, pd",,,Vanidad y Afliction,,Anti Fighter,,,,,,,,,,20
+Vastorayo,vanidad_vastorayo,3,,7500,700,550,,,10,25,27,,,,FRAGMENTATION,,300,0.1,2,,,,,,,500,,,,,,,"ANTI_FTR, FIRE_WHEN_INEFFICIENT, PD, PD_ONLY",,,Vanidad y Afliction,,Anti Fighter,,,,,,,,,,20
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #fighter weapon,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Light Estarayo (fighter),vanidad_estarayo_fighter,5,,1500,400,100,,,0,30,7,,,,ENERGY,,110,0.1,0.1,0.5,0,,,,,3200,,,,,,,SYSTEM,,,,,General,,,,,,,,,,20
@@ -15,7 +15,7 @@ Light Estarayo (fighter),vanidad_estarayo_fighter,5,,1500,400,100,,,0,30,7,,,,EN
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,48
 #lenador,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Arm lmg (150 KE),vanidad_lenador_arm_right,5,,100,300,,25,,1,50,3,,,,KINETIC,3,,0,0.4,5,0.1,0,5,1,15,,600,,,10,,,"PD, SYSTEM",,,,,Anti Shield,,,,,,,,,,0.5
-Cadena Vio (300 HE beam dps),vanidad_lenador_arm_left,5,,1500,25,300,,,0,60,10,,,,HIGH_EXPLOSIVE,,50,0.1,0.1,,,,,,,3200,,,,,,,SYSTEM,,,,,Shredder,,,,,,,,,,
+Cadena Vio (300 HE beam dps),vanidad_lenador_arm_left,5,,1500,25,300,,,0,60,10,,,,HIGH_EXPLOSIVE,,50,0.1,2,,,,,,,3200,,,,,,,SYSTEM,,,,,Shredder,,,,,,,,,,
 ,vanidad_lenador_shoulder_right,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
 ,vanidad_lenador_shoulder_left,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,
 ,vanidad_lenador_head,,,,1,1,,,,,,,,,,,,,10,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,

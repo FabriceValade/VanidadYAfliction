@@ -52,6 +52,7 @@ public class vanidad_wideBeam {
     public vanidad_shape rectangle = new vanidad_shape();
     public int numberOfComb = 1;
     public boolean IsExisting = false;
+    
     public vanidad_wideBeam(){
         
     }
@@ -69,39 +70,8 @@ public class vanidad_wideBeam {
         this.UpdateShape();
         IsExisting = true;
     }
-    public Vector2f getCollisionCircleIntersectionProjectionAddMax(CombatEntityAPI entity, boolean isFromTop){
-        Vector2f AddToCenter = new Vector2f();
-        Vector2f.sub(entity.getLocation(), this.GetCornerValue(Corners.BOTTOMADD), AddToCenter);
 
-        //because of the sense of the unit vector, negative are outside the real segment, virtual projection point, greater than width are virtual too, but on the other side
-        float add_To_CircleCenterProjection_Distance = Vector2f.dot(AddToCenter, perpendicularDirectionVectorAddtoLess);
-        float distance;
-        if (add_To_CircleCenterProjection_Distance > 0)
-            distance = add_To_CircleCenterProjection_Distance- entity.getCollisionRadius();
-        else
-            distance = add_To_CircleCenterProjection_Distance;
-        if(isFromTop)
-            return getPointFromProjectionDistance(Corners.TOPADD, distance);
-        return getPointFromProjectionDistance(Corners.BOTTOMADD, distance);
-    }
-    
-    public Vector2f getCollisionCircleIntersectionProjectionAddMin(CombatEntityAPI entity, boolean isFromTop){
-        Vector2f AddToCenter = new Vector2f();
-        Vector2f.sub(entity.getLocation(), this.GetCornerValue(Corners.BOTTOMADD), AddToCenter);
-
-        //because of the sense of the unit vector, negative are outside the real segment, virtual projection point, greater than width are virtual too, but on the other side
-        float add_To_CircleCenterProjection_Distance = Vector2f.dot(AddToCenter, perpendicularDirectionVectorAddtoLess);
-        float distance;
-        if (add_To_CircleCenterProjection_Distance > (width-entity.getCollisionRadius()))
-            distance = width;
-        else
-            distance = add_To_CircleCenterProjection_Distance + entity.getCollisionRadius();
-        if(isFromTop)
-            return getPointFromProjectionDistance(Corners.TOPADD, distance);
-        return getPointFromProjectionDistance(Corners.BOTTOMADD, distance);
-    }
-    
-   private Vector2f getPointFromProjectionDistance(Corners corner, float distance){
+    private Vector2f GetPointFromProjectionDistance(Corners corner, float distance){
         Vector2f correction = new Vector2f(perpendicularDirectionVectorAddtoLess);
         VectorUtils.resize(correction, distance);
         Vector2f intersection = new Vector2f();
@@ -111,15 +81,44 @@ public class vanidad_wideBeam {
         return intersection;
 
     }
-    
-    
-    public boolean IsCollisionCircleIntersecting(CombatEntityAPI entity)
-    {
-        return rectangle.isCollides(entity.getLocation(), entity.getCollisionRadius());
+    private Parallels GetCombThroughBeam() {
+        Parallels result = new Parallels();
+        float interCombFraction = 1f / (float)numberOfComb;
+        Vector2f displacement = new Vector2f();
+        Vector2f start= new Vector2f();
+        Vector2f end= new Vector2f();
+        for (int i=0; i<=numberOfComb; i++){
+            float combDistance = interCombFraction*width*i;
+            start = GetPointFromProjectionDistance(Corners.BOTTOMADD,
+                                                            combDistance);
+            end = GetPointFromProjectionDistance(Corners.TOPADD,
+                                                            combDistance);
+            result.addLine(start, end);
+        }
+        return result;
     }
     
-    public boolean IsEntityIntersecting(CombatEntityAPI entity)
-    {
+    //feature of the widebeams we might want to get
+    public Vector2f GetVectorAlongDirection(float length){
+        return vanidad_util.GetPointFrom(new Vector2f(0,0), directionVector, length);
+    }
+    public Vector2f GetVectorOnBeam(float length){
+        return vanidad_util.GetPointFrom(coreBeam.getFrom(), directionVector, length);
+    }
+    public float GetLength(){
+        Vector2f along = Vector2f.sub(coreBeam.getTo(), coreBeam.getFrom(),
+                                      null);
+        return along.length();
+    } 
+    public float GetAngle(){
+        return (float)Math.toDegrees(Math.atan2(directionVector.y, directionVector.x));
+    }
+    
+    //more involved stuff implicating another entity
+    public boolean IsCollisionCircleIntersecting(CombatEntityAPI entity)    {
+        return rectangle.isCollides(entity.getLocation(), entity.getCollisionRadius());
+    }
+    public boolean IsEntityIntersecting(CombatEntityAPI entity){
         BoundsAPI bounds = entity.getExactBounds();
 
         // Entities that lack bounds will use the collision circle instead
@@ -127,7 +126,6 @@ public class vanidad_wideBeam {
         {
             return this.IsCollisionCircleIntersecting(entity);
         }
-        // Convert all segments to lines, do collision checks to find closest hit
         bounds.update(entity.getLocation(), entity.getFacing());
         return rectangle.isCollides(bounds);
     }
@@ -135,7 +133,7 @@ public class vanidad_wideBeam {
     {
 
         List<Vector2f> collisionPoints = new ArrayList<Vector2f>();
-        Parallels comb = this.getCombThroughBeam();
+        Parallels comb = this.GetCombThroughBeam();
         for (int i = 0; i < comb.count(); i++) {
                         Vector2f lineStart = new Vector2f(comb.xstart.get(i),comb.ystart.get(i));
                         Vector2f lineEnd = new Vector2f(comb.xend.get(i),comb.yend.get(i));
@@ -152,24 +150,8 @@ public class vanidad_wideBeam {
         
         return collisionPoints;
     }
-    public Parallels getCombThroughBeam() {
-        Parallels result = new Parallels();
-        float interCombFraction = 1f / (float)numberOfComb;
-        Vector2f displacement = new Vector2f();
-        Vector2f start= new Vector2f();
-        Vector2f end= new Vector2f();
-        for (int i=0; i<=numberOfComb; i++){
-            float combDistance = interCombFraction*width*i;
-            VectorUtils.resize(perpendicularDirectionVectorAddtoLess, combDistance, displacement);
-            Vector2f.add(this.GetCornerValue(Corners.BOTTOMADD), displacement, start);
-            Vector2f.add(this.GetCornerValue(Corners.TOPADD), displacement, end);
-            result.addLine(start, end);
-        }
-        return result;
-    }
-    public Vector2f getVectorAlongDirection(float length){
-        return vanidad_util.GetPointFrom(new Vector2f(0,0), directionVector, length);
-    }
+    
+    
     
     
     private static Vector2f MakeRotatedVector(Vector2f Source, float angle){
