@@ -4,7 +4,7 @@
 	"darkUIColor":[39,72,207,100],
 	"secondaryUIColor":[247,100,7,255],
 	"secondarySegments":6,
-	
+	"showInIntelTab":false,
 	
 	"displayName":"VAO Liberador",
 	"displayNameWithArticle":"the VAO Liberador",

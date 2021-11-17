@@ -146,7 +146,8 @@ public class vanidad_Citlali {
                                 Industries.FARMING,
                                 Industries.LIGHTINDUSTRY,
                                 Industries.GROUNDDEFENSES,
-                                Industries.PATROLHQ
+                                Industries.PATROLHQ,
+                                Industries.MINING
                         )
                 ),
                 true,

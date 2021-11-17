@@ -1,0 +1,63 @@
+{
+    "displayName": "Player",
+    "fluxCapacitors": 9,
+    "fluxVents": 30,
+    "hullId": "vanidad_naveExplorar",
+    "hullMods": [
+        "targetingunit",
+        "unstable_injector"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "vanidad_naveExplorar_player",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "autopulse"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0010": "reaper",
+                "WS0011": "reaper"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "ioncannon",
+                "WS0005": "ioncannon"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "vanidad_estarayo_medium",
+                "WS0003": "vanidad_estarayo_medium"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0009": "vanidad_vastorayo"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0008": "lrpdlaser"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "pdlaser",
+                "WS0007": "pdlaser"
+            }
+        }
+    ],
+    "wings": ["vanidad_lenador"]
+}
