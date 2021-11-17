@@ -1,9 +1,9 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
 ,,,,,,,,,,,,,,,,,,
-Nihilistic VAO crew,vanidad_nihilistic_spacer,,,Vanidad y Afliction,,,,,TRUE,,0,0,0,0,data.hullmods.vanidad_NihilisticSpacer,"Members of the VA Operation have developed a quite unique outlook on life and death. They are unafraid to push beyond safeties protocol, but also don't worry to much when it all inevitably break.
+Nihilistic VAO crew,vanidad_nihilistic_spacer,,,Vanidad y Afliction,,,,,TRUE,,0,0,0,0,data.hullmods.vanidad_NihilisticSpacer,"Members of the VA Operation have developed a rather unique outlook on life and death. They are unafraid to push their ships beyond what safety protocols would allow, but also don't worry too much when it all inevitably breaks.
 
-increase damage and flux cost of energy weapon by %s but reduce the rate broken weapons are repaired by %s.",,graphics/vanidad/hullmods/vanidad_comission.png
-VAO refit,vanidad_refit,,,Vanidad y Afliction,,,,,TRUE,,0,0,0,0,data.hullmods.vanidad_VAORefit,"Minor improvement and changes were made in the docks of the Debajo Del Sol station. This improve speed by %s and dissipation by %s, however the ship has %s less armor and hull.",,graphics/vanidad/factions/vanidadcrest.png
+Increases the damage and flux cost of energy weapon by %s but reduces the rate broken weapons are repaired by %s.",,graphics/vanidad/hullmods/vanidad_comission.png
+VAO refit,vanidad_refit,,,Vanidad y Afliction,,,,,TRUE,,0,0,0,0,data.hullmods.vanidad_VAORefit,"Minor improvements and changes were made to this ship in the docks of the Debajo Del Sol station. This improves ship speed by %s and flux dissipation by %s, while the ship has %s less armor and hull.",,graphics/vanidad/factions/vanidadcrest.png
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
