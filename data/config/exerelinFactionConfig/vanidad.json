@@ -45,7 +45,7 @@
 	[["vanidad_laere_package", ""]],
 	],    
 	"startShipsSolo":[["vanidad_cazador_hunter"]],
-    "startShipsCombatSmall":[["vanidad_forrajeador_explorer", "vanidad_halcon_leader", "vanidad_cazador_hunter"],["vanidad_naveExplorar_player","vanidad_pazjoya_guardian","vanidad_cazador_elite"],
+    "startShipsCombatSmall":[["vanidad_forrajeador_explorer", "vanidad_halcon_leader", "vanidad_cazador_hunter"],["vanidad_naveExplorar_player","vanidad_pazjoya_guardian","vanidad_cazador_elite"]],
     "startShipsCarrierSmall":[["vanidad_forrajeador_explorer", "vanidad_invasor_standard", "vanidad_pazjoya_guardian"]],
     "startShipsCombatLarge":[["vanidad_forrajeador_explorer", "vanidad_almadena_support", "vanidad_ionizador_support", "vanidad_halcon_leader"],["vanidad_dominator_balanced","vanidad_forrajeador_explorer","vanidad_pazjoya_interceptor","vanidad_cazador_elite"]],
 	"startShipsSuper":[
