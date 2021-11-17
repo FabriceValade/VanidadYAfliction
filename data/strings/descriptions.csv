@@ -33,6 +33,7 @@ vanidad_fisgon,SHIP,"The Fisgon is a freighter prized for its ability to dissimu
 
 The peculiar cylindrical container pods of the Fisgon seem to have been a proprietary design of the Vanidad y Afliction Operation before the collapse. They are shared by the smaller Forrajeador and are universally loathed by dock workers across the core due to their poor fit to Domain machinery. Aboard the Fisgon, an apparatus takes advantage of the pod shape to spread a sensor negating effect to the entire storage area. This feature is unavailable to its smaller cousin even though rumors float that engineers studying the nanoforge output of the Fisgon might be close to succeeding in replicating this technology.
 ",,,
+vanidad_naveExplorar,SHIP,"The Nave Explorar is a small cruiser with a unique anti-fighter weapon. It excell at escort duty, able to clear missiles and other indesirable with ease while supporting with generous angle of fire and a single flight deck. It's main flaw being a subpar speed, especially compared to other VAO ship.",,,
 #---- capital,,,,,
 vanidad_comandante,SHIP,"Comandante is the biggest ship found in the blueprint vault located on the Debajo Del Sol station. It has spectacular forward firepower and surprising mobility for ship of its size thanks to its temporal shell system. Unfortunately, this firepower cannot be sustained for long periods of time. 
 
@@ -44,6 +45,7 @@ vanidad_abogado_fighter,SHIP,"Multi purpose fighter able to damage fighters and 
 
  It is a marvel of engineering to have sloted a fully functional light estarayo on a fighter frame. The dual barrel system manage to maintain the same per beam efficiency as the standard weapon. Inneficient vs larger vessel",,,
 vanidad_lenador,SHIP,"The mining operation of Kristos contains many unique device to help the worker. The lenador is one of them, a massive mechanised suit meant to tear down transplutonic material. Inventive mind of the VAO noticed they were able to operate in space however. Small modification to their design allow them to participate in dismantling ennemy vessel. The civilian origin is easy to see however as they are very vulnerable to counter fire.",,,
+,,,,,
 #---- gun_estarayo,,,,,
 vanidad_estarayo_light,WEAPON,"The Estarayo is a beam weapon created through detonating a flux charge inside of the weapon while firing, causing the beam to disperse in a violent explosion after reaching a certain distance. The peculiar charge loading mechanism does however cause rattling of the focusing lenses, which makes the beam quite inaccurate.
 
@@ -81,11 +83,14 @@ The LAERE seems to be an acronym for some physical phenomena, but most research 
 vanidad_laere_heavy,WEAPON,"General multipurpose energy weapon. While better against armor compared to similar weapons, it suffers from a lower rate of fire and worse efficiency.
 
 The LAERE seems to be an acronym for some physical phenomena, but most research data related to it was unrecoverable. The dual barrel design is quite disliked by maintenance crew, and does not at all follow conventional pulse weaponry despite performing quite similarly. Post-Collapse science is unable to prove if the underlying technology is similar at all. Researchers and historians alike seem to share the hypothesis that this line of weapons might have been created as an attempt to create a competitor to the venerable Pulse Laser and similar weaponry. An attempt that didn't work, seeing as it is not in use by most factions in the Sector.",,,
+#---- builtin gun,,,,,
+vanidad_vastoRayo,WEAPON,"The Vastorayo fire a wide but diffuse beam of magnetically controlled plasma matter. It reacts violently with small target, like fighters and missiles while damaging targets behind them. Armored and shielded mainship can withstand its impact quite easily however.",,,
 ,,,,,
 #ship systems,,,,,
 vanidad_redirect_power,SHIP_SYSTEM,"Sets the reactor into weapon overdrive mode, lowering acceleration and top speed of the ship, while increasing rate of fire and lowering the flux cost of all energy weapons.",,,
 vanidad_hyper_stabiliser,SHIP_SYSTEM,"Hypercharges weapon mounts, increasing maximum range of all weapons by 200 units.",,,
 vanidad_spiraldischarge_system,SHIP_SYSTEM,Project a large wave that creates EMP arc on anything it hit. Hits on shield that do not pierce create hard flux. Disable Phase for a short time.,,,
+vanidad_delay,SHIP_SYSTEM,Isolated capacitors can absorb most excess flux caused by hostile fire on the shield for a short moment before needing to cooldown and be repaired,,,
 ,,,,,
 #Campaign,,,,,
 #---- faction,,,,,

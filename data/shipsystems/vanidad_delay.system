@@ -1,0 +1,25 @@
+{
+	"id":"vanidad_delay",
+	"type":"SHIELD_MOD",
+	"aiType":"FORTRESS_SHIELD",
+	
+	"statsScript":"data.scripts.shipsystems.vanidad_delayTheInevitable",
+	
+	"shieldRingColor":[255,235,201,255],
+	"shieldInnerColor":[255,159,0,75],
+	"shieldThicknessMult":1,
+	"shieldFluctuationMult":0,
+	
+	"soundFilterType":"LOWPASS",
+	"soundFilterGain":0.75,
+	"soundFilterGainHF":0.0,
+	
+	"loopSound":"system_fortress_shield_loop",
+	"outOfUsesSound":"gun_out_of_ammo",	
+	
+	"aiHints":{
+	}
+}
+
+
+

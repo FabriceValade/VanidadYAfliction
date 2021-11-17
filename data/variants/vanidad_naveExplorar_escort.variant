@@ -1,14 +1,64 @@
 {
-  "variantId": "vanidad_naveExplorar_escort",
-  "hullId": "vanidad_naveExplorar",
-  "displayName": "Escort",
-  "goalVariant": true,
-  "fluxCapacitors": 0,
-  "fluxVents": 0,
-  "quality": 1,
-  "permaMods": [],
-  "hullMods": [],
-  "weaponGroups": [],
-  "modules": [],
-  "wings": []
+    "displayName": "Escort",
+    "fluxCapacitors": 11,
+    "fluxVents": 30,
+    "goalVariant": true,
+    "hullId": "vanidad_naveExplorar",
+    "hullMods": [
+        "targetingunit",
+        "stabilizedshieldemitter"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "vanidad_naveExplorar_escort",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "vanidad_laere_heavy"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "vanidad_laere_small",
+                "WS0005": "vanidad_laere_small"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "vanidad_estarayo_medium",
+                "WS0003": "vanidad_estarayo_medium"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0009": "vanidad_vastorayo"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0008": "heavyburst"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "pdlaser",
+                "WS0007": "pdlaser"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0010": "reaper",
+                "WS0011": "reaper"
+            }
+        }
+    ],
+    "wings": ["vanidad_abogado_fighter"]
 }
