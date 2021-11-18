@@ -1,0 +1,13 @@
+Lot of people helped me make this mod, and I think they should really be thanked
+
+Contributors:
+barackollama: for extensive help and contribution in the writing
+avanitia: wonderfull testing and other feedback
+norsepal: early writing help and encouragement
+
+
+also:
+All the wonderfull (even if a little harsh) people of the Unofficial starsector discord spriting and modmaking channel
+Techpriest for a lot of usefull comment and info on coding and quest
+Nia Tahl and Tartiflette, for their mod. I inspired myself a lot from them
+Puretilt, because I used part of his code to start mine
