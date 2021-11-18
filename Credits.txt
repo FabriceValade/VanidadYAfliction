@@ -10,4 +10,4 @@ also:
 All the wonderfull (even if a little harsh) people of the Unofficial starsector discord spriting and modmaking channel
 Techpriest for a lot of usefull comment and info on coding and quest
 Nia Tahl and Tartiflette, for their mod. I inspired myself a lot from them
-Puretilt, because I used part of his code to start mine
+Puretilt, because I used part of her code to start mine
