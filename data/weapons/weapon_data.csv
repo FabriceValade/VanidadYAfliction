@@ -1,13 +1,13 @@
 name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn rate,OPs,ammo,ammo/sec,reload size,type,energy/shot,energy/second,chargeup,chargedown,burst size,burst delay,min spread,max spread,spread/shot,spread decay/sec,beam speed,proj speed,launch speed,flight time,proj hitpoints,autofireAccBonus,extraArcForAI,hints,tags,groupTag,tech/manufacturer,for weapon tooltip>>,primaryRoleStr,speedStr,trackingStr,turnRateStr,accuracyStr,customPrimary,customPrimaryHL,customAncillary,customAncillaryHL,noDPSInTooltip,number
-Heavy Estarayo,vanidad_estarayo_heavy,3,0.7,7500,800,600,,,10,15,27,,,,ENERGY,,600,0.1,0.7,0.9,,,,,,4200,,,,,,,"ANTI_FTR, FIRE_WHEN_INEFFICIENT","energy18, beam18, hist3t, vanidad_bp, vanidad_estarayo_bp",,Vanidad y Afliction,,Suppression,,,,,"Explodes on contact or after reaching maximum range, dealing 150 High Explosive damage in an area. Explosion size and damage dealt reduced under under 1000 range, with explosion not taking place if distance to target is 300 or smaller.",,,,,20
-Medium Estarayo,vanidad_estarayo_medium,2,,1500,700,300,,,5,20,11,,,,ENERGY,,300,0.1,0.45,0.6,,,,,,4200,,,,,,,"ANTI_FTR, FIRE_WHEN_INEFFICIENT","energy12, beam12, merc, vanidad_bp, vanidad_estarayo_bp",,Vanidad y Afliction,,Suppression,,,,,"Explodes on contact or after reaching maximum range, dealing 90 High Explosive damage in an area. Explosion size and damage dealt reduced under under 900 range, with explosion not taking place if distance to target is 200 or smaller.",,,,,20
-Light Estarayo,vanidad_estarayo_light,1,,400,600,100,,,0,30,7,,,,ENERGY,,110,0.1,0.45,0.6,,,,,,4200,,,,,,,"ANTI_FTR, FIRE_WHEN_INEFFICIENT","energy8, beam8, merc, vanidad_bp, vanidad_estarayo_bp",,Vanidad y Afliction,,Suppression,,,,,"Explodes on contact or after reaching maximum range, dealing 30 High Explosive damage in an area. Explosion size and damage dealt reduced under under 700 range, with explosion not taking place if distance to target is 50 or smaller.",,,,,20
-Heavy LAERE,vanidad_laere_heavy,3,0.9,7000,800,,300,100,0,15,25,,,,ENERGY,310,,0,0.5,,,0,10,2,10,,1500,,,,,,,"energy17, hist3t, vanidad_bp, vanidad_laere_bp",,Vanidad y Afliction,,General,,,,,,,,,,70
-Medium LAERE,vanidad_laere_medium,1,,1200,700,,200,75,0,20,12,,,,ENERGY,210,,0,0.8,,,0,10,2,10,,1500,,,,,,,"energy12, merc vanidad_bp, vanidad_laere_bp",,Vanidad y Afliction,,General,,,,,,,,,,71
-Light LAERE,vanidad_laere_small,0,,200,650,,100,50,0,30,6,,,,ENERGY,110,,0,0.9,,,0,5,1,10,,1500,,,,,,,"energy8, merc, vanidad_bp, vanidad_laere_bp",,Vanidad y Afliction,,General,,,,,,,,,,72
+Heavy Estarayo,vanidad_estarayo_heavy,3,0.6,7500,800,600,,,10,15,27,,,,ENERGY,,600,0.1,0.7,0.9,,,,,,4200,,,,,,,"ANTI_FTR, FIRE_WHEN_INEFFICIENT","energy18, beam18, hist3t, vanidad_bp, vanidad_estarayo_bp",,Vanidad y Afliction,,Suppression,,,,,"Explodes on contact or after reaching maximum range, dealing 300 High Explosive damage in an area. Explosion size and damage dealt reduced under under 800 range, with explosion not taking place if distance to target is 250 or smaller.",,,,,20
+Medium Estarayo,vanidad_estarayo_medium,2,0.8,1500,700,300,,,5,20,11,,,,ENERGY,,300,0.1,0.45,0.6,,,,,,4200,,,,,,,"ANTI_FTR, FIRE_WHEN_INEFFICIENT","energy12, beam12, merc, vanidad_bp, vanidad_estarayo_bp",,Vanidad y Afliction,,Suppression,,,,,"Explodes on contact or after reaching maximum range, dealing 120 High Explosive damage in an area. Explosion size and damage dealt reduced under under 700 range, with explosion not taking place if distance to target is 150 or smaller.",,,,,20
+Light Estarayo,vanidad_estarayo_light,1,1,400,600,100,,,0,30,7,,,,ENERGY,,110,0.1,0.45,0.6,,,,,,4200,,,,,,,"ANTI_FTR, FIRE_WHEN_INEFFICIENT","energy8, beam8, merc, vanidad_bp, vanidad_estarayo_bp",,Vanidad y Afliction,,Suppression,,,,,"Explodes on contact or after reaching maximum range, dealing 60 High Explosive damage in an area. Explosion size and damage dealt reduced under under 600 range, with explosion not taking place if distance to target is 50 or smaller.",,,,,20
+Heavy LAERE,vanidad_laere_heavy,3,0.8,7000,800,,300,100,0,15,25,,,,ENERGY,320,,0,0.5,,,0,10,2,10,,1500,,,,,,,"energy17, hist3t, vanidad_bp, vanidad_laere_bp",,Vanidad y Afliction,,General,,,,,,,,,,70
+Medium LAERE,vanidad_laere_medium,1,0.9,1200,700,,200,75,0,20,12,,,,ENERGY,220,,0,0.8,,,0,10,2,10,,1500,,,,,,,"energy12, merc vanidad_bp, vanidad_laere_bp",,Vanidad y Afliction,,General,,,,,,,,,,71
+Light LAERE,vanidad_laere_small,0,1,200,650,,100,50,0,30,6,,,,ENERGY,90,,0,0.9,,,0,5,1,10,,1500,,,,,,,"energy8, merc, vanidad_bp, vanidad_laere_bp",,Vanidad y Afliction,,General,,,,,,,,,,72
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #built in,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Vastorayo,vanidad_vastorayo,3,,7500,700,550,,,10,25,27,,,,FRAGMENTATION,,300,0.1,2,,,,,,,500,,,,,,,"ANTI_FTR, FIRE_WHEN_INEFFICIENT, PD, PD_ONLY",,,Vanidad y Afliction,,Anti Fighter,,,,,,,,,,20
+Vastorayo,vanidad_vastorayo,3,,7500,700,550,,,10,25,27,,,,FRAGMENTATION,,300,0.1,2,,,,,,,500,,,,,,,"SYSTEM, ANTI_FTR, FIRE_WHEN_INEFFICIENT, PD, PD_ONLY",,,Vanidad y Afliction,,Anti Fighter,,,,,,,,,,20
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #fighter weapon,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Light Estarayo (fighter),vanidad_estarayo_fighter,5,,1500,400,100,,,0,30,7,,,,ENERGY,,110,0.1,0.1,0.5,0,,,,,3200,,,,,,,SYSTEM,,,,,General,,,,,,,,,,20
@@ -42,10 +42,10 @@ Spiral discharge,vanidad_spiraldischarge,,,,1500,,100,100000,,,,,0,,ENERGY,0,0,0
 ,vanidad_ionizador_glow,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,49
 ,vanidad_ionizador_front_deco,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,50
 ,vanidad_ionizador_decothruster,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,51
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,52
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,53
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,54
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,55
+,vanidad_halcon_prong_left,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,52
+,vanidad_halcon_prong_right,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,53
+,vanidad_halcon_miss_left,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,54
+,vanidad_halcon_miss_right,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,,,,,,,,,,,,,55
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,56
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,57
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,58

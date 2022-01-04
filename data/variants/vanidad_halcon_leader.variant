@@ -1,10 +1,13 @@
 {
-    "displayName": "Leader",
-    "fluxCapacitors": 13,
-    "fluxVents": 20,
+    "displayName": "Pd",
+    "fluxCapacitors": 0,
+    "fluxVents": 16,
     "goalVariant": true,
     "hullId": "vanidad_halcon",
-    "hullMods": [],
+    "hullMods": [
+        "advancedoptics",
+        "targetingunit"
+    ],
     "permaMods": [],
     "sMods": [],
     "variantId": "vanidad_halcon_leader",
@@ -13,16 +16,8 @@
             "autofire": false,
             "mode": "LINKED",
             "weapons": {
-                "WS0001": "vanidad_laere_medium",
-                "WS0002": "vanidad_laere_medium"
-            }
-        },
-        {
-            "autofire": false,
-            "mode": "ALTERNATING",
-            "weapons": {
-                "WS0009": "sabot",
-                "WS0010": "sabot"
+                "WS0015": "vanidad_estarayo_medium",
+                "WS0016": "vanidad_estarayo_medium"
             }
         },
         {
@@ -31,25 +26,33 @@
             "weapons": {"WS0008": "reaper"}
         },
         {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0011": "heatseeker",
+                "WS0012": "heatseeker"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0007": "irpulse"}
+        },
+        {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0003": "lightneedler",
-                "WS0004": "lightneedler"
+                "WS0013": "lightac",
+                "WS0014": "lightac"
             }
         },
         {
             "autofire": true,
             "mode": "LINKED",
             "weapons": {
-                "WS0005": "pdlaser",
-                "WS0006": "pdlaser"
+                "WS0017": "pdburst",
+                "WS0018": "pdburst"
             }
-        },
-        {
-            "autofire": true,
-            "mode": "LINKED",
-            "weapons": {"WS0007": "pdlaser"}
         }
     ]
 }

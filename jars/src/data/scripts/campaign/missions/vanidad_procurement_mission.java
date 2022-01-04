@@ -115,13 +115,7 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
                                      goGetMarket);
         setStageOnMarketDecivilized(Stage.FAILED_DECIV, createdAt);
 
-        setTimeLimit(Stage.FAILED, 10000, null);
 
-//		int sizeModifier = market.getSize() * 10000;
-//		if (variation == Variation.PIRATE_BASE || variation == Variation.LUDDIC_PATH_BASE) {
-//			sizeModifier = 10 * 10000;;
-//		}
-//		setCreditReward(10000 + sizeModifier, 30000 + sizeModifier);
         setCreditReward(BaseHubMission.CreditReward.AVERAGE, 10);
         setupFleetEncounter();
 
