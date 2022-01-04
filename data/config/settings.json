@@ -4,7 +4,7 @@
     },
 	"graphics":{
 	"blueprint_packages":{
-			"vanidad_package":"graphics/vanidad/factions/vanidadflag.png",
+			"vanidad_hull_package":"graphics/vanidad/factions/vanidadflag.png",
 			"vanidad_laere_package":"graphics/vanidad/factions/vanidadflag.png",
 			"vanidad_estarayo_package":"graphics/vanidad/factions/vanidadflag.png",
 			"vanidad_base_hull_package":"graphics/vanidad/factions/vanidadflag.png",
