@@ -214,7 +214,7 @@ public class vanidad_procurement_mission extends HubMissionWithBarEvent {
             triggerMakeHostileAndAggressive();
             triggerMakeFleetIgnoredByOtherFleets();
             triggerFleetSetName("Peace keeper");
-            triggerFleetMakeFaster(true, 2, true);
+            triggerFleetMakeFaster(true, 1, true);
             triggerMakeLowRepImpact();
 
             triggerPickLocationTowardsPlayer(
