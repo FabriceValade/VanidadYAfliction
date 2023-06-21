@@ -1,0 +1,33 @@
+{
+  "java.project.sourcePaths": [
+    "src"
+  ],
+  "java.project.outputPath": "bin",
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\starfarer.api.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\mods\\LazyLib\\jars\\LazyLib.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\starfarer_obf.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\commons-compiler.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\commons-compiler-jdk.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\fs.common_obf.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\fs.sound_obf.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\janino.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\jinput.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\jogg-0.0.7.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\jorbis-0.0.15.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\json.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\log4j-1.2.9.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\lwjgl.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\lwjgl_util.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\xstream-1.4.10.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\mods\\MagicLib\\jars\\MagicLib.jar"
+  ],
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-1.7",
+      "path": "C:\\Program Files\\Java\\jdk1.7.0_80",
+      "default": true
+    }
+  ]
+}

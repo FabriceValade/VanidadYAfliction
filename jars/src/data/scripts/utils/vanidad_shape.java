@@ -199,4 +199,10 @@ public class vanidad_shape implements BoundsAPI
         }
         return result;
     }
+
+
+    @Override
+    public List<SegmentAPI> getOrigSegments() {
+        return null;
+    }
 }
