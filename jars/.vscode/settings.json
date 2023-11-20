@@ -21,7 +21,8 @@
     "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\lwjgl.jar",
     "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\lwjgl_util.jar",
     "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\starsector-core\\xstream-1.4.10.jar",
-    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\mods\\MagicLib\\jars\\MagicLib.jar"
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\mods\\MagicLib\\jars\\MagicLib.jar",
+    "c:\\Program Files (x86)\\Fractal Softworks\\Starsector\\mods\\GraphicsLib\\jars\\Graphics.jar"
   ],
   "java.configuration.runtimes": [
     {

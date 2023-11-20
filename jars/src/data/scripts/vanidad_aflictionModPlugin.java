@@ -15,6 +15,9 @@ import com.fs.starfarer.api.PluginPick;
 import com.fs.starfarer.api.campaign.CampaignPlugin;
 import data.scripts.weaponai.vanidad_vastoRayoAutofireAi;
 
+import org.dark.shaders.util.ShaderLib;
+import org.dark.shaders.util.TextureData;
+import org.dark.shaders.light.LightData;
 
 import data.scripts.world.vanidad_Gen;
 /**
@@ -37,7 +40,18 @@ public class vanidad_aflictionModPlugin extends BaseModPlugin {
     }
     
     public static final String VASTORAYO = "vanidad_vastorayo";
-    
+    public static boolean hasGraphicsLib;
+
+    @Override
+    public void onApplicationLoad() {
+        hasGraphicsLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
+
+        if (hasGraphicsLib) {
+            ShaderLib.init();
+            LightData.readLightDataCSV("data/config/vanidad_lights_data.csv");
+            TextureData.readTextureDataCSV("data/config/vanidad_texture_data.csv");
+        }
+    }
     
     @Override
     public void onNewGame() {

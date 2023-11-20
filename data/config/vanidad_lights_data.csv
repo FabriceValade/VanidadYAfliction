@@ -1,0 +1,9 @@
+id,type,size,intensity,fadeout,color,offset,hit size,hit intensity,hit fadeout,hit color,flash size,flash intensity,flash fadeout,flash color,flash offset,chance,fighter dim
+vanidad_laere_shot_heavy,projectile,80,1.05,1,"[38,114,255]",,160,1,0.65,"[38,114,255]",75,1.35,0.85,"[255,128,0]",,1,TRUE
+vanidad_laere_shot_medium,projectile,50,0.95,1,"[38,114,255]",,50,0.95,0.65,"[38,114,255]",45,1.15,0.85,"[255,128,0]",,1,TRUE
+vanidad_laere_shot_small,projectile,35,0.85,1,"[38,114,255]",,30,0.85,0.65,"[38,114,255]",25,1,0.85,"[255,128,0]",,1,TRUE
+vanidad_estarayo_heavy,beam,85,1.15,,"[255,128,0]",,80,1,,"[255,128,0]",75,1.15,,"[255,128,0]",,1,TRUE
+vanidad_estarayo_medium,beam,55,0.85,,"[255,128,0]",,55,0.85,,"[255,128,0]",45,0.85,,"[255,128,0]",,1,TRUE
+vanidad_estarayo_light,beam,40,0.75,,"[255,128,0]",,35,0.75,,"[255,128,0]",30,0.75,,"[255,128,0]",,1,TRUE
+vanidad_estarayo_fighter,beam,40,0.75,,"[255,128,0]",,35,0.75,,"[255,128,0]",30,0.75,,"[255,128,0]",,1,TRUE
+vanidad_vastorayo,beam,120,1,0.65,"[223,143,22]",,120,1,0.2,"[223,143,22]",120,1,0.4,"[223,143,22]",,1,TRUE

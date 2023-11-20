@@ -35,6 +35,8 @@ public class vanidad_VAORefit extends BaseHullMod {
                 if (index == 2) return "" + (int) ARMORHULL_MALUS + "%";
 		return null;
 	}
+
+    
     
 
 }
